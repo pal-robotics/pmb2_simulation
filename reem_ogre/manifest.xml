@@ -1,0 +1,14 @@
+<package>
+  <description brief="Reem-H2 Ogre Mesh Files"></description>
+  <author>Maintained by Adolfo Rodriguez Tsouroukdissian</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+
+  <depend package="convex_decomposition"/>
+  <depend package="ivcon"/>
+  <depend package="ogre_tools"/>
+  <depend package="reem_description"/>
+</package>
+
+
