@@ -1,0 +1,18 @@
+torso_controller:
+  type: "JointSplineTrajectoryController"
+  joints:
+    - torso_1_joint
+    - torso_2_joint
+  gains:
+    torso_1_joint: {p: 1600.0, d: 1000.0}
+    torso_2_joint: {p: 1600.0, d: 1000.0}
+  joint_trajectory_action_node:
+    joints:
+      - torso_1_joint
+      - torso_2_joint
+    constraints:
+      goal_time: 0.6
+      torso_1_joint:
+        goal: 0.02
+      torso_2_joint:
+        goal: 0.02

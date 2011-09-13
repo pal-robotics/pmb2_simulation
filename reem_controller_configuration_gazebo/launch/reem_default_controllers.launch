@@ -1,0 +1,61 @@
+<launch>
+
+<!-- TODO: Mirror structure in PR2 analog -->
+
+   <!-- Gazebo backend for PAL motors controller -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/pal_motors_controller.yaml" />
+
+  <!-- Upper body -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_upper_body_controllers.yaml" />
+
+  <!-- Arms -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_arm_controllers.yaml" />
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_both_arms_controllers.yaml" />
+
+  <!-- Head -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_head_controller.yaml" />
+
+  <!-- Torso -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_torso_controller.yaml" />
+
+  <!-- Controllers that come up started -->
+  <node name="default_controllers_spawner"
+        pkg="pr2_controller_manager" type="spawner" output="screen"
+        args="--wait-for=calibrated pal_motors_controller" />
+
+  <!-- Nodes on top of the controllers -->
+  <group ns="pal_motors_controller">
+    <node name="pr2_controller_manger"
+          pkg="pr2_controller_manager" type="spawner" args="--wait-for=calibrated pal_motors_controller" />
+  </group>
+
+  <group ns="right_arm_controller">
+    <node name="joint_trajectory_action_node"
+          pkg="joint_trajectory_action" type="joint_trajectory_action" />
+  </group>
+
+  <group ns="left_arm_controller">
+    <node name="joint_trajectory_action_node"
+          pkg="joint_trajectory_action" type="joint_trajectory_action" />
+  </group>
+
+  <group ns="both_arms_controller">
+    <node name="joint_trajectory_action_node"
+          pkg="joint_trajectory_action" type="joint_trajectory_action" />
+  </group>
+
+  <group ns="upper_body_controller">
+    <node name="joint_trajectory_action_node"
+          pkg="joint_trajectory_action" type="joint_trajectory_action" />
+  </group>
+
+  <group ns="head_controller">
+    <node name="joint_trajectory_action_node"
+          pkg="joint_trajectory_action" type="joint_trajectory_action" />
+  </group>
+
+  <group ns="torso_controller">
+    <node name="joint_trajectory_action_node"
+          pkg="joint_trajectory_action" type="joint_trajectory_action" />
+  </group>
+</launch>

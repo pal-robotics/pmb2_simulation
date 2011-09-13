@@ -1,0 +1,28 @@
+<stack>
+  <description brief="Reem-H2 simulation components">
+    Reem-H2-specific simulation components. These include
+    plugins and launch scripts necessary for running Reem-H2 in simulation.
+  </description>
+  <author>Maintained by Adolfo Rodriguez Tsouroukdissian</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+  <depend stack="ros" />
+
+  <depend stack="common" />
+  <depend stack="common_msgs" />
+<!--   <depend stack="diagnostics" /> --><!-- TODO: Remove? -->
+  <depend stack="geometry" />
+<!--   <depend stack="image_common" /> --><!-- TODO: Remove? -->
+<!--   <depend stack="image_pipeline" /> --><!-- TODO: Remove? -->
+<!--   <depend stack="navigation" /> --><!-- TODO: Remove? -->
+  <depend stack="physics_ode" />
+  <depend stack="reem_common" />
+  <depend stack="pr2_controllers" />
+  <depend stack="pr2_mechanism" />
+  <depend stack="robot_model" />
+  <depend stack="ros" />
+  <depend stack="simulator_gazebo" />
+<!--   <depend stack="vision_opencv" /> --><!-- TODO: Remove? -->
+  <depend stack="visualization_common" />
+</stack>

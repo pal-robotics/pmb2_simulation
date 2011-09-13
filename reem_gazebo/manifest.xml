@@ -1,0 +1,26 @@
+<package>
+  <description> 3D Reem-H2 Simulator Launch Scripts. </description>
+  <author>Pablo Garcia Martinez</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+
+  <depend package="reem_controller_configuration_gazebo"/>
+  <depend package="reem_description"/>
+  <depend package="pr2_gazebo_plugins"/> <!--TODO: Make reem-specific package!-->
+  <depend package="reem_ogre" />
+
+  <depend package="gazebo"/>
+  <depend package="gazebo_worlds"/>
+  <depend package="ogre"/>
+
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="std_msgs"/>
+
+  <export>
+    <gazebo gazebo_media_path="${prefix}" />
+  </export>
+</package>
+
+

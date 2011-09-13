@@ -1,0 +1,98 @@
+upper_body_controller:
+  type: "JointSplineTrajectoryController"
+  joints:
+    - torso_1_joint
+    - torso_2_joint
+    - head_1_joint
+    - head_2_joint
+    - arm_right_1_joint
+    - arm_right_2_joint
+    - arm_right_3_joint
+    - arm_right_4_joint
+    - arm_right_5_joint
+    - arm_right_6_joint
+    - arm_right_7_joint
+    - arm_left_1_joint
+    - arm_left_2_joint
+    - arm_left_3_joint
+    - arm_left_4_joint
+    - arm_left_5_joint
+    - arm_left_6_joint
+    - arm_left_7_joint
+  gains:
+    torso_1_joint:     {p: 800.0, d: 500.0}
+    torso_2_joint:     {p: 800.0, d: 500.0}
+    head_1_joint:      {p: 400.0, d: 300.0}
+    head_2_joint:      {p: 400.0, d: 300.0}
+    arm_right_1_joint: {p: 800.0, d: 500.0}
+    arm_right_2_joint: {p: 800.0, d: 500.0}
+    arm_right_3_joint: {p: 600.0, d: 400.0}
+    arm_right_4_joint: {p: 800.0, d: 600.0}
+    arm_right_5_joint: {p: 200.0, d: 140.0}
+    arm_right_6_joint: {p: 200.0, d: 140.0}
+    arm_right_7_joint: {p: 200.0, d: 160.0}
+    arm_left_1_joint:  {p: 800.0, d: 500.0}
+    arm_left_2_joint:  {p: 800.0, d: 500.0}
+    arm_left_3_joint:  {p: 600.0, d: 400.0}
+    arm_left_4_joint:  {p: 800.0, d: 600.0}
+    arm_left_5_joint:  {p: 200.0, d: 140.0}
+    arm_left_6_joint:  {p: 200.0, d: 140.0}
+    arm_left_7_joint:  {p: 200.0, d: 160.0}
+  joint_trajectory_action_node:
+    joints:
+      - torso_1_joint
+      - torso_2_joint
+      - head_1_joint
+      - head_2_joint
+      - arm_right_1_joint
+      - arm_right_2_joint
+      - arm_right_3_joint
+      - arm_right_4_joint
+      - arm_right_5_joint
+      - arm_right_6_joint
+      - arm_right_7_joint
+      - arm_left_1_joint
+      - arm_left_2_joint
+      - arm_left_3_joint
+      - arm_left_4_joint
+      - arm_left_5_joint
+      - arm_left_6_joint
+      - arm_left_7_joint
+    constraints:
+      goal_time: 0.6
+      torso_1_joint:
+        goal: 0.02
+      torso_2_joint:
+        goal: 0.02
+      head_1_joint:
+        goal: 0.02
+      head_2_joint:
+        goal: 0.02
+      arm_right_1_joint:
+        goal: 0.02
+      arm_right_2_joint:
+        goal: 0.02
+      arm_right_3_joint:
+        goal: 0.02
+      arm_right_4_joint:
+        goal: 0.02
+      arm_right_5_joint:
+        goal: 0.02
+      arm_right_6_joint:
+        goal: 0.02
+      arm_right_7_joint:
+        goal: 0.02
+      arm_left_1_joint:
+        goal: 0.02
+      arm_left_2_joint:
+        goal: 0.02
+      arm_left_3_joint:
+        goal: 0.02
+      arm_left_4_joint:
+        goal: 0.02
+      arm_left_5_joint:
+        goal: 0.02
+      arm_left_6_joint:
+        goal: 0.02
+      arm_left_7_joint:
+        goal: 0.02

@@ -1,0 +1,18 @@
+head_controller:
+  type: "JointSplineTrajectoryController"
+  joints:
+    - head_1_joint
+    - head_2_joint
+  gains:
+    head_1_joint: {p: 400.0, d: 300.0}
+    head_2_joint: {p: 400.0, d: 300.0}
+  joint_trajectory_action_node:
+    joints:
+      - head_1_joint
+      - head_2_joint
+    constraints:
+      goal_time: 0.6
+      head_1_joint:
+        goal: 0.02
+      head_2_joint:
+        goal: 0.02
