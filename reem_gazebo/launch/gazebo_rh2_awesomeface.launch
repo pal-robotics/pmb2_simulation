@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- start up pujades world -->
+  <include file="$(find reem_gazebo)/worlds/awesomeface_world.launch"/>
+
+  <!--export ROBOT_INITIAL_POSE="-x 3.0 -y 0"-->
+
+  <!-- start REEM_H2 robot -->
+  <!--<include file="$(find reem_gazebo)/launch/reem.launch"/>-->
+	
+</launch>
+
