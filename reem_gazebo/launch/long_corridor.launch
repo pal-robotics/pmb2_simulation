@@ -3,9 +3,9 @@
   <!-- start gazebo with an simple office -->
   <param name="/use_sim_time" value="true" />
 
-  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/simple_office.world" respawn="false" output="screen"/>
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find reem_gazebo)/worlds/simple_office.world" respawn="false" output="screen"/>
 
-  export ROBOT_INITIAL_POSE="-x 3.0 -y 0"
+  export ROBOT_INITIAL_POSE="-x -20.0 -y 0"
 
   <!-- start REEM_H2 robot -->
   <include file="$(find reem_gazebo)/launch/reem.launch"/>
