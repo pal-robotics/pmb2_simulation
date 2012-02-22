@@ -1,0 +1,11 @@
+target_frame: base_link
+
+scan_filter_chain:
+- name: fov
+  type: laser_filters/LaserScanAngularBoundsFilter
+  params:
+    lower_angle: -1.2217
+    upper_angle: 1.2217
+- name: interpolation
+  type: laser_filters/InterpolationFilter
+

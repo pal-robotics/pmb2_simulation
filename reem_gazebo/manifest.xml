@@ -5,6 +5,7 @@
   <review status="unreviewed" notes=""/>
   <url></url>
 
+  <depend package="laser_filters"/>
   <depend package="reem_controller_configuration_gazebo"/>
   <depend package="reem_description"/>
   <depend package="pr2_gazebo_plugins"/> <!--TODO: Make reem-specific package!-->

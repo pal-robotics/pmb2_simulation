@@ -4,25 +4,16 @@
     plugins and launch scripts necessary for running Reem-H2 in simulation.
   </description>
   <author>Maintained by Adolfo Rodriguez Tsouroukdissian</author>
-  <license>BSD</license>
+  <license>BSD</license>  
   <review status="unreviewed" notes=""/>
-  <url></url>
+  <url>http://ros.org/wiki/reem_simulation</url>
+  <depend stack="laser_pipeline" /> <!-- laser_filters -->
+  <depend stack="pr2_simulator" /> <!-- pr2_gazebo_plugins -->
+  <depend stack="reem_common" /> <!-- reem_description -->
+  <depend stack="robot_model" /> <!-- convex_decomposition, ivcon -->
   <depend stack="ros" />
+  <depend stack="ros_comm" /> <!-- std_msgs, rospy, roscpp -->
+  <depend stack="simulator_gazebo" /> <!-- gazebo, gazebo_worlds -->
+  <depend stack="visualization_common" /> <!-- ogre, ogre_tools -->
 
-  <depend stack="common" />
-  <depend stack="common_msgs" />
-<!--   <depend stack="diagnostics" /> --><!-- TODO: Remove? -->
-  <depend stack="geometry" />
-<!--   <depend stack="image_common" /> --><!-- TODO: Remove? -->
-<!--   <depend stack="image_pipeline" /> --><!-- TODO: Remove? -->
-<!--   <depend stack="navigation" /> --><!-- TODO: Remove? -->
-  <depend stack="physics_ode" />
-  <depend stack="reem_common" />
-  <depend stack="pr2_controllers" />
-  <depend stack="pr2_mechanism" />
-  <depend stack="robot_model" />
-  <depend stack="ros" />
-  <depend stack="simulator_gazebo" />
-<!--   <depend stack="vision_opencv" /> --><!-- TODO: Remove? -->
-  <depend stack="visualization_common" />
 </stack>

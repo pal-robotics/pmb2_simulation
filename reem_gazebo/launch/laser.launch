@@ -1,0 +1,11 @@
+<launch>
+
+<!-- base laser filter-->
+ <include file="$(find reem_gazebo)/launch/base_laser_filter.launch">
+ </include>
+
+<!-- torso laser filter-->
+ <include file="$(find reem_gazebo)/launch/upper_laser_filter.launch">
+ </include>
+
+</launch>
