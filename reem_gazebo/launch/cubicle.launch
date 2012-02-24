@@ -1,0 +1,13 @@
+<launch>
+
+  <!-- start gazebo with an simple office -->
+  <param name="/use_sim_time" value="true" />
+
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find reem_gazebo)/worlds/cubicle.world" respawn="false" output="screen"/>
+
+  export ROBOT_INITIAL_POSE="-x 0 -y 0"
+
+  <!-- start REEM_H2 robot -->
+  <include file="$(find reem_gazebo)/launch/reem.launch"/>
+
+</launch>
