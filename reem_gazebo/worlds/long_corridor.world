@@ -25,7 +25,6 @@
 <!-- here's the global contact cfm/erp -->
   <physics:ode>
     <stepTime>0.001</stepTime>
-    <updateRate>-0.8</updateRate>
     <gravity>0 0 -9.8</gravity>
     <cfm>0.000000000001</cfm>
     <erp>0.2</erp>
@@ -75,115 +74,30 @@
         <kp>1000000.0</kp>
         <kd>1.0</kd>
         <normal>0 0 1</normal>
-        <size>51.3 51.3</size>
+        <size>51.3 11.3</size>
         <!-- map3.png -->
         <material>Gazebo/White</material>
       </geom:plane>
     </body:plane>
   </model:physical>
 
-  <!-- office walls -->
-  <model:physical name="wall_1_model">
-    <xyz>0 -5 1</xyz>
-    <rpy>0.0 0.0 0.0</rpy>
-    <static>true</static>
-    <body:box name="wall_1_body">
-      <geom:box name="wall_1_geom">
-        <mesh>default</mesh>
-        <size>10 .2 2</size>
-        <visual>
-          <size>10 .2 2</size>
-          <material>Gazebo/Green</material>
-          <mesh>unit_box</mesh>
-        </visual>
-      </geom:box>
-    </body:box>
-  </model:physical>
-
-  <model:physical name="wall_2_model">
-    <xyz>0 10 1</xyz>
-    <rpy>0.0 0.0 0.0</rpy>
-    <static>true</static>
-    <body:box name="wall_2_body">
-      <geom:box name="wall_2_geom">
-        <mesh>default</mesh>
-        <size>10 .2 2</size>
-        <visual>
-          <size>10 .2 2</size>
-          <material>Gazebo/Green</material>
-          <mesh>unit_box</mesh>
-        </visual>
-      </geom:box>
-    </body:box>
-  </model:physical>
-
-  <model:physical name="wall_3_model">
-    <xyz>-5 2.5 1</xyz>
-    <rpy>0.0 0.0 0.0</rpy>
-    <static>true</static>
-    <body:box name="wall_3_body">
-      <geom:box name="wall_3_geom">
-        <mesh>default</mesh>
-        <size>.2 15 2</size>
-        <visual>
-          <size>.2 15 2</size>
-          <material>Gazebo/Green</material>
-          <mesh>unit_box</mesh>
-        </visual>
-      </geom:box>
-    </body:box>
-  </model:physical>
-
-  <model:physical name="wall_4_model">
-    <xyz>5 2.5 1</xyz>
-    <rpy>0.0 0.0 0.0</rpy>
-    <static>true</static>
-    <body:box name="wall_4_body">
-      <geom:box name="wall_4_geom">
-        <mesh>default</mesh>
-        <size>.2 15 2</size>
-        <visual>
-          <size>.2 15 2</size>
-          <material>Gazebo/Green</material>
-          <mesh>unit_box</mesh>
-        </visual>
-      </geom:box>
-    </body:box>
-  </model:physical>
-
-  <!-- interior walls -->
-  <model:physical name="wall_5_model">
-    <xyz>-2 5 1</xyz>
-    <rpy>0.0 0.0 0.0</rpy>
-    <static>true</static>
-    <body:box name="wall_5_body">
-      <geom:box name="wall_5_geom">
-        <mesh>default</mesh>
-        <size>6 .2 2</size>
-        <visual>
-          <size>6 .2 2</size>
-          <material>Gazebo/Green</material>
-          <mesh>unit_box</mesh>
-        </visual>
-      </geom:box>
-    </body:box>
-  </model:physical>
-
-  <model:physical name="wall_6_model">
-    <xyz>3.5 5 1</xyz>
-    <rpy>0.0 0.0 0.0</rpy>
-    <static>true</static>
-    <body:box name="wall_6_body">
-      <geom:box name="wall_6_geom">
-        <mesh>default</mesh>
-        <size>3 .2 2</size>
-        <visual>
-          <size>3 .2 2</size>
-          <material>Gazebo/Green</material>
-          <mesh>unit_box</mesh>
-        </visual>
-      </geom:box>
-    </body:box>
+  <!-- generate the walls -->
+  <model:physical name="pujades_map">
+   <xyz>-25 -5 0.0</xyz>	
+   <rpy>0 0 0</rpy>
+   <static>true</static>
+   <body:map name="pujades_map_body">
+     <geom:map name="pujades_map_geom">
+     <!--  <image>willowMap.png</image> -->
+			  <image>longcorridor3.png</image> 
+       <threshold>200</threshold>
+       <granularity>1</granularity>
+       <negative>false</negative>
+       <scale>0.1</scale>
+       <offset>0 0 0</offset>
+       <material>Gazebo/Rocky</material>
+     </geom:map>
+   </body:map>
   </model:physical>
 
   <!-- White Directional light -->
