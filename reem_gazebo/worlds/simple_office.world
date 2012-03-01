@@ -24,8 +24,8 @@
 <!-- erp is typically .1-.8 -->
 <!-- here's the global contact cfm/erp -->
   <physics:ode>
-    <stepTime>0.001</stepTime>
-    <updateRate>-0.8</updateRate>
+    <stepTime>0.0004</stepTime>
+    <!--updateRate>-0.8</updateRate-->
     <gravity>0 0 -9.8</gravity>
     <cfm>0.000000000001</cfm>
     <erp>0.2</erp>
