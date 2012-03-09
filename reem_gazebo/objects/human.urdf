@@ -1,0 +1,228 @@
+<robot name="simple_human">
+  <link name="rigth_foot">
+    <inertial>
+      <origin xyz="0.125 0.05 0.05"/>
+      <mass value="1" />
+      <inertia  ixx="100" ixy="0.0"  ixz="0.0"  iyy="100"  iyz="0.0"  izz="100" />
+    </inertial>
+    <visual>
+      <origin xyz="0.125 0.05 0.05"/>
+      <geometry>
+        <box size="0.25 0.1 0.1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.125 0.05 0.05"/>
+      <geometry>
+        <box size="0.25 0.1 0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="rigth_foot">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <link name="left_foot">
+    <inertial>
+      <origin xyz="0.125 0.35 0.05"/>
+      <mass value="1" />
+      <inertia  ixx="100" ixy="0.0"  ixz="0.0"  iyy="100"  iyz="0.0"  izz="100" />
+    </inertial>
+    <visual>
+      <origin xyz="0.125 0.35 0.05"/>
+      <geometry>
+        <box size="0.25 0.1 0.1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.125 0.35 0.05"/>
+      <geometry>
+        <box size="0.25 0.1 0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="left_foot">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <link name="rigth_leg">
+    <inertial>
+      <origin xyz="0.05 0.05 0.475"/>
+      <mass value="1" />
+      <inertia  ixx="100" ixy="0.0"  ixz="0.0"  iyy="100"  iyz="0.0"  izz="100" />
+    </inertial>
+    <visual>
+      <origin xyz="0.05 0.05 0.475"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.75" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0.05 0.475"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.75" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="rigth_leg">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <link name="left_leg">
+    <inertial>
+      <origin xyz="0.05 0.35 0.475"/>
+      <mass value="1" />
+      <inertia  ixx="100" ixy="0.0"  ixz="0.0"  iyy="100"  iyz="0.0"  izz="100" />
+    </inertial>
+    <visual>
+      <origin xyz="0.05 0.35 0.475"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.75" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0.35 0.475"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.75" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="left_leg">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <link name="rigth_arm">
+    <inertial>
+      <origin xyz="0.05 -0.05 1.25"/>
+      <mass value="1" />
+      <inertia  ixx="100" ixy="0.0"  ixz="0.0"  iyy="100"  iyz="0.0"  izz="100" />
+    </inertial>
+    <visual>
+      <origin xyz="0.05 -0.05 1.25"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.6" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.05 -0.05 1.25"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.6" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="rigth_arm">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <link name="left_arm">
+    <inertial>
+      <origin xyz="0.05 0.45 1.25"/>
+      <mass value="1" />
+      <inertia  ixx="100" ixy="0.0"  ixz="0.0"  iyy="100"  iyz="0.0"  izz="100" />
+    </inertial>
+    <visual>
+      <origin xyz="0.05 0.45 1.25"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.6" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0.45 1.25"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.6" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="left_arm">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <link name="body">
+    <inertial>
+      <origin xyz="0.05 0.2 1.2"/>
+      <mass value="1" />
+      <inertia  ixx="100" ixy="0.0"  ixz="0.0"  iyy="100"  iyz="0.0"  izz="100" />
+    </inertial>
+    <visual>
+      <origin xyz="0.05 0.2 1.2"/>
+      <geometry>
+        <box size="0.2 0.4 0.7" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0.2 1.2"/>
+      <geometry>
+        <box size="0.2 0.4 0.7" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="body">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <link name="head">
+    <inertial>
+      <origin xyz="0.05 0.2 1.7"/>
+      <mass value="1" />
+      <inertia  ixx="100" ixy="0.0"  ixz="0.0"  iyy="100"  iyz="0.0"  izz="100" />
+    </inertial>
+    <visual>
+      <origin xyz="0.05 0.2 1.7"/>
+      <geometry>
+        <box size="0.2 0.2 0.3" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0.2 1.7"/>
+      <geometry>
+        <box size="0.2 0.2 0.3" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="head">
+    <material>Face</material>
+  </gazebo>
+
+  <joint name="rigth_ankle" type="fixed">
+    <parent link="rigth_leg"/>
+    <child link="rigth_foot"/>
+  </joint>
+
+  <joint name="left_ankle" type="fixed">
+    <parent link="left_leg"/>
+    <child link="left_foot"/>
+  </joint>
+  
+  <joint name="rigth_hip" type="fixed">
+    <parent link="body"/>
+    <child link="rigth_leg"/>
+  </joint>
+
+  <joint name="left_hip" type="fixed">
+    <parent link="body"/>
+    <child link="left_leg"/>
+  </joint>
+
+  <joint name="rigth_shoulder" type="fixed">
+    <parent link="body"/>
+    <child link="rigth_arm"/>
+  </joint>
+
+  <joint name="left_shoulder" type="fixed">
+    <parent link="body"/>
+    <child link="left_arm"/>
+  </joint>
+
+  <joint name="neck" type="fixed">
+    <parent link="body"/>
+    <child link="head"/>
+  </joint>
+</robot>

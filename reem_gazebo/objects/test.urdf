@@ -1,0 +1,27 @@
+<robot name="cube">
+  <link name="cube">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1" />
+      <inertia  ixx="100" ixy="0.0"  ixz="0.0"  iyy="100"  iyz="0.0"  izz="100" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <gazebo reference="cube">
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <material>Gazebo/Red</material>
+  </gazebo>
+</robot>
