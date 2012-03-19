@@ -1,9 +1,0 @@
-<map>
-<map_point x = "3"  y = "0"  theta = "0"  radius = "1.4142135623730951"  type = "5"  id = "kitchen"  description = "" ></map_point>
-<map_point x = "3"  y = "3"  theta = "0"  radius = "1.4142135623730951"  type = "5"  id = "charger"  description = "" ></map_point>
-<map_point x = "10"  y = "10"  theta = "0"  radius = "1.4142135623730951"  type = "5"  id = "KK"  description = "" ></map_point>
-<map_point x = "1.5"  y = "2.5"  theta = "0"  radius = "1.4142135623730951"  type = "9"  id = "Obstacle"  description = "" ></map_point>
-<map_point x = "1.5"  y = "1.5"  theta = "0"  radius = "1.4142135623730951"  type = "9"  id = "Obstacle"  description = "" ></map_point>
-<map_point x = "0.5"  y = "2.5"  theta = "0"  radius = "1.4142135623730951"  type = "9"  id = "Obstacle"  description = "" ></map_point>
-<map_point x = "0.5"  y = "1.5"  theta = "0"  radius = "1.4142135623730951"  type = "9"  id = "Obstacle"  description = "" ></map_point>
-</map>
