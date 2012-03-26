@@ -1,15 +1,18 @@
 <package>
-  <description> 3D Reem-H2 Simulator Launch Scripts. </description>
+  <description> 3D REEM Simulator Launch Scripts. </description>
   <author>Pablo Garcia Martinez</author>
-  <license>BSD</license>
+  <license>Modified BSD</license>
   <review status="unreviewed" notes=""/>
   <url></url>
 
   <depend package="laser_filters"/>
   <depend package="reem_controller_configuration_gazebo"/>
   <depend package="reem_description"/>
-  <depend package="pr2_gazebo_plugins"/> <!--TODO: Make reem-specific package!-->
+  <depend package="pr2_gazebo_plugins"/>
+  <depend package="reem_controller_plugin"/>
+  <depend package="range_gazebo_plugin"/>
   <depend package="reem_ogre" />
+  <depend package="robot_mechanism_controllers"/>
 
   <depend package="gazebo"/>
   <depend package="gazebo_worlds"/>

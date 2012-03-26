@@ -3,13 +3,8 @@
   <!-- send Reem-H2 urdf to param server -->
   <include file="$(find reem_description)/robots/upload_reem.launch" />
 
-  <!-- push robot_description to factory and spawn robot in gazebo 
-  <node name="spawn_reem_model" pkg="gazebo" type="spawn_model" args="$(optenv ROBOT_INITIAL_POSE) -unpause -urdf -param robot_description -model reem" respawn="false" output="screen" /> -->
-
-  <!-- ******************************************************************************************************************************************** -->
-	<!--  that node will be deprecated, but we need it to use differential drive (pr2 don't). Try to fix it in the future and use the above sentence  -->
-	<!-- ******************************************************************************************************************************************** -->
-  <node name="reem_gazebo_model" pkg="gazebo_tools" type="gazebo_model" args="$(optenv ROBOT_INITIAL_POSE) -p robot_description spawn robot_description" respawn="false" output="screen" />
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_reem_model" pkg="gazebo" type="spawn_model" args="$(optenv ROBOT_INITIAL_POSE) -unpause -urdf -param robot_description -model reem" respawn="false" output="screen" />
 
   <!-- default bringup script -->
   <include file="$(find reem_gazebo)/launch/reem_bringup.launch" />

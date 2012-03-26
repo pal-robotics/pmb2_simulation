@@ -1,7 +1,7 @@
 <package>
-  <description brief="Controller gains for the simulated Reem-H2 robot."></description>
+  <description brief="Controller gains for the simulated REEM robot."></description>
   <author>Adolfo Rodriguez Tsouroukdissian</author>
-  <license>BSD</license>
+  <license>Modified BSD</license>
   <review status="unreviewed" notes=""/>
   <url></url>
 

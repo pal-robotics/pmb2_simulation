@@ -1,5 +1,5 @@
 torso_controller:
-  type: "JointSplineTrajectoryController"
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
   joints:
     - torso_1_joint
     - torso_2_joint
