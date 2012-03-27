@@ -4,7 +4,7 @@
   <include file="$(find reem_gazebo)/launch/empty_world_real_time.launch"/>
 
   <!-- start Reem-H2 robot -->
-  <include file="$(find reem_gazebo)/launch/reem.launch"/>
+  <include file="$(find reem_gazebo)/launch/reem_pal.launch"/>
 
 </launch>
 
