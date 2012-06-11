@@ -15,5 +15,8 @@
   <!-- Controllers that come up started -->
   <node name="default_controllers_spawner"
         pkg="pr2_controller_manager" type="spawner" output="screen"
-        args="--wait-for=calibrated right_arm_torso_controller left_arm_controller head_controller" />
+        args="--wait-for=calibrated right_arm_torso_controller left_arm_controller head_traj_controller" />
+
+  <!-- Point head action -->
+  <include file="$(find reem_bringup)/launch/point_head_action.launch" />
 </launch>
