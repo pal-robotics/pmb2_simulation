@@ -1,0 +1,19 @@
+<launch>
+
+  <!-- start up empty world -->
+  <include file="$(find reem_gazebo)/launch/empty_world_real_time.launch"/>
+
+  <!-- send REEM urdf to param server -->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find reem_description)/robots/reem_eye_hand_calibration.urdf.xacro'" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_reem_model" pkg="gazebo" type="spawn_model" args="$(optenv ROBOT_INITIAL_POSE) -unpause -urdf -param robot_description -model reem_eye_hand_calibration" respawn="false" output="screen" />
+
+  <!-- default bringup script -->
+  <include file="$(find reem_gazebo)/launch/reem_bringup.launch" />
+
+  <!-- Default Controllers -->
+  <include file="$(find reem_controller_configuration_gazebo)/launch/reem_pal_controllers.launch" />
+
+</launch>
+
