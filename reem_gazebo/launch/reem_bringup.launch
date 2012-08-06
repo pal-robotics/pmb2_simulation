@@ -7,9 +7,6 @@
   <node pkg="rostopic" type="rostopic" name="fake_joint_calibration"
         args="pub /calibrated std_msgs/Bool true" />
 
-	<!-- load controllers -->
-	<node name="diffdrive" pkg="gazebo_plugins" type="gazebo_ros_diffdrive" respawn="true" output="screen"/> 
-
 <!-- TODO: In what follows, include whatever is implemented for Reem-H2, remove the rest -->
 
   <!-- Stereo image processing -->
