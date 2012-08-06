@@ -4,8 +4,8 @@ head_traj_controller:
     - head_1_joint
     - head_2_joint
   gains:
-    head_1_joint: {p: 40.0, d: 20.0}
-    head_2_joint: {p: 40.0, d: 20.0}
+    head_1_joint: {p: 400.0, d: 300.0} #{p: 40.0, d: 1.5, i: 2.0, i_clamp: 0.5}
+    head_2_joint: {p: 400.0, d: 300.0} #{p: 60.0, d: 2.0, i: 2.0, i_clamp: 0.5}
   joint_trajectory_action_node:
     joints:
       - head_1_joint

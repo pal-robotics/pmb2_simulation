@@ -19,6 +19,7 @@ pal_motors_controller:
     - arm_left_5_joint
     - arm_left_6_joint
     - arm_left_7_joint
+
   gains:
     torso_1_joint:     {p: 800.0, d: 500.0}
     torso_2_joint:     {p: 800.0, d: 500.0}

@@ -4,8 +4,8 @@ torso_controller:
     - torso_1_joint
     - torso_2_joint
   gains:
-    torso_1_joint: {p: 1600.0, d: 1000.0}
-    torso_2_joint: {p: 1600.0, d: 1000.0}
+    torso_1_joint: {p: 800.0, d: 500.0} #{p: 3000.0, d: 20.0, i: 1500, i_clamp: 8.0}
+    torso_2_joint: {p: 800.0, d: 500.0} #{p: 3000.0, d: 20.0, i: 1500, i_clamp: 8.0}
   joint_trajectory_action_node:
     joints:
       - torso_1_joint

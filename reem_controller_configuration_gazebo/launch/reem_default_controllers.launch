@@ -6,6 +6,9 @@
   <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_arm_controllers.yaml" />
   <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_both_arms_controllers.yaml" />
 
+  <!-- Hands -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_hand_controllers.yaml" />
+
   <!-- Head -->
   <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_head_controller.yaml" />
 
@@ -15,7 +18,7 @@
   <!-- Controllers that come up started -->
   <node name="default_controllers_spawner"
         pkg="pr2_controller_manager" type="spawner" output="screen"
-        args="--wait-for=calibrated right_arm_torso_controller left_arm_controller head_traj_controller" />
+        args="--wait-for=calibrated torso_controller head_traj_controller right_arm_torso_controller left_arm_controller right_hand_traj_controller left_hand_traj_controller" />
 
   <!-- Point head action -->
   <include file="$(find reem_bringup)/launch/point_head_action.launch" />

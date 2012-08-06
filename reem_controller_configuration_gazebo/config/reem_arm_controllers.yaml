@@ -9,13 +9,13 @@ right_arm_controller:
     - arm_right_6_joint
     - arm_right_7_joint
   gains:
-    arm_right_1_joint: {p: 800.0, d: 500.0}
-    arm_right_2_joint: {p: 800.0, d: 500.0}
-    arm_right_3_joint: {p: 600.0, d: 400.0}
-    arm_right_4_joint: {p: 800.0, d: 600.0}
-    arm_right_5_joint: {p: 200.0, d: 140.0}
-    arm_right_6_joint: {p: 200.0, d: 140.0}
-    arm_right_7_joint: {p: 200.0, d: 160.0}
+    arm_right_1_joint: {p: 800.0, d: 500.0} #{p: 1500.0, d: 10.0, i: 600, i_clamp: 4.0}
+    arm_right_2_joint: {p: 800.0, d: 500.0} #{p: 1500.0, d: 10.0, i: 600, i_clamp: 4.0}
+    arm_right_3_joint: {p: 600.0, d: 400.0} #{p: 600.0,  d: 2.0,  i: 400, i_clamp: 4.0}
+    arm_right_4_joint: {p: 800.0, d: 600.0} #{p: 1500.0, d: 10.0, i: 600, i_clamp: 4.0}
+    arm_right_5_joint: {p: 200.0, d: 140.0} #{p: 200.0,  d: 1.0,  i: 100, i_clamp: 2.0}
+    arm_right_6_joint: {p: 200.0, d: 140.0} #{p: 200.0,  d: 1.0,  i: 100, i_clamp: 2.0}
+    arm_right_7_joint: {p: 200.0, d: 160.0} #{p: 200.0,  d: 1.0,  i: 100, i_clamp: 2.0}
   joint_trajectory_action_node:
     joints:
       - arm_right_1_joint
@@ -55,15 +55,15 @@ right_arm_torso_controller:
     - arm_right_6_joint
     - arm_right_7_joint
   gains:
-    torso_1_joint:     {p: 800.0, d: 500.0}
-    torso_2_joint:     {p: 800.0, d: 500.0}
-    arm_right_1_joint: {p: 800.0, d: 500.0}
-    arm_right_2_joint: {p: 800.0, d: 500.0}
-    arm_right_3_joint: {p: 600.0, d: 400.0}
-    arm_right_4_joint: {p: 800.0, d: 600.0}
-    arm_right_5_joint: {p: 200.0, d: 140.0}
-    arm_right_6_joint: {p: 200.0, d: 140.0}
-    arm_right_7_joint: {p: 200.0, d: 160.0}
+    torso_1_joint:     {p: 800.0, d: 500.0} #{p: 3000.0, d: 20.0, i: 1500, i_clamp: 8.0}
+    torso_2_joint:     {p: 800.0, d: 500.0} #{p: 3000.0, d: 20.0, i: 1500, i_clamp: 8.0}
+    arm_right_1_joint: {p: 800.0, d: 500.0} #{p: 1500.0, d: 10.0, i: 600, i_clamp: 4.0}
+    arm_right_2_joint: {p: 800.0, d: 500.0} #{p: 1500.0, d: 10.0, i: 600, i_clamp: 4.0}
+    arm_right_3_joint: {p: 600.0, d: 400.0} #{p: 600.0,  d: 2.0,  i: 400, i_clamp: 4.0}
+    arm_right_4_joint: {p: 800.0, d: 600.0} #{p: 1500.0, d: 10.0, i: 600, i_clamp: 4.0}
+    arm_right_5_joint: {p: 200.0, d: 140.0} #{p: 200.0,  d: 1.0,  i: 100, i_clamp: 2.0}
+    arm_right_6_joint: {p: 200.0, d: 140.0} #{p: 200.0,  d: 1.0,  i: 100, i_clamp: 2.0}
+    arm_right_7_joint: {p: 200.0, d: 160.0} #{p: 200.0,  d: 1.0,  i: 100, i_clamp: 2.0}
   joint_trajectory_action_node:
     joints:
       - torso_1_joint
@@ -107,13 +107,13 @@ left_arm_controller:
     - arm_left_6_joint
     - arm_left_7_joint
   gains:
-    arm_left_1_joint: {p: 800.0, d: 500.0}
-    arm_left_2_joint: {p: 800.0, d: 500.0}
-    arm_left_3_joint: {p: 600.0, d: 400.0}
-    arm_left_4_joint: {p: 800.0, d: 600.0}
-    arm_left_5_joint: {p: 200.0, d: 140.0}
-    arm_left_6_joint: {p: 200.0, d: 140.0}
-    arm_left_7_joint: {p: 200.0, d: 160.0}
+    arm_left_1_joint: {p: 800.0, d: 500.0} #{p: 1500.0, d: 10.0, i: 600, i_clamp: 4.0}
+    arm_left_2_joint: {p: 800.0, d: 500.0} #{p: 1500.0, d: 10.0, i: 600, i_clamp: 4.0}
+    arm_left_3_joint: {p: 600.0, d: 400.0} #{p: 600.0,  d: 2.0,  i: 400, i_clamp: 4.0}
+    arm_left_4_joint: {p: 800.0, d: 600.0} #{p: 1500.0, d: 10.0, i: 600, i_clamp: 4.0}
+    arm_left_5_joint: {p: 200.0, d: 140.0} #{p: 200.0,  d: 1.0,  i: 100, i_clamp: 2.0}
+    arm_left_6_joint: {p: 200.0, d: 140.0} #{p: 200.0,  d: 1.0,  i: 100, i_clamp: 2.0}
+    arm_left_7_joint: {p: 200.0, d: 160.0} #{p: 200.0,  d: 1.0,  i: 100, i_clamp: 2.0}
   joint_trajectory_action_node:
     joints:
       - arm_left_1_joint
