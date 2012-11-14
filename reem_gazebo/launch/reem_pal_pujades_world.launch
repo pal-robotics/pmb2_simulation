@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- start up pujades world -->  
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find pal_navigation)/worlds/pujades.world" respawn="false" output="screen"/>
+
+  <!-- start Reem-H2 robot -->
+  <include file="$(find reem_gazebo)/launch/reem_pal.launch"/>
+
+</launch>
+
