@@ -4,7 +4,7 @@
   <include file="$(find reem_description)/robots/upload_reem.launch" />
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
-  <node name="spawn_reem_model" pkg="gazebo" type="spawn_model" args="$(optenv ROBOT_INITIAL_POSE) -unpause -urdf -param robot_description -model reem" respawn="false" output="screen" />
+  <node name="spawn_reem_model" pkg="gazebo" type="spawn_model" args="$(optenv ROBOT_INITIAL_POSE) -unpause -urdf -param robot_description -model reem -ros_namespace /gazebo" respawn="false" output="screen" />
 
   <!-- default bringup script -->
   <include file="$(find reem_gazebo)/launch/reem_bringup.launch" />

@@ -58,7 +58,7 @@
   <rendering:ogre>
     <ambient>1.0 1.0 1.0 1.0</ambient>
     <sky>
-      <material>Gazebo/CloudySky</material>
+      <material>Gazebo/Grey</material>
     </sky>
     <grid>false</grid>
     <maxUpdateRate>10</maxUpdateRate>
@@ -76,12 +76,11 @@
         <kd>1.0</kd>
         <normal>0 0 1</normal>
         <size>51.3 51.3</size>
-        <!-- map3.png -->
-        <material>Gazebo/White</material>
+        <material>Gazebo/Grey</material>
       </geom:plane>
     </body:plane>
   </model:physical>
-
+ 
   <!-- office walls -->
   <model:physical name="wall_1_model">
     <xyz>0 -5 1</xyz>
@@ -197,8 +196,5 @@
       <range>10</range>
     </light>
   </model:renderable>
-  <!--
-  -->
-  
 
 </gazebo:world>
