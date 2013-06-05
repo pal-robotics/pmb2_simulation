@@ -1,0 +1,28 @@
+material Aruco/marker582_8cm
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+	texture aruco-582_8cm.png
+      }
+    }
+  }
+}
+
+material Aruco/marker26_8cm
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+	texture aruco-26_8cm.png
+      }
+    }
+  }
+}
+

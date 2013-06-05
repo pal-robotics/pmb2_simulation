@@ -1,6 +1,6 @@
 <launch>
 
-  <!-- startup Reem-H2 without starting up any defaut controllers -->
+  <!-- startup REEM without starting up any defaut controllers -->
   <include file="$(find reem_gazebo)/launch/reem_no_controllers.launch" />
 
   <!-- Default Controllers -->

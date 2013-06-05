@@ -8,6 +8,6 @@
   <node name="gazebo" pkg="pal_gazebo_plugins" type="run_$(arg gzname)" args="$(find reem_gazebo)/worlds/simple_office.world" output="screen" />
 
   <!-- start REEM robot -->
-  <include file="$(find reem_gazebo)/launch/reem.launch"/>
+  <include file="$(find reem_gazebo)/launch/reem_pal.launch"/>
 
 </launch>

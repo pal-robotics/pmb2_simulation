@@ -1,11 +1,11 @@
 <launch>
+  <!-- Spawn REEM with a marker in its right hand without starting up any defaut controllers -->
+
   <!-- Robot Description -->
-  <include file="$(find reem_description)/robots/upload_reem.launch" />
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find reem_description)/robots/reem_right_hand_marker.urdf.xacro'" />
 
   <!-- Robot model to spawn -->
-  <arg name="use_rgbd_sensor" value="$(optenv USE_RGBD_SENSOR false)" />
-  <arg if="$(arg use_rgbd_sensor)"     name="gzmodel" value="reem_rgbd_description/reem_rgbd.urdf"/>
-  <arg unless="$(arg use_rgbd_sensor)" name="gzmodel" value="reem_description/reem.urdf"/>
+  <arg name="gzmodel" value="reem_right_hand_marker_description/reem_right_hand_marker.urdf"/>
 
   <!-- Push robot_description to factory and spawn robot in Gazebo -->
   <arg name="gzpose"  default="-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
@@ -13,4 +13,7 @@
 
   <!-- Default bringup script -->
   <include file="$(find reem_gazebo)/launch/reem_bringup.launch" />
+
+  <!-- Default Controllers -->
+  <include file="$(find reem_controller_configuration_gazebo)/launch/reem_default_controllers.launch" />
 </launch>
