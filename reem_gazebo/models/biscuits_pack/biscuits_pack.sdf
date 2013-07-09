@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version='1.4'>
-  <model name="pringles">      
+  <model name="biscuits_pack">      
       <static>0</static>
       <link name='link'>
         <inertial>
@@ -17,8 +17,8 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.04</radius>
-              <length>0.235</length>
+              <radius>0.029</radius>
+              <length>0.15</length>
             </cylinder>
           </geometry>
           <surface>
@@ -34,15 +34,15 @@
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.04</radius>
-              <length>0.235</length>
+              <radius>0.029</radius>
+              <length>0.15</length>
             </cylinder>
           </geometry>
           <material>
             <script>
-	      <uri>model://pringles/material/scripts</uri>
-	      <uri>model://pringles/material/textures</uri>
-              <name>Custom/pringles</name>
+              <uri>model://biscuits_pack/material/scripts</uri>
+              <uri>model://biscuits_pack/material/textures</uri>
+              <name>Custom/biscuits_pack</name>
             </script>
           </material>
         </visual>

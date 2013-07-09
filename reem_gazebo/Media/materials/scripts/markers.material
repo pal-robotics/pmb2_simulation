@@ -12,17 +12,3 @@ material Aruco/marker582_8cm
   }
 }
 
-material Aruco/marker26_8cm
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-	texture aruco-26_8cm.png
-      }
-    }
-  }
-}
-

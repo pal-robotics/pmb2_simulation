@@ -20,22 +20,17 @@
       </ode>
     </physics>
     <!-- A global light source -->
-    <include><uri>model://sun</uri></include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://reem_heightmap_1</uri>
+    </include>
+
     <!-- A ground plane -->
     <include>
       <uri>model://ground_plane</uri>
-    </include>
-    <!-- A table -->
-    <include>
-      <uri>model://table_1m</uri>
-      <name>table1</name>
-      <pose>0.8 0 0 0 0 0</pose>
-    </include>
-    <!-- A pringles can -->
-    <include>
-      <uri>model://pringles_with_marker</uri>
-      <!-- <pose>0.55 -0.1 1.8 3.1416 0 0</pose> -->
-      <pose>0.55 0 1.8 0 0 0</pose>
     </include>
  </world>
 </sdf>
