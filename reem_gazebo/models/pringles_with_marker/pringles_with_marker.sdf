@@ -57,7 +57,7 @@
     <!-- A marker on top of the can -->
     <include>
       <uri>model://marker26_8cm</uri>
-      <pose>0 0 0.17 3.14 -1.57 0</pose>
+      <pose>0 0 0.17 0.6 -1.57 0</pose> <!-- 0 0 0.17 3.14 -1.57 0 -->
     </include>
   </model>
 </sdf>

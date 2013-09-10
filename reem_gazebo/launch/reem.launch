@@ -1,6 +1,10 @@
 <launch>
+  <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
   <!-- Spawn REEM without starting up any defaut controllers -->
-  <include file="$(find reem_gazebo)/launch/reem_no_controllers.launch" />
+  <include file="$(find reem_gazebo)/launch/reem_no_controllers.launch">
+    <arg name="gzpose" value="$(arg gzpose)"/>
+  </include>
 
   <!-- Default Controllers -->
   <include file="$(find reem_controller_configuration_gazebo)/launch/reem_default_controllers.launch" />

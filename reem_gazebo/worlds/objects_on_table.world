@@ -19,8 +19,21 @@
         </constraints>
       </ode>
     </physics>
-    <!-- A global light source -->
-    <include><uri>model://sun</uri></include>
+
+    <light type="directional" name="light1">
+      <cast_shadows>true</cast_shadows>
+      <pose>-2 0 4 0 0 0</pose>
+      <diffuse>1.0 1.0 1.0 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>0.2  0.0  -1.0</direction>
+    </light>
+   
     <!-- A ground plane -->
     <include>
       <uri>model://ground_plane</uri>
@@ -34,8 +47,20 @@
     <!-- A pringles can -->
     <include>
       <uri>model://pringles_with_marker</uri>
-      <!-- <pose>0.55 -0.1 1.8 3.1416 0 0</pose> -->
-      <pose>0.55 0 1.8 0 0 0</pose>
+      <!-- <uri>model://pringles</uri> -->
+      <pose>0.55 0 1.8 0 0 2.62</pose>
+    </include>    
+    <include>
+      <uri>model://biscuits_pack</uri>
+      <pose>0.8 0.4 1.8 0 0 1.5</pose>
+    </include>
+    <include>
+      <uri>model://coke_can_slim</uri>      
+      <pose>0.64 -0.25 1.8 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://bifrutas_tropical_can</uri>      
+      <pose>0.42 0.2 1.8 0 0 -0.5</pose>
     </include>
  </world>
 </sdf>

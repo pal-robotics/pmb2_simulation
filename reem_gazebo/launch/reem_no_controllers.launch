@@ -8,7 +8,7 @@
   <arg unless="$(arg use_rgbd_sensor)" name="gzmodel" value="reem_description/reem.urdf"/>
 
   <!-- Push robot_description to factory and spawn robot in Gazebo -->
-  <arg name="gzpose"  default="-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+  <arg name="gzpose"  default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
   <node name="gzfactory" pkg="pal_gazebo_plugins" type="run_gzfactory" args="spawn -f $(find reem_gazebo)/models/$(arg gzmodel) $(arg gzpose)" output="screen" />
 
   <!-- Default bringup script -->
