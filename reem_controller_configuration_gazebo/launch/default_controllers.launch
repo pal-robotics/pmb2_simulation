@@ -1,0 +1,18 @@
+<launch>
+  <rosparam command="load" file="$(find joint_state_controller)/joint_state_controller.yaml" />
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/joint_trajectory_controllers.yaml" />
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_mobile_base_controller.yaml" />
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/pids.yaml" />
+
+  <!-- Controllers that come up started -->
+  <node name="default_controllers_spawner"
+        pkg="controller_manager" type="spawner" output="screen"
+        args="joint_state_controller
+              mobile_base_controller
+              left_arm_controller
+              right_arm_controller
+              left_hand_controller
+              right_hand_controller
+              torso_controller
+              head_controller" />
+</launch>

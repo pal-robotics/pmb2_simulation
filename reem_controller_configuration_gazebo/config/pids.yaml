@@ -1,0 +1,42 @@
+gains:
+  head_1_joint:                   {p: 300,  d: 250, i: 10, i_clamp: 1.5}
+  head_2_joint:                   {p: 300,  d: 250, i: 10, i_clamp: 1.5}
+
+  torso_1_joint:                  {p: 1500, d: 100, i: 30, i_clamp: 6}
+  torso_2_joint:                  {p: 1500, d: 100, i: 30, i_clamp: 6}
+
+  arm_right_1_joint: &arm_1_gains {p: 2000, d: 100, i: 20, i_clamp: 3.0}
+  arm_right_2_joint: &arm_2_gains {p: 800,  d: 500, i: 20, i_clamp: 3.0}
+  arm_right_3_joint: &arm_3_gains {p: 600,  d: 350, i: 15, i_clamp: 2.0}
+  arm_right_4_joint: &arm_4_gains {p: 800,  d: 800, i: 20, i_clamp: 3.0}
+  arm_right_5_joint: &arm_5_gains {p: 100,  d: 80,  i: 10, i_clamp: 1.5}
+  arm_right_6_joint: &arm_6_gains {p: 100,  d: 80,  i: 10, i_clamp: 1.5}
+  arm_right_7_joint: &arm_7_gains {p: 100,  d: 80,  i: 10, i_clamp: 1.5}
+  arm_left_1_joint:  *arm_1_gains
+  arm_left_2_joint:  *arm_2_gains
+  arm_left_3_joint:  *arm_3_gains
+  arm_left_4_joint:  *arm_4_gains
+  arm_left_5_joint:  *arm_5_gains
+  arm_left_6_joint:  *arm_6_gains
+  arm_left_7_joint:  *arm_7_gains
+
+  hand_right_thumb_joint:    &thumb_gains    {p: 200, d: 120, i: 50, i_clamp: 1}
+  hand_right_index_1_joint:  &finger_1_gains {p: 200, d: 120, i: 50, i_clamp: 1}
+  hand_right_index_2_joint:  *finger_1_gains
+  hand_right_index_3_joint:  *finger_1_gains
+  hand_right_middle_1_joint: *finger_1_gains
+  hand_right_middle_2_joint: *finger_1_gains
+  hand_right_middle_3_joint: *finger_1_gains
+  hand_left_thumb_joint:     *thumb_gains
+  hand_left_index_1_joint:   *finger_1_gains
+  hand_left_index_2_joint:   *finger_1_gains
+  hand_left_index_3_joint:   *finger_1_gains
+  hand_left_middle_1_joint:  *finger_1_gains
+  hand_left_middle_2_joint:  *finger_1_gains
+  hand_left_middle_3_joint:  *finger_1_gains
+
+  # TODO: Remove!
+  hand_right_index_joint:  *finger_1_gains
+  hand_right_middle_joint: *finger_1_gains
+  hand_left_index_joint:   *finger_1_gains
+  hand_left_middle_joint:  *finger_1_gains

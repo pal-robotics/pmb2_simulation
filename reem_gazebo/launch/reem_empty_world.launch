@@ -1,7 +1,7 @@
-<launch>
-  <!-- start up empty world -->
-  <include file="$(find reem_gazebo)/launch/empty_world.launch"/>
+<?xml version="1.0" encoding="UTF-8"?>
 
-  <!-- start REEM robot -->
-  <include file="$(find reem_gazebo)/launch/reem.launch"/>
+<launch>
+  <include file="$(find reem_gazebo)/launch/reem_gazebo.launch">
+    <arg name="world" value="empty" />
+  </include>
 </launch>

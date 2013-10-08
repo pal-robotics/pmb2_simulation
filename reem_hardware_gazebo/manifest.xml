@@ -1,0 +1,23 @@
+<package>
+  <description brief="reem_hardware_gazebo"></description>
+  <author>Adolfo Rodriguez Tsouroukdissian</author>
+  <license>Modified BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/reem_hardware_gazebo</url>
+
+  <depend package="angles"/>
+  <depend package="control_toolbox"/>
+  <depend package="hardware_interface"/>
+  <depend package="joint_limits_interface"/>
+  <depend package="ros_control_gazebo"/>
+  <depend package="ros_control_gazebo_plugin"/>
+  <depend package="urdf_parser"/>
+
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lreem_hardware_gazebo" />
+    <ros_control_gazebo plugin="${prefix}/reem_hardware_gazebo_plugins.xml"/>
+  </export>
+
+</package>
+
+

@@ -1,8 +1,13 @@
 <launch>
-  <!-- Controller Manager -->
-  <include file="$(find pr2_controller_manager)/controller_manager.launch" />
+  <!-- PID gains -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/pids.yaml" />
 
-  <!-- Fake Calibration -->
-  <node pkg="rostopic" type="rostopic" name="fake_joint_calibration"
-        args="pub /calibrated std_msgs/Bool true" />
+  <!-- Controller configuration -->
+  <include file="$(find reem_controller_configuration_gazebo)/launch/default_controllers.launch" />
+
+  <!-- Robot state publisher -->
+  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" type="string" value="" />
+  </node>
 </launch>

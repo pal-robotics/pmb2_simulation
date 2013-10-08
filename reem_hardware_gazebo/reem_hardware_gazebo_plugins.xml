@@ -1,0 +1,11 @@
+<library path="lib/libreem_hardware_gazebo">
+
+  <class
+    name="reem_hardware_gazebo/ReemHardwareGazebo"
+    type="reem_hardware_gazebo::ReemHardwareGazebo"
+    base_class_type="ros_control_gazebo::RobotSim">
+    <description>
+      REEM robot simulation interface.
+    </description>
+  </class>
+</library>

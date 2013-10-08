@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <arg name="world"  default="empty"/>   <!-- empty, simple_office, ... (see ../worlds) -->
+  <arg name="robot"  default="full"/>    <!-- full -->
+  <arg name="gzname" default="gazebo"/>  <!-- gazebo, gzserver-->
+  <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
+
+  <!-- start up world -->
+  <include file="$(find pal_gazebo_plugins)/launch/run_gazebo.launch">
+    <arg name="gzworld" value="$(find reem_gazebo)/worlds/$(arg world).world" />
+    <arg name="gzname" value="$(arg gzname)" />
+  </include>
+
+  <!-- load REEM robot in simulation -->
+  <include file="$(find reem_gazebo)/launch/reem_spawn.launch">
+    <arg name="robot"  value="$(arg robot)"/>
+    <arg name="gzpose" value="$(arg gzpose)"/>
+  </include>
+
+  <!-- start REEM robot -->
+  <include file="$(find reem_gazebo)/launch/reem_bringup.launch"/>
+</launch>

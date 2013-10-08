@@ -6,7 +6,9 @@
   <url></url>
 
   <depend package="reem_bringup"/>
+  <depend package="reem_hardware_gazebo"/>
   <depend package="joint_group_position_controller"/>
+  <depend package="diff_drive_controller"/>
 
 </package>
 
