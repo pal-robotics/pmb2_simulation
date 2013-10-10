@@ -11,7 +11,7 @@
   <depend package="joint_limits_interface"/>
   <depend package="ros_control_gazebo"/>
   <depend package="ros_control_gazebo_plugin"/>
-  <depend package="urdf_parser"/>
+  <depend package="urdf"/>
 
   <export>
     <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lreem_hardware_gazebo" />
