@@ -68,8 +68,7 @@ add_custom_target(generate_reem_upper_body_urdf ALL DEPENDS ${OUTPUT_UPPER_BODY_
 #Never use absolute paths, as they are broken when the stacks are copied to another computer
 #Better solution is in the way, see https://redmine/issues/5827
 set(INPUT_MESHES_DIR ../../../../reem_common/reem_description/meshes)
-
-set(OUTPUT_MESHES_SYMLINK ${CMAKE_CURRENT_SOURCE_DIR}/models/reem_full/meshes)
+set(OUTPUT_MESHES_SYMLINK ${CMAKE_CURRENT_SOURCE_DIR}/models/reem_description/meshes)
 
 # NOTE: Because of a cmake bug [1], we cannot add a custom command/target pair here, otherwise calling 'make clean'
 # deletes the pointed-to folder contents!. This is fixed in CMake 2.8.11
