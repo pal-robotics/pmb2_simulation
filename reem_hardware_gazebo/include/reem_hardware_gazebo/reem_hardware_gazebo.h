@@ -39,7 +39,7 @@
 
 #include <pluginlib/class_list_macros.h>
 
-#include <ros_control_gazebo/robot_sim.h>
+#include <gazebo_ros_control/robot_hw_sim.h>
 
 #include <angles/angles.h>
 
@@ -50,14 +50,18 @@
 namespace reem_hardware_gazebo
 {
 
-class ReemHardwareGazebo : public ros_control_gazebo::RobotSim
+class ReemHardwareGazebo : public gazebo_ros_control::RobotHWSim
 {
 public:
 
   ReemHardwareGazebo();
 
   // Simulation-specific
-  bool initSim(ros::NodeHandle nh, gazebo::physics::ModelPtr model);
+  bool initSim(const std::string& robot_namespace,
+      ros::NodeHandle model_nh,
+      gazebo::physics::ModelPtr parent_model,
+      const urdf::Model* const urdf_model,
+      std::vector<transmission_interface::TransmissionInfo> transmissions);
   void readSim(ros::Time time, ros::Duration period);
   void writeSim(ros::Time time, ros::Duration period);
 

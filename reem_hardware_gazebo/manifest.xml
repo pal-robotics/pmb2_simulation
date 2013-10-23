@@ -9,13 +9,12 @@
   <depend package="control_toolbox"/>
   <depend package="hardware_interface"/>
   <depend package="joint_limits_interface"/>
-  <depend package="ros_control_gazebo"/>
-  <depend package="ros_control_gazebo_plugin"/>
+  <depend package="gazebo_ros_control"/>
   <depend package="urdf"/>
 
   <export>
     <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lreem_hardware_gazebo" />
-    <ros_control_gazebo plugin="${prefix}/reem_hardware_gazebo_plugins.xml"/>
+    <gazebo_ros_control plugin="${prefix}/reem_hardware_gazebo_plugins.xml"/>
   </export>
 
 </package>

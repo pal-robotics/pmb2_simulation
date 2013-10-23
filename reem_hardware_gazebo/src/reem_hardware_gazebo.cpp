@@ -37,10 +37,15 @@ namespace reem_hardware_gazebo
   using namespace hardware_interface;
 
   ReemHardwareGazebo::ReemHardwareGazebo()
-    : ros_control_gazebo::RobotSim()
+    : gazebo_ros_control::RobotHWSim()
   {}
 
-  bool ReemHardwareGazebo::initSim(ros::NodeHandle nh, gazebo::physics::ModelPtr model)
+
+  bool ReemHardwareGazebo::initSim(const std::string& robot_namespace,
+      ros::NodeHandle nh,
+      gazebo::physics::ModelPtr model,
+      const urdf::Model* const urdf_model,
+      std::vector<transmission_interface::TransmissionInfo> transmissions)
   {
     using gazebo::physics::JointPtr;
 
@@ -174,4 +179,4 @@ namespace reem_hardware_gazebo
 
 } // reem_hardware_gazebo
 
-PLUGINLIB_DECLARE_CLASS(reem_hardware_gazebo, ReemHardwareGazebo, reem_hardware_gazebo::ReemHardwareGazebo, ros_control_gazebo::RobotSim)
+PLUGINLIB_EXPORT_CLASS( reem_hardware_gazebo::ReemHardwareGazebo, gazebo_ros_control::RobotHWSim)
