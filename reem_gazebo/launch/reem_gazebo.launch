@@ -6,11 +6,11 @@
   <arg name="gzname" default="gazebo"/>  <!-- gazebo, gzserver-->
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
 
+  <env name="GAZEBO_MODEL_PATH" value="$(find reem_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
 
   <!-- start up world -->
-  <include file="$(find pal_gazebo_plugins)/launch/run_gazebo.launch">
-    <arg name="gzworld" value="$(find reem_gazebo)/worlds/$(arg world).world" />
-    <arg name="gzname" value="$(arg gzname)" />
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find reem_gazebo)/worlds/$(arg world).world" />
   </include>
 
   <!-- load REEM robot in simulation -->

@@ -8,9 +8,8 @@
     <arg name="robot" value="$(arg robot)"/>
   </include>
 
-  <!-- Push robot_description to factory and spawn robot in Gazebo -->
-  <include file="$(find pal_gazebo_plugins)/launch/spawn.launch">
-    <arg name="gzmodel" value="$(arg gzmodel)"/>
-    <arg name="gzpose"  value="$(arg gzpose)"/>
-  </include>
+  <!-- Spawn robot in Gazebo -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_model"
+    args="-sdf -file $(arg gzmodel) $(arg gzpose) -model reem_$(arg robot)" />
+
 </launch>
