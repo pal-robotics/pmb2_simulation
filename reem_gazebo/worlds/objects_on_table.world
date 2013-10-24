@@ -81,5 +81,11 @@
       <uri>model://bifrutas_tropical_can</uri>      
       <pose>0.42 0.2 1.8 0 0 -0.5</pose>
     </include>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>1.152670 -0.041479 3.496780 0.000000 1.123640 3.132190</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
  </world>
 </sdf>
