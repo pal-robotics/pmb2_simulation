@@ -1,7 +1,7 @@
 <package>
   <description brief="reem_simulone">reem_simulone</description>
-  <author>Maintained by Antonio Herrero</author>
-  <license>BSD</license>  
+  <author>Antonio Herrero, maintained by Sammy Pfeiffer</author>
+  <license>BSD</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/reem_simulone</url>
 </package>
