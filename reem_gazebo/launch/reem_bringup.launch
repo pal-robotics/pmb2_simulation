@@ -1,7 +1,4 @@
 <launch>
-  <!-- PID gains -->
-  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/pids.yaml" />
-
   <!-- Controller configuration -->
   <include file="$(find reem_controller_configuration_gazebo)/launch/default_controllers.launch" />
 
