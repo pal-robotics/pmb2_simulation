@@ -1,5 +1,5 @@
 <sdf version="1.4">
-  <model name="kitchen_chair">
+  <model name="sketchup_map_1">
     <static>1</static>
     <link name="link">
 
@@ -7,8 +7,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://kitchen_chair/meshes/kitchen_chair.stl</uri>
-	    <scale> 1 1 1 </scale>
+            <uri>model://sketchup_map_1/map1.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -26,14 +25,13 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://kitchen_chair/meshes/kitchen_chair.stl</uri>
-	    <scale> 1 1 1 </scale>
+            <uri>model://sketchup_map_1/map1.dae</uri>
           </mesh>
         </geometry>
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/White</name>
           </script>
         </material>
       </visual>

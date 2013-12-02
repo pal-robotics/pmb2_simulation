@@ -7,7 +7,7 @@
         <pose>0 0 0.25 0 0 3.1416</pose>
         <geometry>
           <mesh>
-            <uri>file://models/cereal_rocket_power/meshes/cereal_rocket_power.dae</uri>
+            <uri>model://cereal_rocket_power/meshes/cereal_rocket_power.dae</uri>
 	    <scale> 1.8 1.8 1.8 </scale>
           </mesh>
         </geometry>
@@ -26,7 +26,7 @@
         <pose>0 0 0.25 0 0 3.1416</pose>
         <geometry>
           <mesh>
-            <uri>file://models/cereal_rocket_power/meshes/cereal_rocket_power.dae</uri>
+            <uri>model://cereal_rocket_power/meshes/cereal_rocket_power.dae</uri>
 	    <scale> 1.8 1.8 1.8 </scale>
           </mesh>
         </geometry>

@@ -1,5 +1,5 @@
 <sdf version="1.4">
-  <model name="house_walls">
+  <model name="robocup_walls_70cm_doors">
     <static>1</static>
     <link name="link">
 
@@ -7,7 +7,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>file://models/house_walls/meshes/robocup_house.stl</uri>
+            <uri>model://robocup_walls_70cm_doors/meshes/robocup_house.stl</uri>
 	    <scale> 0.001 0.001 0.001 </scale>
           </mesh>
         </geometry>
@@ -26,7 +26,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>file://models/house_walls/meshes/robocup_house.stl</uri>
+            <uri>model://robocup_walls_70cm_doors/meshes/robocup_house.stl</uri>
 	    <scale> 0.001 0.001 0.001 </scale>
           </mesh>
         </geometry>

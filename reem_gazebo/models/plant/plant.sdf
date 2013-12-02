@@ -7,7 +7,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>file://models/plant/meshes/plant_base.stl</uri>
+            <uri>model://plant/meshes/plant_base.stl</uri>
 	    <scale> 1 1 1 </scale>
           </mesh>
         </geometry>
@@ -26,7 +26,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>file://models/plant/meshes/plant_base.stl</uri>
+            <uri>model://plant/meshes/plant_base.stl</uri>
 	    <scale> 1 1 1 </scale>
           </mesh>
         </geometry>
@@ -53,7 +53,7 @@
         <pose>0 0 0.5 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>file://models/plant/meshes/plant_leaf.stl</uri>
+            <uri>model://plant/meshes/plant_leaf.stl</uri>
 	    <scale> 1 1 1 </scale>
           </mesh>
         </geometry>
@@ -72,7 +72,7 @@
         <pose>0 0 0.5 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>file://models/plant/meshes/plant_leaf.stl</uri>
+            <uri>model://plant/meshes/plant_leaf.stl</uri>
 	    <scale> 1 1 1 </scale>
           </mesh>
         </geometry>

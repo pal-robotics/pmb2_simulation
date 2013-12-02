@@ -1,4 +1,3 @@
-<?xml version="1.0" ?>
 <sdf version='1.4'>
   <world name='default'>
     <physics type='ode'>
@@ -6,8 +5,8 @@
       <ode>
         <solver>
           <type>quick</type>
-          <iters>20</iters>
-          <sor>1.000000</sor>
+          <iters>50</iters>
+          <sor>1.400000</sor>
         </solver>
         <constraints>
           <cfm>0.000000</cfm>
@@ -69,7 +68,7 @@
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Orange</name>
+              <name>Gazebo/Grey</name>
             </script>
           </material>
         </visual>
@@ -86,16 +85,16 @@
       <ambient>0.200000 0.200000 0.200000 1.000000</ambient>
       <background>0.700000 0.700000 0.700000 1.000000</background>
       <shadows>1</shadows>
-    </scene>   
-    <model name='ramp'>
+    </scene>
+    <model name='willowgarage'>
       <static>1</static>
-      <link name='ramp_link'>
-        <collision name='ramp_up_collision'>
-          <pose>0.000000 0.000000 0.500000 0.000000 0.124355 0.000000</pose>
+      <pose>-20.000000 -17.000000 0.000000 0.000000 0.000000 0.000000</pose>
+      <link name='walls'>
+        <collision name='collision'>
           <geometry>
-            <box>
-              <size>8.062260 2.000000 0.010000</size>
-            </box>
+            <mesh>
+              <uri>model://willowgarage/meshes/willowgarage_collision.dae</uri>
+            </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
           <surface>
@@ -108,85 +107,12 @@
             </contact>
           </surface>
         </collision>
-        <visual name='ramp_up_visual'>
-          <pose>0.000000 0.000000 0.500000 0.000000 0.124355 0.000000</pose>
+        <visual name='visual'>
           <geometry>
-            <box>
-              <size>8.062258 2.000000 0.010000</size>
-            </box>
+            <mesh>
+              <uri>model://willowgarage/meshes/willowgarage_visual.dae</uri>
+            </mesh>
           </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Wood</name>
-            </script>
-          </material>
-          <cast_shadows>0</cast_shadows>
-        </visual>
-        <collision name='plane_collision'>
-          <pose>-6.000000 0.000000 1.000000 0.000000 0.000000 0.000000</pose>
-          <geometry>
-            <box>
-              <size>4.000000 2.000000 0.010000</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <bounce/>
-            <friction>
-              <ode/>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-          </surface>
-        </collision>
-        <visual name='plane_visual'>
-          <pose>-6.000000 0.000000 1.000000 0.000000 0.000000 0.000000</pose>
-          <geometry>
-            <box>
-              <size>4.000000 2.000000 0.010000</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Wood</name>
-            </script>
-          </material>
-          <cast_shadows>0</cast_shadows>
-        </visual>
-        <collision name='ramp_down_collision'>
-          <pose>-12.000000 0.000000 0.500000 0.000000 -0.124355 0.000000</pose>
-          <geometry>
-            <box>
-              <size>8.062260 2.000000 0.010000</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <bounce/>
-            <friction>
-              <ode/>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-          </surface>
-        </collision>
-        <visual name='ramp_down_visual'>
-          <pose>-12.000000 0.000000 0.500000 0.000000 -0.124355 0.000000</pose>
-          <geometry>
-            <box>
-              <size>8.062258 2.000000 0.010000</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Wood</name>
-            </script>
-          </material>
           <cast_shadows>0</cast_shadows>
         </visual>
         <velocity_decay>
@@ -197,16 +123,15 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose>6.000000 4.000000 0.000000 0.000000 0.000000 0.000000</pose>
     </model>
     <state world_name='default'>
       <sim_time>0 0</sim_time>
-      <real_time>0 36677</real_time>
-      <wall_time>1375293235 471791087</wall_time>
+      <real_time>0 52167</real_time>
+      <wall_time>1382982317 34491614</wall_time>
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>9.101490 -1.464570 3.028600 0.000000 0.299643 2.576190</pose>
+        <pose>5.842300 7.066120 56.135400 0.000001 1.569800 3.096230</pose>
         <view_controller>orbit</view_controller>
       </camera>
     </gui>

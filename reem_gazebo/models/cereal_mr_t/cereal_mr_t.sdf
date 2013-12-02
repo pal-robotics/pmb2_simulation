@@ -7,7 +7,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>file://models/cereal_mr_t/meshes/cereal_mr_t.dae</uri>
+            <uri>model://cereal_mr_t/meshes/cereal_mr_t.dae</uri>
 	    <scale> 1 1 1 </scale>
           </mesh>
         </geometry>
@@ -26,7 +26,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>file://models/cereal_mr_t/meshes/cereal_mr_t.dae</uri>
+            <uri>model://cereal_mr_t/meshes/cereal_mr_t.dae</uri>
 	    <scale> 1 1 1 </scale>
           </mesh>
         </geometry>

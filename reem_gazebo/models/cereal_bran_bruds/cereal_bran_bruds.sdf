@@ -7,7 +7,7 @@
         <pose>0 0 0.25 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>file://models/cereal_bran_bruds/meshes/cereal_bran_bruds.dae</uri>
+            <uri>model://cereal_bran_bruds/meshes/cereal_bran_bruds.dae</uri>
 	    <scale> 1 1 1 </scale>
           </mesh>
         </geometry>
@@ -26,7 +26,7 @@
         <pose>0 0 0.25 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>file://models/cereal_bran_bruds/meshes/cereal_bran_bruds.dae</uri>
+            <uri>model://cereal_bran_bruds/meshes/cereal_bran_bruds.dae</uri>
 	    <scale> 1 1 1 </scale>
           </mesh>
         </geometry>

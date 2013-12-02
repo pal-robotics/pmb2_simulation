@@ -89,9 +89,9 @@
 
     <!-- Walls -->
     <include>
-      <uri>model://simple_loop_closure</uri>
+      <uri>model://sketchup_map_1</uri>
       <name>walls</name>
-      <pose>-6 2 0 0 0 1.5708</pose>
+      <pose>0 2 0 0 0 1.5708</pose>
     </include>
 
     <!-- Plant -->

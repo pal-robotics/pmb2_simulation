@@ -4,18 +4,16 @@
   <license>Modified BSD</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/reem_gazebo</url>
-  <depend package="laser_filters"/>
-  <depend package="reem_controller_configuration_gazebo"/>
   <depend package="reem_description"/>
-  <!--depend package="pr2_gazebo_plugins"/-->
+  <depend package="reem_bringup"/>
+  <depend package="reem_hardware_gazebo"/>
+  <depend package="reem_controller_configuration_gazebo"/>
+  <depend package="reem_hardware_gazebo"/>
+  <depend package="reem_laser_sensors"/>
   <depend package="pal_gazebo_plugins"/>
-  <depend package="robot_mechanism_controllers"/>
-  <!--  <depend package="gazebo"/>-->
-  <depend package="gazebo_ros"/>
-  <depend package="roscpp"/>
-  <depend package="rospy"/>
-  <depend package="std_msgs"/>
-  <depend package="xacro"/>
+  <depend package="tf_lookup"/>
+  <depend package="pal_mobile_base"/>
+
   <rosdep name="gazebo"/>
   <export>
     <gazebo gazebo_media_path="${prefix}"/>

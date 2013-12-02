@@ -62,7 +62,7 @@
     </include>
     <!-- A pringles can -->
     <include>
-      <uri>model://pringles</uri>
+      <uri>model://pringles_with_marker</uri>
       <!-- <uri>model://pringles</uri> -->
       <pose>0.55 0 1.8 0 0 2.62</pose>
     </include>

@@ -28,8 +28,16 @@
 #include <cassert>
 #include <boost/foreach.hpp>
 
+#include <gazebo/sensors/SensorManager.hh>
+
+#include <urdf_parser/urdf_parser.h>
+
+#include <joint_limits_interface/joint_limits_urdf.h>
+#include <joint_limits_interface/joint_limits_rosparam.h>
+
 #include <reem_hardware_gazebo/reem_hardware_gazebo.h>
 
+using std::string;
 using std::vector;
 
 namespace reem_hardware_gazebo
@@ -60,6 +68,18 @@ namespace reem_hardware_gazebo
     jnt_pos_cmd_curr_.clear();
     jnt_vel_cmd_.clear();
 
+    // URDF
+    const std::string urdf_model_param_name = "robot_description";
+    bool res = nh.hasParam(urdf_model_param_name);
+    std::string robot_urdf_model_str = "";
+    if (!res || !nh.getParam(urdf_model_param_name, robot_urdf_model_str))
+    {
+      ROS_ERROR("Robot descripion couldn't be retrieved from param server.");
+      return false;
+    }
+
+    boost::shared_ptr<urdf::ModelInterface> urdf_model(urdf::parseURDF(robot_urdf_model_str));
+
     // Simulation joints
     std::vector<gazebo::physics::JointPtr> sim_joints_tmp = model->GetJoints();
 
@@ -75,7 +95,15 @@ namespace reem_hardware_gazebo
       {
         if(0 == unscoped_name.compare(0, 5, "wheel"))
         {
-          sim_joints_tmp[i]->SetMaxForce(0u, 5.0); //FIXME: should get from urdf
+          boost::shared_ptr<const urdf::Joint> joint(urdf_model->getJoint(unscoped_name));
+          if(!joint)
+          {
+            ROS_ERROR_STREAM(unscoped_name
+                             << " couldn't be retrieved from model description");
+            return false;
+          }
+
+          sim_joints_tmp[i]->SetMaxForce(0u, joint->limits->effort);
           vel_sim_joints_.push_back(sim_joints_tmp[i]);
           vel_jnt_names.push_back(unscoped_name);
         }
@@ -101,7 +129,6 @@ namespace reem_hardware_gazebo
     jnt_pos_cmd_.resize(pos_n_dof_);
     jnt_pos_cmd_curr_.resize(pos_n_dof_);
     jnt_vel_cmd_.resize(vel_n_dof_);
-
 
     // Hardware interfaces
     for (size_t i = 0; i < n_dof_; ++i)
@@ -129,6 +156,83 @@ namespace reem_hardware_gazebo
     registerInterface(&jnt_state_interface_);
     registerInterface(&jnt_pos_cmd_interface_);
     registerInterface(&jnt_vel_cmd_interface_);
+
+    // Position joint limits interface
+    vector<string> pos_joints_with_limits, pos_joints_without_limits;
+    for (size_t i = 0; i < pos_n_dof_; ++i)
+    {
+      JointHandle cmd_handle = jnt_pos_cmd_interface_.getHandle(pos_sim_joints_[i]->GetName());
+      const string name = cmd_handle.getName();
+
+      using namespace joint_limits_interface;
+      boost::shared_ptr<const urdf::Joint> urdf_joint = urdf_model->getJoint(name);
+      JointLimits limits;
+      SoftJointLimits soft_limits;
+      if (!getJointLimits(urdf_joint, limits) || !getSoftJointLimits(urdf_joint, soft_limits))
+      {
+        pos_joints_without_limits.push_back(name);
+        continue;
+      }
+      pos_jnt_limits_interface_.registerHandle(PositionJointSoftLimitsHandle(cmd_handle, limits, soft_limits));
+      pos_joints_with_limits.push_back(name);
+    }
+    if (!pos_joints_with_limits.empty())
+    {
+      ROS_DEBUG_STREAM("Joint limits will be enforced for position-controlled joints:" <<
+                        containerToString(pos_joints_with_limits, "\n - "));
+    }
+    if (!pos_joints_without_limits.empty())
+    {
+      ROS_WARN_STREAM("Joint limits will not be enforced for position-controlled joints:" <<
+                      containerToString(pos_joints_without_limits, "\n - "));
+    }
+
+    // Velocity joint limits interface
+    vector<string> vel_joints_with_limits, vel_joints_without_limits;
+    for (unsigned int i = 0; i < vel_n_dof_; ++i)
+    {
+      JointHandle cmd_handle = jnt_vel_cmd_interface_.getHandle(vel_sim_joints_[i]->GetName());
+      const string name = cmd_handle.getName();
+
+      using namespace joint_limits_interface;
+      boost::shared_ptr<const urdf::Joint> urdf_joint = urdf_model->getJoint(name);
+      JointLimits limits;
+      if (!getJointLimits(urdf_joint, limits) || !getJointLimits(name, nh, limits))
+      {
+        vel_joints_without_limits.push_back(name);
+        continue;
+      }
+      vel_jnt_limits_interface_.registerHandle(VelocityJointSaturationHandle(cmd_handle, limits));
+      vel_joints_with_limits.push_back(name);
+    }
+    if (!vel_joints_with_limits.empty())
+    {
+      ROS_DEBUG_STREAM("Joint limits will be enforced for velocity-controlled joints:" <<
+                        containerToString(vel_joints_with_limits, "\n - "));
+    }
+    if (!vel_joints_without_limits.empty())
+    {
+      ROS_WARN_STREAM("Joint limits will not be enforced for velocity-controlled joints:" <<
+                      containerToString(vel_joints_without_limits, "\n - "));
+    }
+
+    // Hardware interfaces: Base IMU sensors
+    const string imu_name = "base_inclinometer";
+    imu_sensor_ =  boost::shared_dynamic_cast<gazebo::sensors::ImuSensor>
+                   (gazebo::sensors::SensorManager::Instance()->GetSensor(imu_name+"_sensor")); // TODO: Fetch from URDF?
+    if (!this->imu_sensor_)
+    {
+      ROS_ERROR_STREAM("Could not find base IMU sensor.");
+      return false;
+    }
+
+    ImuSensorHandle::Data data;
+    data.name     = imu_name;           // TODO: Fetch from elsewhere?
+    data.frame_id = imu_name + "_link"; // TODO: Fetch from URDF?
+    data.orientation = &base_orientation_[0];
+    imu_sensor_interface_.registerHandle(ImuSensorHandle(data));
+    registerInterface(&imu_sensor_interface_);
+    ROS_DEBUG_STREAM("Registered IMU sensor.");
 
     // PID controllers
     pids_.resize(pos_n_dof_);
@@ -158,10 +262,32 @@ namespace reem_hardware_gazebo
       jnt_pos_cmd_curr_[j] += angles::shortest_angular_distance
           (jnt_pos_cmd_curr_[j], pos_sim_joints_[j]->GetAngle(0u).Radian());
     }
+
+    // Read IMU sensor
+    gazebo::math::Quaternion imu_quat = imu_sensor_->GetOrientation();
+    base_orientation_[0] = imu_quat.x;
+    base_orientation_[1] = imu_quat.y;
+    base_orientation_[2] = imu_quat.z;
+    base_orientation_[3] = imu_quat.w;
+
+    gazebo::math::Vector3 imu_ang_vel = imu_sensor_->GetAngularVelocity();
+    base_ang_vel_[0] = imu_ang_vel.x;
+    base_ang_vel_[1] = imu_ang_vel.y;
+    base_ang_vel_[2] = imu_ang_vel.z;
+
+    gazebo::math::Vector3 imu_lin_acc = imu_sensor_->GetLinearAcceleration();
+    base_lin_acc_[0] =  imu_lin_acc.x;
+    base_lin_acc_[1] =  imu_lin_acc.y;
+    base_lin_acc_[2] =  imu_lin_acc.z;
   }
 
   void ReemHardwareGazebo::writeSim(ros::Time time, ros::Duration period)
   {
+    // Enforce joint limits
+    pos_jnt_limits_interface_.enforceLimits(period);
+    vel_jnt_limits_interface_.enforceLimits(period);
+
+    // Compute and send commands
     for(unsigned int j = 0; j < pos_n_dof_; ++j)
     {
       const double error = jnt_pos_cmd_[j] - jnt_pos_cmd_curr_[j];
