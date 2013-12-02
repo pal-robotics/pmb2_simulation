@@ -52,7 +52,7 @@ namespace reem_hardware_gazebo
   bool ReemHardwareGazebo::initSim(const std::string& robot_namespace,
       ros::NodeHandle nh,
       gazebo::physics::ModelPtr model,
-      const urdf::Model* const urdf_model,
+      const urdf::Model* const urdf_mdl,
       std::vector<transmission_interface::TransmissionInfo> transmissions)
   {
     using gazebo::physics::JointPtr;
@@ -69,16 +69,7 @@ namespace reem_hardware_gazebo
     jnt_vel_cmd_.clear();
 
     // URDF
-    const std::string urdf_model_param_name = "robot_description";
-    bool res = nh.hasParam(urdf_model_param_name);
-    std::string robot_urdf_model_str = "";
-    if (!res || !nh.getParam(urdf_model_param_name, robot_urdf_model_str))
-    {
-      ROS_ERROR("Robot descripion couldn't be retrieved from param server.");
-      return false;
-    }
-
-    boost::shared_ptr<urdf::ModelInterface> urdf_model(urdf::parseURDF(robot_urdf_model_str));
+    boost::shared_ptr<const urdf::ModelInterface> urdf_model(urdf_mdl);
 
     // Simulation joints
     std::vector<gazebo::physics::JointPtr> sim_joints_tmp = model->GetJoints();
