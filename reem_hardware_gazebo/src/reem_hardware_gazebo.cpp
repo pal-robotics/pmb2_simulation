@@ -52,7 +52,7 @@ namespace reem_hardware_gazebo
   bool ReemHardwareGazebo::initSim(const std::string& robot_namespace,
       ros::NodeHandle nh,
       gazebo::physics::ModelPtr model,
-      const urdf::Model* const urdf_mdl,
+      const urdf::Model* const urdf_model,
       std::vector<transmission_interface::TransmissionInfo> transmissions)
   {
     using gazebo::physics::JointPtr;
@@ -67,9 +67,6 @@ namespace reem_hardware_gazebo
     jnt_pos_cmd_.clear();
     jnt_pos_cmd_curr_.clear();
     jnt_vel_cmd_.clear();
-
-    // URDF
-    boost::shared_ptr<const urdf::ModelInterface> urdf_model(urdf_mdl);
 
     // Simulation joints
     std::vector<gazebo::physics::JointPtr> sim_joints_tmp = model->GetJoints();
