@@ -1,0 +1,6 @@
+<launch>
+
+  <!-- Diff drive controller configuration -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/mobile_base_controller.yaml"/>
+
+</launch>

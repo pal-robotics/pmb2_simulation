@@ -1,5 +1,0 @@
-<launch>
-  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/pids.yaml" />
-
-  <include file="$(find reem_controller_configuration)/launch/default_controllers.launch"/>
-</launch>
