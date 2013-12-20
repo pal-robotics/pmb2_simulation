@@ -13,12 +13,12 @@
     <arg name="world_name" value="$(find reem_gazebo)/worlds/$(arg world).world" />
   </include>
 
-  <!-- load REEM robot in simulation -->
+  <!-- spawn robot in simulation -->
   <include file="$(find reem_gazebo)/launch/reem_spawn.launch">
     <arg name="robot"  value="$(arg robot)"/>
     <arg name="gzpose" value="$(arg gzpose)"/>
   </include>
 
-  <!-- start REEM robot -->
+  <!-- bring up robot -->
   <include file="$(find reem_gazebo)/launch/reem_bringup.launch"/>
 </launch>
