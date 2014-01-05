@@ -5,13 +5,13 @@ gains:
   torso_1_joint:                  {p: 1500, d: 100, i: 30, i_clamp: 6}
   torso_2_joint:                  {p: 1500, d: 100, i: 30, i_clamp: 6}
 
-  arm_right_1_joint: &arm_1_gains {p: 2000, d: 100, i: 20, i_clamp: 3.0}
-  arm_right_2_joint: &arm_2_gains {p: 800,  d: 500, i: 20, i_clamp: 3.0}
-  arm_right_3_joint: &arm_3_gains {p: 600,  d: 350, i: 15, i_clamp: 2.0}
-  arm_right_4_joint: &arm_4_gains {p: 800,  d: 800, i: 20, i_clamp: 3.0}
-  arm_right_5_joint: &arm_5_gains {p: 100,  d: 80,  i: 10, i_clamp: 1.5}
-  arm_right_6_joint: &arm_6_gains {p: 100,  d: 80,  i: 10, i_clamp: 1.5}
-  arm_right_7_joint: &arm_7_gains {p: 100,  d: 80,  i: 10, i_clamp: 1.5}
+  arm_right_1_joint: &arm_1_gains {p: 3000, d: 5, i: 1, i_clamp: 3.0}
+  arm_right_2_joint: &arm_2_gains {p: 3000,  d: 5, i: 1, i_clamp: 3.0}
+  arm_right_3_joint: &arm_3_gains {p: 3000,  d: 5, i: 1, i_clamp: 3.0}
+  arm_right_4_joint: &arm_4_gains {p: 3000,  d: 5, i: 1, i_clamp: 3.0}
+  arm_right_5_joint: &arm_5_gains {p: 600,   d: 0.01,  i: 0.001, i_clamp: 3.0}
+  arm_right_6_joint: &arm_6_gains {p: 500,   d: 20,    i: 0.001, i_clamp: 3.0}
+  arm_right_7_joint: &arm_7_gains {p: 500,   d: 0.01,  i: 0.005, i_clamp: 3.0}
   arm_left_1_joint:  *arm_1_gains
   arm_left_2_joint:  *arm_2_gains
   arm_left_3_joint:  *arm_3_gains
