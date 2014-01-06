@@ -1,8 +1,0 @@
-<launch>
-  <include file="$(find reem_gazebo)/launch/run_gazebo.launch">
-    <arg name="robot" value="eye_hand_calibration_right_arm"/> <!-- eye_hand_calibration in spawner!!! -->
-    <arg name="world" value="empty_world"/> <!-- empty_world_real_time?! -->
-    <arg name="gzpose" value="$(optenv ROBOT_INITIAL_POSE)"/>
-  </include>
-</launch>
-
