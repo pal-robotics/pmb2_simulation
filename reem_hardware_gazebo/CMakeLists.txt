@@ -1,30 +1,42 @@
-cmake_minimum_required(VERSION 2.4.6)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+cmake_minimum_required(VERSION 2.8.3)
+project(reem_hardware_gazebo)
 
-# Set the build type.  Options are:
-#  Coverage       : w/ debug symbols, w/o optimization, w/ code-coverage
-#  Debug          : w/ debug symbols, w/o optimization
-#  Release        : w/o debug symbols, w/ optimization
-#  RelWithDebInfo : w/ debug symbols, w/ optimization
-#  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
-#set(ROS_BUILD_TYPE RelWithDebInfo)
+find_package(catkin REQUIRED
+    COMPONENTS
+      angles
+      hardware_interface
+      joint_limits_interface
+      gazebo_ros_control
+      control_toolbox
+    )
 
-rosbuild_init()
+find_package(gazebo REQUIRED)
 
-# Gazebo simulator
-include (FindPkgConfig)
-if (PKG_CONFIG_FOUND)
- pkg_check_modules(GAZEBO gazebo)
-endif()
-include_directories(${GAZEBO_INCLUDE_DIRS})
+catkin_package(
+    INCLUDE_DIRS include
+    CATKIN_DEPENDS
+      control_toolbox
+      gazebo_ros_control
+      joint_limits_interface
+      hardware_interface
+    LIBRARIES ${PROJECT_NAME}
+)
 
-#set the default path for built executables to the "bin" directory
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-#set the default path for built libraries to the "lib" directory
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
+link_directories(${GAZEBO_LIBRARY_DIRS})
 
-#common commands for building c++ executables and libraries
-rosbuild_add_library(${PROJECT_NAME} src/reem_hardware_gazebo.cpp include/reem_hardware_gazebo/reem_hardware_gazebo.h)
-target_link_libraries(${PROJECT_NAME} ${GAZEBO_LIBRARIES})
+add_library(${PROJECT_NAME} src/reem_hardware_gazebo.cpp)
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
-rosbuild_make_distribution(0.0.1)
+install(TARGETS ${PROJECT_NAME}
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  )
+
+install(DIRECTORY include/
+   DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
+   FILES_MATCHING PATTERN "*.h"
+)
+install (FILES reem_hardware_gazebo_plugins.xml
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
