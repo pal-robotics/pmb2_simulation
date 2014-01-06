@@ -1,4 +1,11 @@
-cmake_minimum_required(VERSION 2.4.6)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+cmake_minimum_required(VERSION 2.8.3)
+project(reem_controller_configuration_gazebo)
 
-rosbuild_init()
+find_package(catkin REQUIRED)
+
+catkin_package()
+
+foreach(dir config launch)
+    install(DIRECTORY ${dir}/
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+endforeach(dir)
