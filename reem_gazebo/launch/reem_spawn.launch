@@ -2,6 +2,10 @@
   <arg name="robot"  default="full"/>
   <arg name="gzpose" default="-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
 
+  <!-- PID gains -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/pids.yaml"/>
+
+  <!-- Robot model -->
   <include file="$(find reem_description)/robots/upload_reem.launch">
     <arg name="robot" value="$(arg robot)"/>
   </include>
