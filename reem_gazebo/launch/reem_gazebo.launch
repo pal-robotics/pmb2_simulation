@@ -20,5 +20,5 @@
   </include>
 
   <!-- bring up robot -->
-  <include file="$(find reem_gazebo)/launch/reem_bringup.launch"/>
+  <include file="$(find reem_bringup)/launch/reem_bringup.launch"/>
 </launch>
