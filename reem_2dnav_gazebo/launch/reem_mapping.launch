@@ -26,6 +26,6 @@
       <arg name="gzpose" value="$(arg gzpose)"/>
     </include>
 
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find reem_2dnav)/config/mapping/mapping.vcg" if="$(arg rviz)"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find reem_2dnav)/config/mapping/mapping.rviz" if="$(arg rviz)"/>
   </group>
 </launch>
