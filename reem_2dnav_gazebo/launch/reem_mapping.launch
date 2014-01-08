@@ -1,0 +1,31 @@
+<launch>
+  <!-- Simulation time -->
+  <param name="/use_sim_time" type="bool" value="true"/>
+
+  <arg name="namespace" default="/"/>
+
+  <arg name="mapping" default="karto"/> <!-- karto, gmapping -->
+
+  <arg name="world"  default="simple_office"/>
+  <arg name="robot"  default="full"/>
+  <arg name="gzname" default="gazebo"/>
+  <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
+  <arg name="rviz" default="true"/>
+
+  <group ns="$(arg namespace)">
+
+    <include file="$(find reem_2dnav)/launch/mapping.launch">
+      <arg name="mapping" value="$(arg mapping)"/>
+    </include>
+
+    <include file="$(find reem_gazebo)/launch/reem_gazebo.launch">
+      <arg name="world"  value="$(arg world)"/>
+      <arg name="robot"  value="$(arg robot)"/>
+      <arg name="gzname" value="$(arg gzname)"/>
+      <arg name="gzpose" value="$(arg gzpose)"/>
+    </include>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find reem_2dnav)/config/mapping/mapping.vcg" if="$(arg rviz)"/>
+  </group>
+</launch>
