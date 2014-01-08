@@ -32,7 +32,7 @@
       <arg name="map"           value="$(arg map)"/>
     </include>
 
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find reem_2dnav)/config/$(arg planner)/$(arg local_planner)/reem_navigation.rviz" if="$(arg rviz)"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find reem_2dnav)/config/$(arg planner)/$(arg local_planner)/navigation.rviz" if="$(arg rviz)"/>
 
   </group>
 </launch>
