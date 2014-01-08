@@ -14,6 +14,7 @@
   <run_depend>reem_controller_configuration_gazebo</run_depend>
   <run_depend>reem_gazebo</run_depend>
   <run_depend>reem_hardware_gazebo</run_depend>
+  <run_depend>reem_2dnav_gazebo</run_depend>
 
   <export>
     <metapackage/>
