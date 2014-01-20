@@ -7,12 +7,17 @@
   <arg name="robot"  default="full"/>
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
 
+  <arg name="planner"       default="base"/>
+  <arg name="local_planner" default="trajectory"/>
+
   <arg name="rviz" default="true"/>
 
   <group ns="$(arg namespace)">
 
     <include file="$(find reem_2dnav)/launch/mapping.launch">
-      <arg name="mapping" value="$(arg mapping)"/>
+      <arg name="mapping"       value="$(arg mapping)"/>
+      <arg name="planner"       value="$(arg planner)"/>
+      <arg name="local_planner" value="$(arg local_planner)"/>
     </include>
 
     <include file="$(find reem_gazebo)/launch/reem_gazebo.launch">
