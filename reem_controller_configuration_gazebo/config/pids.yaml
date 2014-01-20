@@ -9,9 +9,9 @@ gains:
   arm_right_2_joint: &arm_2_gains {p: 3000,  d: 5, i: 1, i_clamp: 3.0}
   arm_right_3_joint: &arm_3_gains {p: 3000,  d: 5, i: 1, i_clamp: 3.0}
   arm_right_4_joint: &arm_4_gains {p: 3000,  d: 5, i: 1, i_clamp: 3.0}
-  arm_right_5_joint: &arm_5_gains {p: 600,   d: 0.01,  i: 0.001, i_clamp: 3.0}
-  arm_right_6_joint: &arm_6_gains {p: 500,   d: 20,    i: 0.001, i_clamp: 3.0}
-  arm_right_7_joint: &arm_7_gains {p: 500,   d: 0.01,  i: 0.005, i_clamp: 3.0}
+  arm_right_5_joint: &arm_5_gains {p: 500,   d: 1, i: 0.1, i_clamp: 3.0}
+  arm_right_6_joint: &arm_6_gains {p: 500,   d: 1, i: 0.1, i_clamp: 3.0}
+  arm_right_7_joint: &arm_7_gains {p: 500,   d: 1, i: 0.1, i_clamp: 3.0}
   arm_left_1_joint:  *arm_1_gains
   arm_left_2_joint:  *arm_2_gains
   arm_left_3_joint:  *arm_3_gains
