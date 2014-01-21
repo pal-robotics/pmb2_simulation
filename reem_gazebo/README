@@ -1,0 +1,4 @@
+# Launch REEM with checkerboard in right hand for eye hand calibration
+
+roslaunch reem_gazebo reem_gazebo.launch robot:=right_hand_checkerboard
+
