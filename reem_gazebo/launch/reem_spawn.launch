@@ -8,6 +8,9 @@
   <!-- Diff drive controller parameters -->
   <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/mobile_base_controller.yaml"/>
 
+  <!-- Joint trajectory controllers -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/joint_trajectory_controllers.yaml"/>
+
   <!-- Robot model -->
   <include file="$(find reem_description)/robots/upload_reem.launch">
     <arg name="robot" value="$(arg robot)"/>
