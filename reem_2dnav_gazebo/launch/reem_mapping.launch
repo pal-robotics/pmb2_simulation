@@ -7,7 +7,7 @@
 
   <arg name="planner"       default="base"/>
   <arg name="local_planner" default="pal"/>
-  <arg name="mapping" default="karto"/>
+  <arg name="mapping"       default="karto"/>
 
   <arg name="rviz"     default="true"/>
   <arg name="gzclient" default="true"/>
