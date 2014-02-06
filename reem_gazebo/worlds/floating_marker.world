@@ -20,25 +20,9 @@
       <max_step_size>0.001</max_step_size>
     </physics>
     <!-- A global light source -->
-    <!--
     <include>
       <uri>model://sun</uri>
     </include>
-    -->
-    <!-- Light Source -->
-    <light type="directional" name="sun">
-      <pose>-4 0 10 0 0 0</pose>
-      <diffuse>1.0 1.0 1.0 1</diffuse>
-      <specular>0 0 0 1</specular>
-      <attenuation>
-        <range>20</range>
-        <linear>0.01</linear>
-        <constant>0.8</constant>
-        <quadratic>0.0</quadratic>
-      </attenuation>
-      <direction>0.0 0.2 -8.0</direction>
-      <cast_shadows>true</cast_shadows>
-    </light>
     <!-- A ground plane -->
     <include>
       <uri>model://ground_plane</uri>
@@ -48,7 +32,7 @@
       <uri>model://marker26_8cm_massless</uri>
       <pose>0.4 0 1.5 0 1.5707 0</pose>
     </include>
-    <!-- Add a light on of REEM and the marker -->
+    <!-- Add a light on top of REEM and the marker -->
     <light name="marker_light" type="point">
       <cast_shadows>1</cast_shadows>
       <pose>0.2 0 1.8 0 0 0</pose>
