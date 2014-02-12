@@ -11,7 +11,7 @@ gains:
   arm_right_4_joint: &arm_4_gains {p: 3000,  d: 5, i: 1, i_clamp: 3.0}
   arm_right_5_joint: &arm_5_gains {p: 500,   d: 1, i: 0.1, i_clamp: 3.0}
   arm_right_6_joint: &arm_6_gains {p: 500,   d: 1, i: 0.1, i_clamp: 3.0}
-  arm_right_7_joint: &arm_7_gains {p: 500,   d: 1, i: 0.1, i_clamp: 3.0}
+  arm_right_7_joint: &arm_7_gains {p: 100,   d: 0.1, i: 0.1, i_clamp: 3.0}
   arm_left_1_joint:  *arm_1_gains
   arm_left_2_joint:  *arm_2_gains
   arm_left_3_joint:  *arm_3_gains
@@ -20,8 +20,8 @@ gains:
   arm_left_6_joint:  *arm_6_gains
   arm_left_7_joint:  *arm_7_gains
 
-  hand_right_thumb_joint:    &thumb_gains    {p: 500, d: 10, i: 1, i_clamp: 1}
-  hand_right_index_1_joint:  &finger_1_gains {p: 100, d: 1, i: 1, i_clamp: 1}
+  hand_right_thumb_joint:    &thumb_gains    {p: 50, d: 0.1, i: 0.1, i_clamp: 1}
+  hand_right_index_1_joint:  &finger_1_gains {p: 0, d: 0, i: 0, i_clamp: 0}
   hand_right_index_2_joint:  *finger_1_gains
   hand_right_index_3_joint:  *finger_1_gains
   hand_right_middle_1_joint: *finger_1_gains
@@ -36,7 +36,7 @@ gains:
   hand_left_middle_3_joint:  *finger_1_gains
 
   # TODO: Remove!
-  hand_right_index_joint:  *finger_1_gains
-  hand_right_middle_joint: *finger_1_gains
-  hand_left_index_joint:   *finger_1_gains
-  hand_left_middle_joint:  *finger_1_gains
+  hand_right_index_joint:  &finger_gains {p: 50, d: 0.1, i: 0.1, i_clamp: 1}
+  hand_right_middle_joint: *finger_gains
+  hand_left_index_joint:   *finger_gains
+  hand_left_middle_joint:  *finger_gains
