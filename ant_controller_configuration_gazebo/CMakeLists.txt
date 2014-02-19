@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(reem_controller_configuration_gazebo)
+project(ant_controller_configuration_gazebo)
 
 find_package(catkin REQUIRED)
 
