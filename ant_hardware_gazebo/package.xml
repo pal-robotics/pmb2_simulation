@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 <package>
-  <name>reem_hardware_gazebo</name>
+  <name>ant_hardware_gazebo</name>
   <version>0.9.0</version>
-  <description>Gazebo plugin to control a REEM robot in simulation.</description>
+  <description>Gazebo plugin to control a ANT robot in simulation.</description>
 
-  <maintainer email="adolfo.rodriguez@pal-robotics.com">Adolfo Rodriguez Tsouroukdissian</maintainer>
-  <maintainer email="paul.mathieu@pal-robotics.com">Paul Mathieu</maintainer>
+  <maintainer email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</maintainer>
 
-  <author email="adolfo.rodriguez@pal-robotics.com">Adolfo Rodriguez Tsouroukdissian</author>
+  <author email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</author>
 
   <license>BSD</license>
 
@@ -25,7 +24,7 @@
   <run_depend>gazebo_ros_control</run_depend>
 
   <export>
-    <gazebo_ros_control plugin="${prefix}/reem_hardware_gazebo_plugins.xml"/>
+    <gazebo_ros_control plugin="${prefix}/ant_hardware_gazebo_plugins.xml"/>
   </export>
 
 </package>

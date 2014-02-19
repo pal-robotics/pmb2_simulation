@@ -1,0 +1,11 @@
+<library path="lib/libant_hardware_gazebo">
+
+  <class
+    name="ant_hardware_gazebo/AntHardwareGazebo"
+    type="ant_hardware_gazebo::AntHardwareGazebo"
+    base_class_type="gazebo_ros_control::RobotHWSim">
+    <description>
+      ANT robot simulation interface.
+    </description>
+  </class>
+</library>
