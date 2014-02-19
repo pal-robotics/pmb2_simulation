@@ -1,0 +1,34 @@
+<launch>
+  <arg name="namespace" default="/"/>
+
+  <arg name="world"  default="simple_office"/>
+  <arg name="robot"  default="full"/>
+  <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
+  <arg name="planner"       default="base"/>
+  <arg name="local_planner" default="pal"/>
+  <arg name="mapping"       default="karto"/>
+
+  <arg name="rviz"     default="true"/>
+  <arg name="gzclient" default="true"/>
+
+  <group ns="$(arg namespace)">
+
+    <include file="$(find ant_gazebo)/launch/ant_gazebo.launch">
+      <arg name="world"  value="$(arg world)"/>
+      <arg name="robot"  value="$(arg robot)"/>
+      <arg name="gzpose" value="$(arg gzpose)"/>
+      <arg name="gui"    value="$(arg gzclient)"/>
+    </include>
+
+    <include file="$(find ant_2dnav)/launch/navigation.launch">
+      <arg name="state"         value="mapping"/>
+      <arg name="mapping"       value="$(arg mapping)"/>
+      <arg name="planner"       value="$(arg planner)"/>
+      <arg name="local_planner" value="$(arg local_planner)"/>
+    </include>
+
+    <node name="rviz" pkg="rviz" type="rviz" if="$(arg rviz)"
+          args="-d $(find ant_2dnav)/config/mapping/mapping.rviz"/>
+  </group>
+</launch>
