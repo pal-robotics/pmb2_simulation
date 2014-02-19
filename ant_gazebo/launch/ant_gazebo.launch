@@ -7,21 +7,21 @@
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
 
-  <env name="GAZEBO_MODEL_PATH" value="$(find reem_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
+  <env name="GAZEBO_MODEL_PATH" value="$(find ant_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
 
   <!-- start up world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find reem_gazebo)/worlds/$(arg world).world"/>
+    <arg name="world_name" value="$(find ant_gazebo)/worlds/$(arg world).world"/>
     <arg name="gui" value="$(arg gui)"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
 
   <!-- spawn robot in simulation -->
-  <include file="$(find reem_gazebo)/launch/reem_spawn.launch">
+  <include file="$(find ant_gazebo)/launch/ant_spawn.launch">
     <arg name="robot"  value="$(arg robot)"/>
     <arg name="gzpose" value="$(arg gzpose)"/>
   </include>
 
   <!-- bring up robot -->
-  <include file="$(find reem_bringup)/launch/reem_bringup.launch"/>
+  <include file="$(find ant_bringup)/launch/ant_bringup.launch"/>
 </launch>

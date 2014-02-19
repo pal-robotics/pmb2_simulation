@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-  <include file="$(find reem_gazebo)/launch/reem_gazebo.launch">
+  <include file="$(find ant_gazebo)/launch/ant_gazebo.launch">
     <arg name="world" value="empty" />
   </include>
 </launch>
