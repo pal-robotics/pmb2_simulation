@@ -11,7 +11,7 @@ ir_emitters:
     z:  0.0
 -
   name : ir_center
-  code : 0
+  code : 1
   angle: 0.0
   fov  : !degrees 90.0
   range: 2.0
@@ -21,7 +21,7 @@ ir_emitters:
     z: 0.0
 -
   name : ir_right
-  code : 0
+  code : 2
   angle: 0.0
   fov  : !degrees 90.0
   range: 2.0
