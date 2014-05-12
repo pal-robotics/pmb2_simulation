@@ -1,30 +1,31 @@
 ir_emitters:
-  ir_left:
-    code : 0
-    angle: 0.0
-    fov  : !degrees 90.0
-    range: 2.0
-    position:
-      x:  0.0
-      y: -0.1
-      z:  0.0
-
-  ir_center:
-    code : 0
-    angle: 0.0
-    fov  : !degrees 90.0
-    range: 2.0
-    position:
-      x: 0.0
-      y: 0.0
-      z: 0.0
-
-  ir_right:
-    code : 0
-    angle: 0.0
-    fov  : !degrees 90.0
-    range: 2.0
-    position:
-      x: 0.0
-      y: 1.0
-      z: 0.0
+-
+  name : ir_left
+  code : 0
+  angle: 0.0
+  fov  : !degrees 90.0
+  range: 2.0
+  position:
+    x:  0.0
+    y: -0.1
+    z:  0.0
+-
+  name : ir_center
+  code : 0
+  angle: 0.0
+  fov  : !degrees 90.0
+  range: 2.0
+  position:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+-
+  name : ir_right
+  code : 0
+  angle: 0.0
+  fov  : !degrees 90.0
+  range: 2.0
+  position:
+    x: 0.0
+    y: 1.0
+    z: 0.0
