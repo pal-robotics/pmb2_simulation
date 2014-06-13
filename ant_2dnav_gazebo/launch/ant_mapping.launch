@@ -7,7 +7,7 @@
 
   <arg name="planner"        default="base"/>
   <arg name="global_planner" default="navfn"/>
-  <arg name="local_planner"  default="pal"/>
+  <arg name="local_planner"  default="trajectory"/>
   <arg name="mapping"        default="karto"/>
 
   <arg name="rviz"     default="true"/>
