@@ -216,14 +216,14 @@
         </visual>
       </link>
     </model>
-    <model name='dock_station'>
+    <model name='dock'>
       <static>1</static>
       <link name='link'>
         <collision name='colision1'>
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://dock_station/meshes/dock_station.stl</uri>
+              <uri>model://dock/meshes/dock.stl</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -242,7 +242,7 @@
           <pose>0 0 0 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://dock_station/meshes/dock_station.stl</uri>
+              <uri>model://dock/meshes/dock.stl</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
