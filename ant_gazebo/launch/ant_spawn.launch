@@ -12,6 +12,6 @@
 
   <!-- Spawn robot in Gazebo -->
   <node pkg="gazebo_ros" type="spawn_model" name="$(anon spawn_model)"
-    args="-urdf -param robot_description $(arg gzpose) -model ant_$(arg robot)" />
+    args="-urdf -param robot_description $(arg gzpose) -model ant" />
 
 </launch>
