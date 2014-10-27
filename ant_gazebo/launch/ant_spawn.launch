@@ -2,6 +2,9 @@
   <arg name="robot"  default="full_v2"/>
   <arg name="gzpose" default="-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
 
+  <!-- PID gains -->
+  <rosparam command="load" file="$(find ant_controller_configuration_gazebo)/config/pids.yaml"/>
+
   <!-- Diff drive controller multipliers -->
   <rosparam command="load" file="$(find ant_controller_configuration_gazebo)/config/mobile_base_controller_multipliers.yaml"/>
 
