@@ -23,7 +23,7 @@
     <arg name="gzpose" value="$(arg gzpose)"/>
   </include>
 
-  <node pkg="ant_gazebo" type="ant_sensors.sh" name="ant_sensors" args="$(arg sensor)" output="screen"/>
+  <node pkg="ant_gazebo" type="ant_sensors.sh" name="ant_sensors" args="$(arg sensor)"/>
 
   <!-- bring up robot -->
   <include file="$(find ant_bringup)/launch/ant_bringup.launch"/>
