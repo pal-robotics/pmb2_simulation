@@ -13,6 +13,7 @@
   <run_depend>ant_description</run_depend>
   <run_depend>ant_hardware_gazebo</run_depend>
   <run_depend>ant_bringup</run_depend>
+  <run_depend>ant_laser_sensors</run_depend>
   <run_depend>gazebo_ros</run_depend>
 
 </package>
