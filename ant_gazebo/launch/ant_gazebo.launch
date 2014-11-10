@@ -3,7 +3,7 @@
 <launch>
   <arg name="world"  default="small_office"/>  <!-- empty, small_office, ... (see ../worlds) -->
   <arg name="robot"  default="full_v2"/>       <!-- full, full_v2, rebujito -->
-  <arg name="sensor" default=""/>              <!-- "", rgbd_depth_laser, rgbd_pc_laser -->
+  <arg name="sensor" default=""/>              <!-- "", rgbd_depth_laser, rgbd_cloud_laser -->
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
@@ -23,7 +23,7 @@
     <arg name="gzpose" value="$(arg gzpose)"/>
   </include>
 
-  <node pkg="ant_gazebo" type="ant_sensors.sh" name="ant_sensors" args="$(arg sensor)"/>
+  <node pkg="ant_gazebo" type="ant_sensors.sh" name="ant_sensors" args="$(arg sensor)" output="screen"/>
 
   <!-- bring up robot -->
   <include file="$(find ant_bringup)/launch/ant_bringup.launch"/>

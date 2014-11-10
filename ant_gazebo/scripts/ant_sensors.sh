@@ -7,7 +7,7 @@
 # This allows to run sensor filters or sensors not supported or
 # running inside gazebo.
 
-if [ $# -gt 1 ]; then
+if [ $# -gt 2 ]; then
     SENSOR=$1
     roslaunch ant_laser_sensors ${SENSOR}.launch
 fi
