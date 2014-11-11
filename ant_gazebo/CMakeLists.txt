@@ -5,7 +5,7 @@ find_package(catkin REQUIRED)
 
 catkin_package()
 
-install(PROGRAMS scripts/sensors.sh
+install(PROGRAMS scripts/ant_sensors.sh
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 foreach(dir launch Media models worlds)
