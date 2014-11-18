@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>ant_simulation</name>
-  <version>0.9.0</version>
+  <version>0.9.1</version>
   <description>ANT-specific simulation components. These include plugins
                and launch scripts necessary for running ANT in simulation.</description>
   <maintainer email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</maintainer>

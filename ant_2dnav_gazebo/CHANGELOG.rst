@@ -2,8 +2,8 @@
 Changelog for package ant_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.9.1 (2014-11-18)
+------------------
 * takes map from $HOME/.pal/ant_maps
 * uses full v2.0 robot by default
 * sets PAL local planner as default also for simulation

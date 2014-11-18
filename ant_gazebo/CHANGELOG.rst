@@ -2,8 +2,8 @@
 Changelog for package ant_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.9.1 (2014-11-18)
+------------------
 * fixes install rule for ant_sensors.sh
 * removes not needed output="screen"
 * fixes ant_sensors
