@@ -7,7 +7,7 @@
         <geometry>
           <mesh>
             <uri>model://coffee_table/meshes/coffee_table.min.dae</uri>
-            <scale> 1 1 1 </scale>
+            <scale> 0.1 0.1 0.1 </scale>
           </mesh>
         </geometry>
         <surface>
@@ -26,7 +26,7 @@
         <geometry>
           <mesh>
             <uri>model://coffee_table/meshes/coffee_table.dae</uri>
-            <scale> 1 1 1 </scale>
+            <scale> 0.1 0.1 0.1 </scale>
           </mesh>
         </geometry>
       </visual>
