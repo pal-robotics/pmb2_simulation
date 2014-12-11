@@ -9,6 +9,7 @@
   <arg name="global_planner" default="navfn"/>
   <arg name="local_planner"  default="pal"/>
   <arg name="mapping"        default="karto"/>
+  <arg name="octomap"        default="false"/>
 
   <arg name="rviz"     default="true"/>
   <arg name="gzclient" default="true"/>
@@ -25,6 +26,7 @@
     <include file="$(find ant_2dnav)/launch/navigation.launch">
       <arg name="state"          value="mapping"/>
       <arg name="mapping"        value="$(arg mapping)"/>
+      <arg name="octomap"        value="$(arg octomap)"/>
       <arg name="planner"        value="$(arg planner)"/>
       <arg name="global_planner" value="$(arg global_planner)"/>
       <arg name="local_planner"  value="$(arg local_planner)"/>

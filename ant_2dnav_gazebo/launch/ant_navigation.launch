@@ -10,6 +10,7 @@
   <arg name="local_planner"  default="pal"/>
   <arg name="localization"   default="amcl"/>
   <arg name="map"            default="$(env HOME)/.pal/ant_maps/configurations/$(arg world)"/>
+  <arg name="octomap"        default="false"/>
 
   <arg name="rviz"     default="true"/>
   <arg name="gzclient" default="true"/>
@@ -30,6 +31,7 @@
       <arg name="local_planner"  value="$(arg local_planner)"/>
       <arg name="localization"   value="$(arg localization)"/>
       <arg name="map"            value="$(arg map)"/>
+      <arg name="octomap"        value="$(arg octomap)"/>
     </include>
 
     <node name="rviz" pkg="rviz" type="rviz" if="$(arg rviz)"
