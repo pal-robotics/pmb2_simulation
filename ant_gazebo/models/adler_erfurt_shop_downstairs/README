@@ -1,0 +1,8 @@
+The model.sdf file has been auto-generated from adler_erfurt_shop_downstairs.png.
+
+The image adler_erfurt_shop_downstairs.png was generated from adler_erfurt_shop.pdf with:
+$ convert -density 100 -quality 100 -sharpen 0x1.0
+and edited in gimp afterwards (converting to grayscale).
+
+Use https://github.com/RainCT/img2sdf if you need to re-generate it:
+$ img2sdf.py adler_erfurt_shop_downstairs.png 0.02553191489361702 --name=AdlerErfurtShopDownstairs > model.sdf
