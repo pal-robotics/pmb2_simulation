@@ -34,7 +34,7 @@
 
     <!-- Walls -->
     <include>
-      <uri>model://adler_erfurt_shop_level_1</uri>
+      <uri>model://adler_erfurt_shop_upstairs</uri>
       <name>walls</name>
       <pose>-7 -22.75 0 0 0 1.5708</pose>
     </include>
