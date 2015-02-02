@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>ant_hardware_gazebo</name>
+  <name>pmb2_hardware_gazebo</name>
   <version>0.9.1</version>
-  <description>Gazebo plugin to control a ANT robot in simulation.</description>
+  <description>Gazebo plugin to control a PMB2 robot in simulation.</description>
 
   <maintainer email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</maintainer>
 
@@ -26,7 +26,7 @@
   <run_depend>gazebo</run_depend>
 
   <export>
-    <gazebo_ros_control plugin="${prefix}/ant_hardware_gazebo_plugins.xml"/>
+    <gazebo_ros_control plugin="${prefix}/pmb2_hardware_gazebo_plugins.xml"/>
   </export>
 
 </package>

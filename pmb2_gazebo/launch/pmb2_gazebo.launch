@@ -8,23 +8,23 @@
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
 
-  <env name="GAZEBO_MODEL_PATH" value="$(find ant_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
+  <env name="GAZEBO_MODEL_PATH" value="$(find pmb2_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
 
   <!-- start up world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find ant_gazebo)/worlds/$(arg world).world"/>
+    <arg name="world_name" value="$(find pmb2_gazebo)/worlds/$(arg world).world"/>
     <arg name="gui" value="$(arg gui)"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
 
   <!-- spawn robot in simulation -->
-  <include file="$(find ant_gazebo)/launch/ant_spawn.launch">
+  <include file="$(find pmb2_gazebo)/launch/pmb2_spawn.launch">
     <arg name="robot"  value="$(arg robot)"/>
     <arg name="gzpose" value="$(arg gzpose)"/>
   </include>
 
-  <node pkg="ant_gazebo" type="ant_sensors.sh" name="ant_sensors" args="$(arg sensor)"/>
+  <node pkg="pmb2_gazebo" type="pmb2_sensors.sh" name="pmb2_sensors" args="$(arg sensor)"/>
 
   <!-- bring up robot -->
-  <include file="$(find ant_bringup)/launch/ant_bringup.launch"/>
+  <include file="$(find pmb2_bringup)/launch/pmb2_bringup.launch"/>
 </launch>

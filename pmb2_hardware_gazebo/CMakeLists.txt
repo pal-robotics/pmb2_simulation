@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ant_hardware_gazebo)
+project(pmb2_hardware_gazebo)
 
 find_package(catkin REQUIRED
     COMPONENTS
@@ -25,7 +25,7 @@ catkin_package(
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
-add_library(${PROJECT_NAME} src/ant_hardware_gazebo.cpp)
+add_library(${PROJECT_NAME} src/pmb2_hardware_gazebo.cpp)
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
 install(TARGETS ${PROJECT_NAME}
@@ -38,5 +38,5 @@ install(DIRECTORY include/
    DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
    FILES_MATCHING PATTERN "*.h"
 )
-install (FILES ant_hardware_gazebo_plugins.xml
+install (FILES pmb2_hardware_gazebo_plugins.xml
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})

@@ -9,7 +9,7 @@
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
 
-  <include file="$(find ant_gazebo)/launch/ant_gazebo.launch">
+  <include file="$(find pmb2_gazebo)/launch/pmb2_gazebo.launch">
     <arg name="world"  value="$(arg world)"/>
     <arg name="robot"  value="$(arg robot)"/>
     <arg name="gzpose" value="$(arg robot_pose)"/>
@@ -18,13 +18,13 @@
   </include>
 
   <!-- Dock -->
-  <include file="$(find ant_gazebo)/launch/dock_spawn.launch">
+  <include file="$(find pmb2_gazebo)/launch/dock_spawn.launch">
     <arg name="dock"   value="$(arg dock)"/>
     <arg name="gzpose" value="$(arg dock_pose)"/>
   </include>
 
   <!-- @todo remove this once it's replace by the dock model above completely -->
   <!-- Dock station IR emitters -->
-  <rosparam command="load" file="$(find ant_gazebo)/config/dock.yaml"/>
+  <rosparam command="load" file="$(find pmb2_gazebo)/config/dock.yaml"/>
 
 </launch>

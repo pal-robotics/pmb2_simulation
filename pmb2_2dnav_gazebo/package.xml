@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <package>
-  <name>ant_2dnav_gazebo</name>
+  <name>pmb2_2dnav_gazebo</name>
   <version>0.9.1</version>
-  <description>ANT-specific launch files needed to run
-    navigation on the ANT robot.</description>
+  <description>PMB2-specific launch files needed to run
+    navigation on the PMB2 robot.</description>
   <maintainer email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</maintainer>
   <license>Modified BSD</license>
   <author email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>ant_gazebo</run_depend>
-  <run_depend>ant_2dnav</run_depend>
+  <run_depend>pmb2_gazebo</run_depend>
+  <run_depend>pmb2_2dnav</run_depend>
 </package>

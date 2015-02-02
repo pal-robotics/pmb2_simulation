@@ -25,8 +25,8 @@
 // POSSIBILITY OF SUCH DAMAGE.
 //////////////////////////////////////////////////////////////////////////////
 
-#ifndef ANT_HARDWARE_GAZEBO_ANT_HARDWARE_GAZEBO_H
-#define ANT_HARDWARE_GAZEBO_ANT_HARDWARE_GAZEBO_H
+#ifndef PMB2_HARDWARE_GAZEBO_PMB2_HARDWARE_GAZEBO_H
+#define PMB2_HARDWARE_GAZEBO_PMB2_HARDWARE_GAZEBO_H
 
 #include <vector>
 #include <string>
@@ -50,14 +50,14 @@
 #include <gazebo/sensors/ImuSensor.hh>
 #include <gazebo/common/common.hh>
 
-namespace ant_hardware_gazebo
+namespace pmb2_hardware_gazebo
 {
 
-class AntHardwareGazebo : public gazebo_ros_control::RobotHWSim
+class Pmb2HardwareGazebo : public gazebo_ros_control::RobotHWSim
 {
 public:
 
-  AntHardwareGazebo();
+  Pmb2HardwareGazebo();
 
   // Simulation-specific
   bool initSim(const std::string& robot_namespace,
@@ -125,4 +125,4 @@ private:
 
 }
 
-#endif // ANT_HARDWARE_GAZEBO_ANT_HARDWARE_GAZEBO_H
+#endif // PMB2_HARDWARE_GAZEBO_PMB2_HARDWARE_GAZEBO_H

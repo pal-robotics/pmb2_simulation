@@ -1,12 +1,12 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package ant_gazebo
+Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 0.9.1 (2014-11-18)
 ------------------
-* fixes install rule for ant_sensors.sh
+* fixes install rule for pmb2_sensors.sh
 * removes not needed output="screen"
-* fixes ant_sensors
+* fixes pmb2_sensors
 * adds sensors (or filters)
 * adds Adler Erfurt shop worlds
 * adds large_corridor world
@@ -19,7 +19,7 @@ Changelog for package ant_gazebo
 * uses full v2.0 robot by default
 * sets furniture as non-static (needed by openni-kinect plugin)
   see http://answers.gazebosim.org/question/6914/gazebo-191-openni_kinect-plugin-does-not-refresh/
-* sets model name as 'ant' (is always the same)
+* sets model name as 'pmb2' (is always the same)
 * uses final dock model
 * updates small_office world (with reemc one)
 * adds dock prototype
@@ -44,6 +44,6 @@ Changelog for package ant_gazebo
 * refs #8221 : sets model bottom at z=0
 * refs #8221 : removes models' database (not really needed/used)
 * refs #8221 : adds dock_station model
-* refs #8173 : ant_gazebo done (missed rm/add = mv)
-* refs #8173 : ant_gazebo done
+* refs #8173 : pmb2_gazebo done (missed rm/add = mv)
+* refs #8173 : pmb2_gazebo done
 * Contributors: Enrique Fernandez, Jordi Pages

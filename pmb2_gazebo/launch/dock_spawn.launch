@@ -3,7 +3,7 @@
   <arg name="gzpose" default="-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
 
   <!-- Dock model -->
-  <include file="$(find ant_description)/robots/upload_dock.launch">
+  <include file="$(find pmb2_description)/robots/upload_dock.launch">
     <arg name="dock" value="$(arg dock)"/>
   </include>
 

@@ -1,4 +1,4 @@
-material ant/LightGrey
+material pmb2/LightGrey
 {
  technique
   {
@@ -14,7 +14,7 @@ material ant/LightGrey
   }
 }
 
-material ant/DarkGrey
+material pmb2/DarkGrey
 {
  technique
   {

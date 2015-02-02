@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ant_2dnav_gazebo)
+project(pmb2_2dnav_gazebo)
 
 find_package(catkin REQUIRED)
 

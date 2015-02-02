@@ -35,21 +35,21 @@
 #include <joint_limits_interface/joint_limits_urdf.h>
 #include <joint_limits_interface/joint_limits_rosparam.h>
 
-#include <ant_hardware_gazebo/ant_hardware_gazebo.h>
+#include <pmb2_hardware_gazebo/pmb2_hardware_gazebo.h>
 
 using std::string;
 using std::vector;
 
-namespace ant_hardware_gazebo
+namespace pmb2_hardware_gazebo
 {
   using namespace hardware_interface;
 
-  AntHardwareGazebo::AntHardwareGazebo()
+  Pmb2HardwareGazebo::Pmb2HardwareGazebo()
     : gazebo_ros_control::RobotHWSim()
   {}
 
 
-  bool AntHardwareGazebo::initSim(const std::string& robot_namespace,
+  bool Pmb2HardwareGazebo::initSim(const std::string& robot_namespace,
       ros::NodeHandle nh,
       gazebo::physics::ModelPtr model,
       const urdf::Model* const urdf_model,
@@ -233,7 +233,7 @@ namespace ant_hardware_gazebo
     return true;
   }
 
-  void AntHardwareGazebo::readSim(ros::Time time, ros::Duration period)
+  void Pmb2HardwareGazebo::readSim(ros::Time time, ros::Duration period)
   {
     for(unsigned int j = 0; j < n_dof_; ++j)
     {
@@ -269,7 +269,7 @@ namespace ant_hardware_gazebo
     base_lin_acc_[2] =  imu_lin_acc.z;
   }
 
-  void AntHardwareGazebo::writeSim(ros::Time time, ros::Duration period)
+  void Pmb2HardwareGazebo::writeSim(ros::Time time, ros::Duration period)
   {
     // Enforce joint limits
     pos_jnt_limits_interface_.enforceLimits(period);
@@ -291,6 +291,6 @@ namespace ant_hardware_gazebo
     }
   }
 
-} // ant_hardware_gazebo
+} // pmb2_hardware_gazebo
 
-PLUGINLIB_EXPORT_CLASS( ant_hardware_gazebo::AntHardwareGazebo, gazebo_ros_control::RobotHWSim)
+PLUGINLIB_EXPORT_CLASS( pmb2_hardware_gazebo::Pmb2HardwareGazebo, gazebo_ros_control::RobotHWSim)

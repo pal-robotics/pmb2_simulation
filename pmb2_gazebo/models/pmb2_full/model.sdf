@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version='1.4'>
- <model name='ant'>
+ <model name='pmb2'>
    <include>
-     <uri>model://ant_full</uri>
+     <uri>model://pmb2_full</uri>
    </include>
 </sdf>

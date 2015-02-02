@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package>
-  <name>ant_controller_configuration_gazebo</name>
+  <name>pmb2_controller_configuration_gazebo</name>
   <version>0.9.1</version>
   <description>Gazebo-specifig launch files and scripts needed to configure
-    the controllers of the ANT robot in simulation.</description>
+    the controllers of the PMB2 robot in simulation.</description>
   <maintainer email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</maintainer>
   <license>Modified BSD</license>
   <author email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</author>

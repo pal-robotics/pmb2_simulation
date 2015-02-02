@@ -9,7 +9,7 @@
   <arg name="global_planner" default="global_planner"/>
   <arg name="local_planner"  default="pal"/>
   <arg name="localization"   default="amcl"/>
-  <arg name="map"            default="$(env HOME)/.pal/ant_maps/configurations/$(arg world)"/>
+  <arg name="map"            default="$(env HOME)/.pal/pmb2_maps/configurations/$(arg world)"/>
   <arg name="octomap"        default="false"/>
 
   <arg name="rviz"     default="true"/>
@@ -17,14 +17,14 @@
 
   <group ns="$(arg namespace)">
 
-    <include file="$(find ant_gazebo)/launch/ant_gazebo.launch">
+    <include file="$(find pmb2_gazebo)/launch/pmb2_gazebo.launch">
       <arg name="world"  value="$(arg world)"/>
       <arg name="robot"  value="$(arg robot)"/>
       <arg name="gzpose" value="$(arg gzpose)"/>
       <arg name="gui"    value="$(arg gzclient)"/>
     </include>
 
-    <include file="$(find ant_2dnav)/launch/navigation.launch">
+    <include file="$(find pmb2_2dnav)/launch/navigation.launch">
       <arg name="state"          value="localization"/>
       <arg name="planner"        value="$(arg planner)"/>
       <arg name="global_planner" value="$(arg global_planner)"/>
@@ -35,6 +35,6 @@
     </include>
 
     <node name="rviz" pkg="rviz" type="rviz" if="$(arg rviz)"
-          args="-d $(find ant_2dnav)/config/rviz/navigation.rviz"/>
+          args="-d $(find pmb2_2dnav)/config/rviz/navigation.rviz"/>
   </group>
 </launch>

@@ -1,5 +1,5 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package ant_controller_configuration_gazebo
+Changelog for package pmb2_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 0.9.1 (2014-11-18)
@@ -12,5 +12,5 @@ Changelog for package ant_controller_configuration_gazebo
   NOTE they should be always 1.0 (the default), so we
   could even remove this file
 * adds base_frame_id
-* refs #8173 : ant_controller_configuration_gazebo done
+* refs #8173 : pmb2_controller_configuration_gazebo done
 * Contributors: Enrique Fernandez, Jordi Pages
