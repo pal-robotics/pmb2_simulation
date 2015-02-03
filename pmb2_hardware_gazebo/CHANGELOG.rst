@@ -2,6 +2,11 @@
 Changelog for package pmb2_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add depends on gazebo
+* Contributors: Enrique Fernandez
+
 0.9.2 (2015-02-02)
 ------------------
 * Replace ant -> pmb2
