@@ -2,8 +2,8 @@
 Changelog for package pmb2_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.9.3 (2015-02-03)
+------------------
 * Add depends on gazebo
 * Contributors: Enrique Fernandez
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>pmb2_hardware_gazebo</name>
-  <version>0.9.2</version>
+  <version>0.9.3</version>
   <description>Gazebo plugin to control a PMB2 robot in simulation.</description>
 
   <maintainer email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</maintainer>
