@@ -8,7 +8,7 @@ find_package(catkin REQUIRED
       joint_limits_interface
       gazebo_ros_control
       control_toolbox
-    )
+)
 
 find_package(gazebo REQUIRED)
 
@@ -20,6 +20,8 @@ catkin_package(
       joint_limits_interface
       hardware_interface
     LIBRARIES ${PROJECT_NAME}
+    DEPENDS
+        gazebo
 )
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
@@ -32,7 +34,7 @@ install(TARGETS ${PROJECT_NAME}
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-  )
+)
 
 install(DIRECTORY include/
    DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
