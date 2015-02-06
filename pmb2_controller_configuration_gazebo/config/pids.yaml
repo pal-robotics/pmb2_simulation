@@ -1,2 +1,0 @@
-gains:
-  base_rgbd_camera_joint: {p: 0.5,  d: 0, i: 0, i_clamp: 1.5}
