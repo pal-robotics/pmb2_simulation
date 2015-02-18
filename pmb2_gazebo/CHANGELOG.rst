@@ -2,6 +2,12 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Make rgbd camera fixed
+* Use full robot by default
+* Contributors: Enrique Fernandez
+
 0.9.3 (2015-02-03)
 ------------------
 

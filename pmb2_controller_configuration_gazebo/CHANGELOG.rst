@@ -2,6 +2,11 @@
 Changelog for package pmb2_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Make rgbd camera fixed
+* Contributors: Enrique Fernandez
+
 0.9.3 (2015-02-03)
 ------------------
 
