@@ -23,8 +23,6 @@
     <arg name="gzpose" value="$(arg gzpose)"/>
   </include>
 
-  <node pkg="pmb2_gazebo" type="pmb2_sensors.sh" name="pmb2_sensors" args="$(arg sensor)"/>
-
   <!-- bring up robot -->
   <include file="$(find pmb2_bringup)/launch/pmb2_bringup.launch"/>
 </launch>
