@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>pmb2_simulation</name>
+  <version>0.0.0</version>
+  <description>PMB2-specific simulation components. These include plugins
+               and launch scripts necessary for running PMB2 in simulation.</description>
+  <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
+  <license>BSD</license>
+  <author email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>pmb2_controller_configuration_gazebo</run_depend>
+  <run_depend>pmb2_gazebo</run_depend>
+  <run_depend>pmb2_hardware_gazebo</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

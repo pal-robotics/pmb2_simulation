@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <arg name="world"  default="small_office"/>  <!-- empty, small_office, ... (see ../worlds) -->
+  <arg name="robot"  default="full"/>          <!-- full -->
+  <arg name="sensor" default=""/>              <!-- "", rgbd_depth_laser, rgbd_cloud_laser -->
+  <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+  <arg name="gui" default="true"/>
+  <arg name="debug" default="false"/>
+
+  <env name="GAZEBO_MODEL_PATH" value="$(find pmb2_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
+
+  <!-- start up world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find pmb2_gazebo)/worlds/$(arg world).world"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+  <!-- spawn robot in simulation -->
+  <include file="$(find pmb2_gazebo)/launch/pmb2_spawn.launch">
+    <arg name="robot"  value="$(arg robot)"/>
+    <arg name="gzpose" value="$(arg gzpose)"/>
+  </include>
+
+  <!-- bring up robot -->
+  <include file="$(find pmb2_bringup)/launch/pmb2_bringup.launch"/>
+</launch>
