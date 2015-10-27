@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.9.5 (2015-10-27)
+------------------
 * Don't install deleted file
 * Remove dependency of removed package
 * Remove scripts

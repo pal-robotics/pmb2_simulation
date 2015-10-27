@@ -2,8 +2,8 @@
 Changelog for package pmb2_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.9.5 (2015-10-27)
+------------------
 * Remove boost part that collides with different ubuntu versions
 * Update maintainer
 * Change imu name

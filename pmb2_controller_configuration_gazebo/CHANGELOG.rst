@@ -2,8 +2,8 @@
 Changelog for package pmb2_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.9.5 (2015-10-27)
+------------------
 * Update maintainer
 * Contributors: Bence Magyar
 
