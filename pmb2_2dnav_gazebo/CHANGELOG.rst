@@ -2,6 +2,11 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update maintainer
+* Contributors: Bence Magyar
+
 0.9.4 (2015-02-18)
 ------------------
 

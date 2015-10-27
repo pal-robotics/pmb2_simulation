@@ -2,6 +2,15 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Don't install deleted file
+* Remove dependency of removed package
+* Remove scripts
+* Update maintainer
+* Remove sensors script reference
+* Contributors: Bence Magyar
+
 0.9.4 (2015-02-18)
 ------------------
 * Make rgbd camera fixed
