@@ -2,7 +2,7 @@
 
 <launch>
   <arg name="world"  default="small_office"/>  <!-- empty, small_office, ... (see ../worlds) -->
-  <arg name="robot"  default="full"/>          <!-- full, rebujito -->
+  <arg name="robot"  default="default"/>
   <arg name="robot_pose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="dock"  default="full"/>          <!-- full -->
   <arg name="dock_pose" default="-x 2.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 3.14159"/>
