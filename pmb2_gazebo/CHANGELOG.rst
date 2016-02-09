@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.9.6 (2016-02-09)
+------------------
 * use robot default
 * removed worlds that should be there!
 * Contributors: Jeremie Deray
