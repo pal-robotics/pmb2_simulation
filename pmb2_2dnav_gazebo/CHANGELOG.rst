@@ -2,6 +2,11 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* use robot default
+* Contributors: Jeremie Deray
+
 0.9.5 (2015-10-27)
 ------------------
 * Update maintainer
