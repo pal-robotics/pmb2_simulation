@@ -2,6 +2,11 @@
 Changelog for package pmb2_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update simulation hardware abstraction dependence
+* Contributors: Sam Pfeiffer
+
 0.9.6 (2016-02-09)
 ------------------
 

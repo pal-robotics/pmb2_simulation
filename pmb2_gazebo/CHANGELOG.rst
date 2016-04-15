@@ -2,6 +2,13 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update simulation hardware abstraction dependence
+* rm ususless launch
+* rm sim dock launch as it doesn,t exist yet
+* Contributors: Jeremie Deray, Sam Pfeiffer
+
 0.9.6 (2016-02-09)
 ------------------
 * use robot default
