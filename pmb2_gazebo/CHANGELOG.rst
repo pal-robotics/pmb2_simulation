@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.9.7 (2016-04-15)
+------------------
 * Update simulation hardware abstraction dependence
 * rm ususless launch
 * rm sim dock launch as it doesn,t exist yet
