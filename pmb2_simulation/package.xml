@@ -12,7 +12,7 @@
 
   <run_depend>pmb2_controller_configuration_gazebo</run_depend>
   <run_depend>pmb2_gazebo</run_depend>
-  <run_depend>pmb2_hardware_gazebo</run_depend>
+  <run_depend>pal_hardware_gazebo</run_depend>
   <run_depend>pmb2_2dnav_gazebo</run_depend>
 
   <export>
