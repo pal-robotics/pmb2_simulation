@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add missing gazebo_plugins dependency
+* Contributors: Victor Lopez
+
 0.9.7 (2016-04-15)
 ------------------
 * Update simulation hardware abstraction dependence

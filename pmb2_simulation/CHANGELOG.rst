@@ -2,6 +2,9 @@
 Changelog for package pmb2_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.9.7 (2016-04-15)
 ------------------
 * Update simulation hardware abstraction dependence
