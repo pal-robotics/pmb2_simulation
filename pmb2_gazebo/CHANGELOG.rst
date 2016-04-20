@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.0 (2016-04-20)
+------------------
 * Add missing gazebo_plugins dependency
 * Contributors: Victor Lopez
 
