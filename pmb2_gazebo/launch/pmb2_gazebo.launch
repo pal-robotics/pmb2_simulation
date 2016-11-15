@@ -6,8 +6,11 @@
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
+  <arg name="public_sim" default="false"/>
 
   <env name="GAZEBO_MODEL_PATH" value="$(find pmb2_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
+
+  <env name="LC_NUMERIC" value="C" />
 
   <!-- start up world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -23,5 +26,7 @@
   </include>
 
   <!-- bring up robot -->
-  <include file="$(find pmb2_bringup)/launch/pmb2_bringup.launch"/>
+  <include file="$(find pmb2_gazebo)/launch/simulation_pmb2_bringup.launch">
+    <arg name="public_sim"  value="$(arg public_sim)"/>
+  </include>
 </launch>
