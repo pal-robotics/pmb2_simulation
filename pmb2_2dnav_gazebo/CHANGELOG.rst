@@ -2,6 +2,11 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add tiago_support as maintainer
+* Contributors: Jordi Pages
+
 1.0.0 (2016-04-20)
 ------------------
 

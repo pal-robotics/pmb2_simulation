@@ -2,6 +2,12 @@
 Changelog for package pmb2_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* refs #14797. Add public_sim argument
+* add tiago_support as maintainer
+* Contributors: Jordi Pages
+
 1.0.0 (2016-04-20)
 ------------------
 
