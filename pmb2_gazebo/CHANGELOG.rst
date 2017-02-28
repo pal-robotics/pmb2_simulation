@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.1 (2017-02-28)
+------------------
 * refs #14797. Add public_sim argument
 * add tiago_support as maintainer
 * Contributors: Jordi Pages
