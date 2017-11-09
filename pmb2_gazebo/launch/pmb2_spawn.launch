@@ -1,6 +1,8 @@
 <launch>
   <arg name="robot"  default="default"/>
   <arg name="gzpose" default="-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+  
+  <rosparam ns="pal_robot_info" param="type">"pmb2"</rosparam>
 
   <!-- Diff drive controller and multipliers -->
   <rosparam command="load" file="$(find pmb2_controller_configuration_gazebo)/config/mobile_base_controller.yaml"/>
