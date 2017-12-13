@@ -10,5 +10,6 @@
   <author email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</author>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>diff_drive_controller</run_depend>
 
 </package>
