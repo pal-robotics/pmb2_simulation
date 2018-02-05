@@ -2,6 +2,11 @@
 Changelog for package pmb2_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add missing run depend
+* Contributors: Victor Lopez
+
 1.0.1 (2017-02-28)
 ------------------
 * refs #14797. Add public_sim argument

@@ -2,6 +2,12 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Use pal_gazebo_worlds
+* tmp addition of 'pal_robot_info' in spawn launch
+* Contributors: Jeremie Deray, Victor Lopez
+
 1.0.1 (2017-02-28)
 ------------------
 * refs #14797. Add public_sim argument

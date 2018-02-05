@@ -2,6 +2,9 @@
 Changelog for package pmb2_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.1 (2017-02-28)
 ------------------
 * add tiago_support as maintainer
