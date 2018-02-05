@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2018-02-05)
+------------------
 * Use pal_gazebo_worlds
 * tmp addition of 'pal_robot_info' in spawn launch
 * Contributors: Jeremie Deray, Victor Lopez
