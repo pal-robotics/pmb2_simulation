@@ -2,6 +2,9 @@
 Changelog for package pmb2_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.0 (2018-02-05)
 ------------------
 * Add missing run depend

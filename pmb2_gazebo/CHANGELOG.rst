@@ -2,6 +2,15 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add recording arguments
+* Merge branch 'prevent-upload-warning' into 'erbium-devel'
+  prevent calling deprecated launch file
+  See merge request robots/pmb2_simulation!7
+* prevent calling deprecated launch file
+* Contributors: Hilario Tome, Jordi Pages, Victor Lopez
+
 2.0.0 (2018-02-05)
 ------------------
 * Use pal_gazebo_worlds
