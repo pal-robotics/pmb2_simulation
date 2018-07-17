@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.1 (2018-07-17)
+------------------
 * Add recording arguments
 * Merge branch 'prevent-upload-warning' into 'erbium-devel'
   prevent calling deprecated launch file
