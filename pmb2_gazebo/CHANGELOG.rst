@@ -2,6 +2,9 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.1 (2018-07-17)
 ------------------
 * Add recording arguments

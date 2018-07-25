@@ -2,6 +2,11 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add recording argument
+* Contributors: Victor Lopez
+
 2.0.1 (2018-07-17)
 ------------------
 
