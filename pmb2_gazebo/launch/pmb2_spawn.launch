@@ -1,5 +1,4 @@
 <launch>
-  <arg name="laser_model"  default="sick-571"/>
   <arg name="gzpose" default="-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
 
   <rosparam ns="pal_robot_info" param="type">"pmb2"</rosparam>
@@ -9,9 +8,7 @@
   <rosparam command="load" file="$(find pmb2_controller_configuration_gazebo)/config/mobile_base_controller_multipliers.yaml"/>
 
   <!-- Robot model -->
-  <include file="$(find pmb2_description)/robots/upload.launch">
-    <arg name="laser_model" value="$(arg laser_model)"/>
-  </include>
+  <include file="$(find pmb2_description)/robots/upload.launch" pass_all_args="true"/>
 
   <!-- Spawn robot in Gazebo -->
   <node pkg="gazebo_ros" type="spawn_model" name="$(anon spawn_model)"
