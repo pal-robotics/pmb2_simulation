@@ -2,6 +2,16 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'specifics-refactor' into 'erbium-devel'
+  Change robot for laser_model
+  See merge request robots/pmb2_simulation!9
+* Add and pass all arguments
+* Remove unused argument
+* Change robot for laser_model
+* Contributors: Victor Lopez
+
 2.0.2 (2018-07-25)
 ------------------
 
