@@ -2,6 +2,14 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'public_sim_kinetic' into 'erbium-devel'
+  add kinetic public simulation changes
+  See merge request robots/pmb2_simulation!10
+* add kinetic public simulation changes
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
 2.0.3 (2018-12-19)
 ------------------
 * Merge branch 'specifics-refactor' into 'erbium-devel'
