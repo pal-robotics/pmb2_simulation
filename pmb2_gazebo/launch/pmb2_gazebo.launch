@@ -25,7 +25,11 @@
   </include>
 
   <!-- spawn robot in simulation -->
-  <include file="$(find pmb2_gazebo)/launch/pmb2_spawn.launch" pass_all_args="true"/>
+  <include file="$(find pmb2_gazebo)/launch/pmb2_spawn.launch">
+    <arg name="laser_model" value="$(arg laser_model)"/>
+    <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
+    <arg name="gzpose" value="$(arg gzpose)"/>
+  </include>
 
   <!-- bring up robot -->
   <include file="$(find pmb2_gazebo)/launch/simulation_pmb2_bringup.launch">
