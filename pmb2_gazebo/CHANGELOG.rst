@@ -2,6 +2,14 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'args_fix' into 'erbium-devel'
+  fix for unused arg exception with pass_all_args
+  See merge request robots/pmb2_simulation!11
+* fix for unused arg exception with pass_all_args
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
 2.0.4 (2019-01-17)
 ------------------
 

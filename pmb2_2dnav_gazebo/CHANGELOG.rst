@@ -2,6 +2,9 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.4 (2019-01-17)
 ------------------
 * Merge branch 'public_sim_kinetic' into 'erbium-devel'
