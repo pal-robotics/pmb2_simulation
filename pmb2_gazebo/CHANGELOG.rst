@@ -2,6 +2,9 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.5 (2019-01-23)
 ------------------
 * Merge branch 'args_fix' into 'erbium-devel'
