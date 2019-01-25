@@ -8,8 +8,8 @@
 
   <include file="$(find pmb2_2dnav_gazebo)/launch/pmb2_mapping.launch">
       <arg name="laser_model"    value="$(arg laser_model)"/>
-      <arg name="global_planner" value="navfn"/>
-      <arg name="local_planner"  value="carrot"/>
+      <arg name="global_planner" value="global_planner"/>
+      <arg name="local_planner"  value="eband"/>
       <arg name="mapping"        value="gmapping"/>
       <arg name="world"          value="$(arg world)"/>
       <arg name="public_sim"     value="True"/>
