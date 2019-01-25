@@ -2,8 +2,8 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.6 (2019-01-25)
+------------------
 * Merge branch 'public_eband_conf' into 'erbium-devel'
   changing default planner in public_sim launch
   See merge request robots/pmb2_simulation!12
