@@ -2,6 +2,14 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'gazebo_args' into 'erbium-devel'
+  added extra_gazebo_args argument in launch files
+  See merge request robots/pmb2_simulation!13
+* added extra_gazebo_args argument in launch files
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
 2.0.6 (2019-01-25)
 ------------------
 * Merge branch 'public_eband_conf' into 'erbium-devel'
