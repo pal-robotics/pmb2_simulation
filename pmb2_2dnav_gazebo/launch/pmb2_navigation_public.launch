@@ -6,6 +6,9 @@
   <arg name="gzclient"     default="true"/>
   <arg name="localization"   default="amcl"/>
   <arg name="gzpose"         default="-x 0.78 -y -11.1 -z -0.003 -R 0.0 -P 0.0 -Y 70.0"/>
+  <arg name="recording" default="false"/>
+  <arg name="extra_gazebo_args" default=""/>
+
 
   <include file="$(find pmb2_2dnav_gazebo)/launch/pmb2_navigation.launch">
       <arg name="laser_model"    value="$(arg laser_model)"/>
@@ -17,6 +20,8 @@
       <arg name="map"            value="$(arg map)"/>
       <arg name="rviz"           value="$(arg rviz)"/>
       <arg name="gzclient"       value="$(arg gzclient)"/>
+      <arg name="recording"      value="$(arg recording)"/>
+      <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
     </include>
 
 </launch>

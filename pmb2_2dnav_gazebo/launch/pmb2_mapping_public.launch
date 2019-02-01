@@ -4,7 +4,8 @@
   <arg name="world" default="small_office"/>
   <arg name="rviz"     default="true"/>
   <arg name="gzclient" default="true"/>
-
+  <arg name="recording" default="false"/>
+  <arg name="extra_gazebo_args" default=""/>
 
   <include file="$(find pmb2_2dnav_gazebo)/launch/pmb2_mapping.launch">
       <arg name="laser_model"    value="$(arg laser_model)"/>
@@ -15,6 +16,8 @@
       <arg name="public_sim"     value="True"/>
       <arg name="rviz"           value="$(arg rviz)"/>
       <arg name="gzclient"       value="$(arg gzclient)"/>
+      <arg name="recording"      value="$(arg recording)"/>
+      <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
     </include>
 
 </launch>
