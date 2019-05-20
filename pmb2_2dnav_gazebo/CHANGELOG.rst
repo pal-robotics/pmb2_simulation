@@ -2,8 +2,8 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.8 (2019-05-20)
+------------------
 * Merge branch 'update_adv_nav' into 'erbium-devel'
   Adv param for AdvNav
   See merge request robots/pmb2_simulation!14
