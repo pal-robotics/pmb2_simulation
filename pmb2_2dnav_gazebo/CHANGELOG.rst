@@ -2,6 +2,14 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'new_nav_cfg' into 'erbium-devel'
+  moved simulation launches from pmb2_2dnav
+  See merge request robots/pmb2_simulation!15
+* moved simulation launches from pmb2_2dnav
+* Contributors: Hilario Tome, Sai Kishor Kothakota
+
 2.0.8 (2019-05-20)
 ------------------
 * Merge branch 'update_adv_nav' into 'erbium-devel'
