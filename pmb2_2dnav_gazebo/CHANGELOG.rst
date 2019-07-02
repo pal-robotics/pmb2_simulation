@@ -2,8 +2,8 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.10 (2019-07-02)
+-------------------
 * Merge branch 'simple_sim' into 'erbium-devel'
   Add simple pmb2 model in launch files
   See merge request robots/pmb2_simulation!16
