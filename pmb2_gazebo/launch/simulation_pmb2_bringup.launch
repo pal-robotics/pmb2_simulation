@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="public_sim"     default="false"/>
+  <arg name="simple_sim_model" default="false"/>
 
   <!-- Load default controllers -->
-  <include file="$(find pmb2_controller_configuration)/launch/default_controllers.launch"/>
+  <group unless="$(arg simple_sim_model)">
+    <include file="$(find pmb2_controller_configuration)/launch/default_controllers.launch"/>
+  </group>
 
   <!-- Robot state publisher -->
   <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
