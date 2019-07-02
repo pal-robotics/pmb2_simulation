@@ -2,6 +2,15 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'simple_sim' into 'erbium-devel'
+  Add simple pmb2 model in launch files
+  See merge request robots/pmb2_simulation!16
+* Missing simple_models_gazebo depend
+* Add simple pmb2 model in launch files
+* Contributors: Adria Roig, Victor Lopez
+
 2.0.9 (2019-06-17)
 ------------------
 
