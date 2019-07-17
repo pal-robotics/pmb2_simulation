@@ -10,7 +10,7 @@
 
     <arg name="planner"        default="base"/>
     <arg name="global_planner" default="global_planner"/>
-    <arg name="local_planner"  default="teb"/>
+    <arg name="local_planner"  default="pal"/>
     <arg name="localization"   default="amcl"/>
     <arg name="map"            default="$(env HOME)/.pal/pmb2_maps/configurations/$(arg world)"/>
     <arg name="octomap"        default="false"/>
