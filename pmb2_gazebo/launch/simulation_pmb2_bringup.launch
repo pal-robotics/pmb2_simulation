@@ -2,20 +2,20 @@
 <launch>
   <arg name="public_sim"     default="false"/>
   <arg name="simple_sim_model" default="false"/>
+  <arg name="tf_prefix" default=""/>
 
   <!-- Load default controllers -->
   <group unless="$(arg simple_sim_model)">
-    <include file="$(find pmb2_controller_configuration)/launch/default_controllers.launch"/>
+    <include file="$(find pmb2_controller_configuration)/launch/default_controllers.launch">
+      <arg name="tf_prefix" value="$(arg tf_prefix)"/>
+    </include>
   </group>
 
   <!-- Robot state publisher -->
   <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
     <param name="publish_frequency" type="double" value="50.0"/>
-    <param name="tf_prefix" type="string" value=""/>
+    <param name="tf_prefix" type="string" value="$(arg tf_prefix)"/>
   </node>
-
-  <!-- TF lookup -->
-  <node pkg="tf_lookup" type="tf_lookup" name="tf_lookup" output="screen"/>
 
   <!-- Twist mux -->
   <group if="$(arg public_sim)">
@@ -35,13 +35,11 @@
       <arg name="config"    value="$(find pmb2_bringup)/config/speed_limit.yaml"/>
       <arg name="footprint" value="$(find pmb2_description)/urdf/base/footprint.yaml"/>
     </include>
+
+    <include file="$(find sensor_to_cloud)/launch/sonar_to_cloud.launch"/>
+    
   </group>
 
   <!-- Joystick controller -->
   <include file="$(find pmb2_bringup)/launch/joystick_teleop.launch"/>
-
-  <!-- Sonar to cloud -->
-  <group unless="$(arg public_sim)">
-    <include file="$(find sensor_to_cloud)/launch/sonar_to_cloud.launch"/>
-  </group>
 </launch>

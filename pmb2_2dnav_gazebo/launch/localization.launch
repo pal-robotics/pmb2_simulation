@@ -5,6 +5,8 @@
 
   <arg name="map"     default="$(env HOME)/.pal/pmb2_maps/config"/>
   <arg name="symlink" default="$(env HOME)/.pal/pmb2_maps/config"/>
+  <arg name="multiple" default="false"/>
+  <arg name="tf_prefix" default=""/>
 
   <arg name="mapping" default=""/>
   <arg name="octomap" default="false"/>
@@ -14,11 +16,15 @@
     <arg name="map"     value="$(arg map)"/>
     <arg name="symlink" value="$(arg symlink)"/>
     <arg name="octomap" value="$(arg octomap)"/>
+    <arg name="multiple" value="$(arg multiple)"/>
+    <arg name="tf_prefix" value="$(arg tf_prefix)"/>
   </include>
 
   <!-- Localization -->
   <include file="$(find pmb2_2dnav)/launch/localization.launch">
     <arg name="localization" value="$(arg localization)"/>
+    <arg name="multiple" value="$(arg multiple)"/>
+    <arg name="tf_prefix" value="$(arg tf_prefix)"/>
   </include>
 
 </launch>
