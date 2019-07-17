@@ -7,7 +7,7 @@
     <arg name="debug" default="false"/>
     <arg name="public_sim" default="false"/>
     <arg name="map" default="$(find pmb2_multi)/config/map"/>
-    <arg name="simple_sim_model" default="true"/>
+    <arg name="simple_sim_model" default="false"/>
 
     <env name="LC_NUMERIC" value="C" />
 
@@ -24,41 +24,87 @@
         </node>
     </group>
 
-    <include file="$(find pmb2_multi)/launch/launch_pmb2_navigation.launch">
-        <arg name="world"  value="$(arg world)"/>
-        <arg name="laser_model"  value="$(arg laser_model)"/>
-        <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
-        <arg name="public_sim" value="$(arg public_sim)"/>
-        <arg name="simple_sim_model" value="$(arg simple_sim_model)"/>
-        <arg name="robot_name" value="pmb2_1"/>
-        <arg name="map" value="$(arg map)"/>
-        <arg name="x_pose" value="1.4"/>
-        <arg name="y_pose" value="0.7"/>
-    </include>
+    <group if="$(arg public_sim)">
+	    <include file="$(find pmb2_multi)/launch/launch_pmb2_navigation.launch">
+	        <arg name="world"  value="$(arg world)"/>
+	        <arg name="laser_model"  value="$(arg laser_model)"/>
+	        <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
+	        <arg name="public_sim" value="$(arg public_sim)"/>
+	        <arg name="simple_sim_model" value="$(arg simple_sim_model)"/>
+	        <arg name="robot_name" value="pmb2_1"/>
+	        <arg name="map" value="$(arg map)"/>
+	        <arg name="x_pose" value="1.4"/>
+	        <arg name="y_pose" value="0.7"/>
+	        <arg name="local_planner" value="teb"/>
+	    </include>
 
-    <include file="$(find pmb2_multi)/launch/launch_pmb2_navigation.launch">
-        <arg name="world"  value="$(arg world)"/>
-        <arg name="laser_model"  value="$(arg laser_model)"/>
-        <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
-        <arg name="public_sim" value="$(arg public_sim)"/>
-        <arg name="simple_sim_model" value="$(arg simple_sim_model)"/>
-        <arg name="robot_name" value="pmb2_2"/>
-        <arg name="map" value="$(arg map)"/>
-        <arg name="x_pose" value="1.4"/>
-        <arg name="y_pose" value="-0.7"/>
-    </include>
+	    <include file="$(find pmb2_multi)/launch/launch_pmb2_navigation.launch">
+	        <arg name="world"  value="$(arg world)"/>
+	        <arg name="laser_model"  value="$(arg laser_model)"/>
+	        <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
+	        <arg name="public_sim" value="$(arg public_sim)"/>
+	        <arg name="simple_sim_model" value="$(arg simple_sim_model)"/>
+	        <arg name="robot_name" value="pmb2_2"/>
+	        <arg name="map" value="$(arg map)"/>
+	        <arg name="x_pose" value="1.4"/>
+	        <arg name="y_pose" value="-0.7"/>
+	        <arg name="local_planner" value="teb"/>
+	    </include>
 
-    <include file="$(find pmb2_multi)/launch/launch_pmb2_navigation.launch">
-        <arg name="world"  value="$(arg world)"/>
-        <arg name="laser_model"  value="$(arg laser_model)"/>
-        <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
-        <arg name="public_sim" value="$(arg public_sim)"/>
-        <arg name="simple_sim_model" value="$(arg simple_sim_model)"/>
-        <arg name="robot_name" value="pmb2_3"/>
-        <arg name="map" value="$(arg map)"/>
-        <arg name="x_pose" value="5.0"/>
-        <arg name="y_pose" value="0.0"/>
-    </include>
+	    <include file="$(find pmb2_multi)/launch/launch_pmb2_navigation.launch">
+	        <arg name="world"  value="$(arg world)"/>
+	        <arg name="laser_model"  value="$(arg laser_model)"/>
+	        <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
+	        <arg name="public_sim" value="$(arg public_sim)"/>
+	        <arg name="simple_sim_model" value="$(arg simple_sim_model)"/>
+	        <arg name="robot_name" value="pmb2_3"/>
+	        <arg name="map" value="$(arg map)"/>
+	        <arg name="x_pose" value="5.0"/>
+	        <arg name="y_pose" value="0.0"/>
+	        <arg name="local_planner" value="teb"/>
+	    </include>
+	</group>
+
+	<group unless="$(arg public_sim)">
+	    <include file="$(find pmb2_multi)/launch/launch_pmb2_navigation.launch">
+	        <arg name="world"  value="$(arg world)"/>
+	        <arg name="laser_model"  value="$(arg laser_model)"/>
+	        <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
+	        <arg name="public_sim" value="$(arg public_sim)"/>
+	        <arg name="simple_sim_model" value="$(arg simple_sim_model)"/>
+	        <arg name="robot_name" value="pmb2_1"/>
+	        <arg name="map" value="$(arg map)"/>
+	        <arg name="x_pose" value="1.4"/>
+	        <arg name="y_pose" value="0.7"/>
+	        <arg name="local_planner" value="pal"/>
+	    </include>
+
+	    <include file="$(find pmb2_multi)/launch/launch_pmb2_navigation.launch">
+	        <arg name="world"  value="$(arg world)"/>
+	        <arg name="laser_model"  value="$(arg laser_model)"/>
+	        <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
+	        <arg name="public_sim" value="$(arg public_sim)"/>
+	        <arg name="simple_sim_model" value="$(arg simple_sim_model)"/>
+	        <arg name="robot_name" value="pmb2_2"/>
+	        <arg name="map" value="$(arg map)"/>
+	        <arg name="x_pose" value="1.4"/>
+	        <arg name="y_pose" value="-0.7"/>
+	        <arg name="local_planner" value="pal"/>
+	    </include>
+
+	    <include file="$(find pmb2_multi)/launch/launch_pmb2_navigation.launch">
+	        <arg name="world"  value="$(arg world)"/>
+	        <arg name="laser_model"  value="$(arg laser_model)"/>
+	        <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
+	        <arg name="public_sim" value="$(arg public_sim)"/>
+	        <arg name="simple_sim_model" value="$(arg simple_sim_model)"/>
+	        <arg name="robot_name" value="pmb2_3"/>
+	        <arg name="map" value="$(arg map)"/>
+	        <arg name="x_pose" value="5.0"/>
+	        <arg name="y_pose" value="0.0"/>
+	        <arg name="local_planner" value="pal"/>
+	    </include>
+	</group>
 
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find pmb2_multi)/config/rviz/multi_pmb2.rviz"/>
 
