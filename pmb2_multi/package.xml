@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package>
+  <name>pmb2_multi</name>
+  <version>0.0.0</version>
+  <description>The pmb2_multi package</description>
+
+  <maintainer email="adria.roig@pal-robotics.com">Adrià Roig</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>pmb2_gazebo</run_depend>
+</package>

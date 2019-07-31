@@ -2,6 +2,8 @@
   <arg name="gzpose" default="-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="laser_model"/>
   <arg name="rgbd_sensors"/>
+  <arg name="multi" default=""/>
+  <arg name="model_name" default="pmb2"/>
 
   <rosparam ns="pal_robot_info" param="type">"pmb2"</rosparam>
 
@@ -13,10 +15,11 @@
   <include file="$(find pmb2_description)/robots/upload.launch">
     <arg name="laser_model" value="$(arg laser_model)"/>
     <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
+    <arg name="multi"  value="$(arg multi)"/>
   </include>
 
   <!-- Spawn robot in Gazebo -->
   <node pkg="gazebo_ros" type="spawn_model" name="$(anon spawn_model)"
-    args="-urdf -param robot_description $(arg gzpose) -model pmb2" />
+    args="-urdf -param robot_description $(arg gzpose) -model $(arg model_name)" />
 
 </launch>
