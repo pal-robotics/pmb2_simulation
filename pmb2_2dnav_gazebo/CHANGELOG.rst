@@ -2,6 +2,14 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'multi_pmb2' into 'erbium-devel'
+  Changes for multi pmb2 simulation
+  See merge request robots/pmb2_simulation!17
+* Changes for multi pmb2 simulation
+* Contributors: Adria Roig, Victor Lopez
+
 2.0.10 (2019-07-02)
 -------------------
 * Merge branch 'simple_sim' into 'erbium-devel'
