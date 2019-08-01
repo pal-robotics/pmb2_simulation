@@ -2,8 +2,8 @@
 Changelog for package pmb2_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.11 (2019-08-01)
+-------------------
 * Merge branch 'multi_pmb2' into 'erbium-devel'
   Changes for multi pmb2 simulation
   See merge request robots/pmb2_simulation!17
