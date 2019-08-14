@@ -2,8 +2,8 @@
 Changelog for package pmb2_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.12 (2019-08-14)
+-------------------
 * Merge branch 'add-robot-pose' into 'erbium-devel'
   Add robot pose to navigation.launch
   See merge request robots/pmb2_simulation!18
