@@ -2,6 +2,14 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-robot-pose' into 'erbium-devel'
+  Add robot pose to navigation.launch
+  See merge request robots/pmb2_simulation!18
+* Add robot pose to navigation.launch
+* Contributors: Victor Lopez
+
 2.0.11 (2019-08-01)
 -------------------
 * Merge branch 'multi_pmb2' into 'erbium-devel'
