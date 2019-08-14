@@ -10,21 +10,21 @@
   <arg name="mapping"        default="karto"/>
   <arg name="octomap"        default="false"/>
   <arg name="public_sim"     default="false"/>
-  <arg name="tf_prefix"      default=""/>
+  <arg name="robot_prefix"      default=""/>
   <arg name="multiple"       default="false"/>
 
   <arg name="map" default="$(env HOME)/.pal/pmb2_maps/config"/>
 
   <!-- Localization or Mapping state -->
   <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
-        args="pmb2 $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg multiple) $(arg tf_prefix)"/>
+        args="pmb2 $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg multiple) $(arg robot_prefix)"/>
 
   <!-- Navigation State Machine -->
   <include file="$(find pmb2_2dnav)/launch/state_machine.launch">
     <arg name="state" value="$(arg state)"/>
     <arg name="public_sim" value="$(arg public_sim)"/>
-    <arg if="$(arg multiple)" name="map_frame" value="/$(arg tf_prefix)/map"/>
-    <arg if="$(arg multiple)" name="base_frame" value="/$(arg tf_prefix)/base_footprint"/>
+    <arg if="$(arg multiple)" name="map_frame" value="/$(arg robot_prefix)/map"/>
+    <arg if="$(arg multiple)" name="base_frame" value="/$(arg robot_prefix)/base_footprint"/>
   </include>
 
   <!-- Planning -->
@@ -32,10 +32,12 @@
     <arg name="global_planner" value="$(arg global_planner)"/>
     <arg name="local_planner"  value="$(arg local_planner)"/>
     <arg name="public_sim"     value="$(arg public_sim)"/>
-    <arg name="tf_prefix"      value="$(arg tf_prefix)"/>
+    <arg name="tf_prefix"      value="$(arg robot_prefix)"/>
     <arg name="multiple"       value="$(arg multiple)"/>
   </include>
-
+  <include file="$(find robot_pose)/launch/robot_pose.launch">
+    <arg name="robot_prefix"      value="$(arg robot_prefix)"/>
+  </include>
   <!-- VO map server -->
   <group unless="$(arg public_sim)">
     <include file="$(find pal_vo_server)/launch/vo_server.launch"/>

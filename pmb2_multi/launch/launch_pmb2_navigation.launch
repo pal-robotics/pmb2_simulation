@@ -63,7 +63,7 @@
             <arg name="map"            value="$(arg map)"/>
             <arg name="octomap"        value="$(arg octomap)"/>
             <arg name="public_sim"     value="$(arg public_sim)"/>
-            <arg name="tf_prefix"      value="$(arg robot_name)"/>
+            <arg name="robot_prefix"      value="$(arg robot_name)"/>
             <arg name="multiple"       value="true"/>
         </include>
 
