@@ -10,8 +10,9 @@
   <arg name="mapping"        default="karto"/>
   <arg name="octomap"        default="false"/>
   <arg name="public_sim"     default="false"/>
-  <arg name="robot_prefix"      default=""/>
+  <arg name="robot_prefix"   default=""/>
   <arg name="multiple"       default="false"/>
+  <arg name="laser_model"    default="sick-571"/>
 
   <arg name="map" default="$(env HOME)/.pal/pmb2_maps/config"/>
 
@@ -38,9 +39,20 @@
   <include file="$(find robot_pose)/launch/robot_pose.launch">
     <arg name="robot_prefix"      value="$(arg robot_prefix)"/>
   </include>
+  
   <!-- VO map server -->
   <group unless="$(arg public_sim)">
     <include file="$(find pal_vo_server)/launch/vo_server.launch"/>
   </group>
 
+  <!-- Laser filter (empty for public sim) -->
+  <node name="laser_filter" pkg="laser_filters" type="scan_to_scan_filter_chain">
+    <rosparam file="$(find pmb2_laser_sensors)/config/$(arg laser_model)_filter.yaml" 
+              command="load" 
+              unless="$(arg public_sim)"/> 
+    <remap from="scan"          to="scan_raw"/>
+    <remap from="scan_filtered" to="scan"/>
+  </node>
+
 </launch>
+
