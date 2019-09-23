@@ -2,6 +2,15 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'stockbot-carrot-migration' into 'erbium-devel'
+  added laser filter for simulations
+  See merge request robots/pmb2_simulation!19
+* use  vo filling
+* added laser filter for simulations
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.12 (2019-08-14)
 -------------------
 * Merge branch 'add-robot-pose' into 'erbium-devel'
