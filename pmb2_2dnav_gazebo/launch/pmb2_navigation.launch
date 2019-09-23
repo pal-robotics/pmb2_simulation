@@ -44,7 +44,8 @@
       <arg name="localization"   value="$(arg localization)"/>
       <arg name="map"            value="$(arg map)"/>
       <arg name="octomap"        value="$(arg octomap)"/>
-      <arg name="public_sim" value="$(arg public_sim)"/>
+      <arg name="public_sim"     value="$(arg public_sim)"/>
+      <arg name="laser_model"    value="$(arg laser_model)"/>
     </include>
 
     <group if="$(arg advanced_navigation)">
