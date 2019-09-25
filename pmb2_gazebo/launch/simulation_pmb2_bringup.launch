@@ -18,26 +18,10 @@
   </node>
 
   <!-- Twist mux -->
-  <group if="$(arg public_sim)">
-    <include file="$(find pmb2_bringup)/launch/twist_mux.launch">
-      <arg name="cmd_vel_out" value="mobile_base_controller/cmd_vel" />
-    </include>
-  </group>
-  <group unless="$(arg public_sim)"> -->
-    <include file="$(find pmb2_bringup)/launch/twist_mux.launch">
-     <arg name="cmd_vel_out" value="twist_mux/cmd_vel" />
-    </include>
- </group>
+  <include file="$(find pmb2_bringup)/launch/twist_mux.launch"/>
 
-  <!-- Speed limit -->
   <group unless="$(arg public_sim)">
-    <include file="$(find speed_limit)/launch/speed_limit.launch">
-      <arg name="config"    value="$(find pmb2_bringup)/config/speed_limit.yaml"/>
-      <arg name="footprint" value="$(find pmb2_description)/urdf/base/footprint.yaml"/>
-    </include>
-
-    <include file="$(find sensor_to_cloud)/launch/sonar_to_cloud.launch"/>
-    
+    <include file="$(find sensor_to_cloud)/launch/sonar_to_cloud.launch"/>   
   </group>
 
   <!-- Joystick controller -->
