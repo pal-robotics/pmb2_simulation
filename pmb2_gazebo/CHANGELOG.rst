@@ -2,6 +2,15 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'remove-speed-limit' into 'erbium-devel'
+  removed speed limit
+  See merge request robots/pmb2_simulation!20
+* removed remap of twist_mux topic
+* removed speed limit
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.13 (2019-09-23)
 -------------------
 
