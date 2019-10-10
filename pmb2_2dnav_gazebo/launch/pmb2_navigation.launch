@@ -66,4 +66,9 @@
             args="-d $(find pmb2_2dnav)/config/rviz/navigation.rviz"/>
     </group>
   </group>
+
+  <group if="$(arg public_sim)">
+    <node name="relay_map" pkg="topic_tools" type="relay" args="map vo_map"/>
+  </group>
+
 </launch>
