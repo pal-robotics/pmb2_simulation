@@ -2,6 +2,14 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'remove-sonar-cloud' into 'erbium-devel'
+  remove sonar cloud
+  See merge request robots/pmb2_simulation!21
+* remove sonar cloud
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.16 (2019-10-10)
 -------------------
 
