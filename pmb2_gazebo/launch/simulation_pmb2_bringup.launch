@@ -20,10 +20,6 @@
   <!-- Twist mux -->
   <include file="$(find pmb2_bringup)/launch/twist_mux.launch"/>
 
-  <group unless="$(arg public_sim)">
-    <include file="$(find sensor_to_cloud)/launch/sonar_to_cloud.launch"/>   
-  </group>
-
   <!-- Joystick controller -->
   <include file="$(find pmb2_bringup)/launch/joystick_teleop.launch"/>
 </launch>
