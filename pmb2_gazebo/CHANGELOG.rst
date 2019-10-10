@@ -2,6 +2,9 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.14 (2019-09-25)
 -------------------
 * Merge branch 'remove-speed-limit' into 'erbium-devel'

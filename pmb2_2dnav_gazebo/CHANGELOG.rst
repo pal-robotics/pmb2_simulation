@@ -2,6 +2,14 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-relay' into 'erbium-devel'
+  added relay from map to vo_map
+  See merge request robots/pmb2_simulation!22
+* added relay from map to vo_map
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.14 (2019-09-25)
 -------------------
 
