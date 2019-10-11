@@ -2,18 +2,20 @@
 <launch>
   <arg name="namespace" default="/"/>
 
+  <arg name="public_sim"   default="false"/>
   <arg name="world"  default="small_office"/>
   <arg name="laser_model"  default="sick-571"/>
-  <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
+  <arg name="lost" default="false"/>
+  <arg name="gzpose" default="-x 0.0  -y   0.0 -z  0.0   -R 0.0 -P 0.0 -Y  0.0" unless="$(arg lost)"/>
+  <arg name="gzpose" default="-x 0.78 -y -11.1 -z -0.003 -R 0.0 -P 0.0 -Y 70.0" if="$(arg lost)"/>
 
   <arg name="planner"        default="base"/>
   <arg name="global_planner" default="global_planner"/>
-  <arg name="local_planner"  default="pal"/>
+  <arg name="local_planner"  default="$(eval 'teb' if arg('public_sim') else 'pal')"/> 
   <arg name="localization"   default="amcl"/>
   <arg name="map"            default="$(env HOME)/.pal/pmb2_maps/configurations/$(arg world)"/>
   <arg name="octomap"        default="false"/>
-
-  <arg name="public_sim"   default="false"/>
 
   <arg name="rviz"     default="true"/>
   <arg name="gzclient" default="true"/>
