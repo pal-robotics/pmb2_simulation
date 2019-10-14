@@ -20,6 +20,4 @@
   <!-- Twist mux -->
   <include file="$(find pmb2_bringup)/launch/twist_mux.launch"/>
 
-  <!-- Joystick controller -->
-  <include file="$(find pmb2_bringup)/launch/joystick_teleop.launch"/>
 </launch>
