@@ -2,6 +2,14 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'refactoring' into 'erbium-devel'
+  removed public launches in favor of using public_sim flag
+  See merge request robots/pmb2_simulation!23
+* removed joystick teleop
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.17 (2019-10-10)
 -------------------
 * Merge branch 'remove-sonar-cloud' into 'erbium-devel'

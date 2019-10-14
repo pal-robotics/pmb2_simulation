@@ -2,6 +2,14 @@
 Changelog for package pmb2_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'refactoring' into 'erbium-devel'
+  removed public launches in favor of using public_sim flag
+  See merge request robots/pmb2_simulation!23
+* removed public launches in favor of using public_sim flag
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.17 (2019-10-10)
 -------------------
 
