@@ -45,8 +45,5 @@
             <arg name="simple_sim_model" default="$(arg simple_sim_model)"/>
         </include>
 
-        <group if="$(arg public_sim)">
-            <node name="relay_map" pkg="topic_tools" type="relay" args="map vo_map"/>
-        </group>
     </group>
 </launch>
