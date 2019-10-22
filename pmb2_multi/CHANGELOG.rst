@@ -2,8 +2,8 @@
 Changelog for package pmb2_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.19 (2019-10-22)
+-------------------
 * Merge branch 'removed-relay' into 'erbium-devel'
   removed map relay
   See merge request robots/pmb2_simulation!24
