@@ -2,6 +2,9 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.18 (2019-10-14)
 -------------------
 * Merge branch 'refactoring' into 'erbium-devel'

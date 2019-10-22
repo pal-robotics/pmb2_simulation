@@ -2,6 +2,18 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'disable-laser-footprint' into 'erbium-devel'
+  disabled laser filter for multi
+  See merge request robots/pmb2_simulation!25
+* disabled laser filter for multi
+* Merge branch 'removed-relay' into 'erbium-devel'
+  removed map relay
+  See merge request robots/pmb2_simulation!24
+* removed map relay
+* Contributors: Jordan Palacios, Procópio Stein, Victor Lopez
+
 2.0.18 (2019-10-14)
 -------------------
 * Merge branch 'refactoring' into 'erbium-devel'
