@@ -21,7 +21,7 @@
 
     <group ns="$(arg robot_name)">
         <arg name="gzpose" default="-x $(arg x_pose) -y $(arg y_pose) -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
-        <node pkg="tf" type="static_transform_publisher" name="$(arg robot_name)_bc" args="0 0 0 0 0 0 /map $(arg robot_name)/map 100"/>
+        <node pkg="tf2_ros" type="static_transform_publisher" name="$(arg robot_name)_static_map_tf_pub" args="0 0 0 0 0 0 /map $(arg robot_name)/map"/>
         <!-- Write the pose in the pose.yaml used by amcl -->
         <node pkg="pmb2_multi" type="pose_writing.sh" name="multi_pose_writing"
               args="$(arg robot_name) $(arg x_pose) $(arg y_pose)" output="screen"/>
