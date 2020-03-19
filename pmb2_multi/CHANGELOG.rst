@@ -2,6 +2,14 @@
 Changelog for package pmb2_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'use-tf2-static-pub' into 'erbium-devel'
+  Use tf2 static pub, which publishes to /tf_static
+  See merge request robots/pmb2_simulation!26
+* Use tf2 static pub, which publishes to /tf_static
+* Contributors: Victor Lopez, victor
+
 2.0.19 (2019-10-22)
 -------------------
 * Merge branch 'removed-relay' into 'erbium-devel'

@@ -2,6 +2,9 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.19 (2019-10-22)
 -------------------
 * Merge branch 'disable-laser-footprint' into 'erbium-devel'
