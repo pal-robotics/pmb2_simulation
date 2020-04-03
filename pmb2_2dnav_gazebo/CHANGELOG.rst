@@ -2,8 +2,8 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.21 (2020-04-03)
+-------------------
 * Merge branch 'pmb2-stvl' into 'erbium-devel'
   Pmb2 stvl
   See merge request robots/pmb2_simulation!27
