@@ -2,6 +2,9 @@
 Changelog for package pmb2_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.20 (2020-03-19)
 -------------------
 * Merge branch 'use-tf2-static-pub' into 'erbium-devel'

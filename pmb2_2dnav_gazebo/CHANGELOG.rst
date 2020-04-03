@@ -2,6 +2,16 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'pmb2-stvl' into 'erbium-devel'
+  Pmb2 stvl
+  See merge request robots/pmb2_simulation!27
+* updated config filenames
+* launching pcl filters for rgbd cameras
+* adding rgbd_sensors param
+* Contributors: federiconardi, procopiostein
+
 2.0.20 (2020-03-19)
 -------------------
 
