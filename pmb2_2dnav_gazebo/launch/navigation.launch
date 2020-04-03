@@ -13,6 +13,8 @@
   <arg name="robot_prefix"   default=""/>
   <arg name="multiple"       default="false"/>
   <arg name="laser_model"    default="sick-571"/>
+  <arg name="rgbd_sensors"  default="false"/>
+
 
   <arg name="map" default="$(env HOME)/.pal/pmb2_maps/config"/>
 
@@ -35,6 +37,7 @@
     <arg name="public_sim"     value="$(arg public_sim)"/>
     <arg name="tf_prefix"      value="$(arg robot_prefix)"/>
     <arg name="multiple"       value="$(arg multiple)"/>
+    <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
   </include>
   <include file="$(find robot_pose)/launch/robot_pose.launch">
     <arg name="robot_prefix"      value="$(arg robot_prefix)"/>
@@ -56,6 +59,19 @@
     <remap from="scan"          to="scan_raw"/>
     <remap from="scan_filtered" to="scan"/>
   </node>
+  
+  <!-- pcl filter for base rgbd camera -->
+  <node name="base_rgbd_camera_filter" pkg="pal_pcl" type="pal_stockbot_floor_filter_node" output="screen">
+    <remap from="cloud1" to="/base_rgbd_camera/depth/points"/>
+    <rosparam command="load" file="$(find pmb2_rgbd_sensors)/config/base_floor_filter_structure.yaml" />
+  </node>
+  
+  <!-- pcl filter for roof rgbd camera -->
+  <node name="roof_rgbd_camera_filter" pkg="pal_pcl" type="pal_stockbot_floor_filter_node" output="screen">
+    <remap from="cloud1" to="/roof_rgbd_camera/depth/points"/>
+    <rosparam command="load" file="$(find pmb2_rgbd_sensors)/config/roof_floor_filter_structure.yaml" />
+  </node>
+
 
 </launch>
 
