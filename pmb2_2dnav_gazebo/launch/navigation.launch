@@ -13,14 +13,14 @@
   <arg name="robot_prefix"   default=""/>
   <arg name="multiple"       default="false"/>
   <arg name="laser_model"    default="sick-571"/>
-  <arg name="rgbd_sensors"  default="false"/>
+  <arg name="rgbd_sensors"   default="false"/>
 
 
   <arg name="map" default="$(env HOME)/.pal/pmb2_maps/config"/>
 
   <!-- Localization or Mapping state -->
   <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
-        args="pmb2 $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg multiple) $(arg robot_prefix)"/>
+    args="pmb2 $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg multiple) $(arg robot_prefix)"/>
 
   <!-- Navigation State Machine -->
   <include file="$(find pmb2_2dnav)/launch/state_machine.launch">
@@ -37,19 +37,12 @@
     <arg name="public_sim"     value="$(arg public_sim)"/>
     <arg name="tf_prefix"      value="$(arg robot_prefix)"/>
     <arg name="multiple"       value="$(arg multiple)"/>
-    <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
+    <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
   </include>
+
   <include file="$(find robot_pose)/launch/robot_pose.launch">
     <arg name="robot_prefix"      value="$(arg robot_prefix)"/>
   </include>
-  
-  <!-- VO map server -->
-  <group unless="$(arg public_sim)">
-    <include file="$(find pal_vo_server)/launch/vo_server.launch">
-      <arg name="fill_with_unknown" value="true"/>
-      <arg name="vo_resolution" value="0.3"/>
-    </include>
-  </group>
   
   <!-- Laser filter (empty for public sim) -->
   <node name="laser_filter" pkg="laser_filters" type="scan_to_scan_filter_chain">
@@ -60,17 +53,27 @@
     <remap from="scan_filtered" to="scan"/>
   </node>
   
-  <!-- pcl filter for base rgbd camera -->
-  <node name="base_rgbd_camera_filter" pkg="pal_pcl" type="pal_stockbot_floor_filter_node" output="screen">
-    <remap from="cloud1" to="/base_rgbd_camera/depth/points"/>
-    <rosparam command="load" file="$(find pmb2_rgbd_sensors)/config/base_floor_filter_structure.yaml" />
-  </node>
+  <group unless="$(arg public_sim)">
+    <!-- VO map server -->
+    <include file="$(find pal_vo_server)/launch/vo_server.launch">
+      <arg name="fill_with_unknown" value="true"/>
+      <arg name="vo_resolution" value="0.3"/>
+    </include>
   
-  <!-- pcl filter for roof rgbd camera -->
-  <node name="roof_rgbd_camera_filter" pkg="pal_pcl" type="pal_stockbot_floor_filter_node" output="screen">
-    <remap from="cloud1" to="/roof_rgbd_camera/depth/points"/>
-    <rosparam command="load" file="$(find pmb2_rgbd_sensors)/config/roof_floor_filter_structure.yaml" />
-  </node>
+    <group if="$(arg rgbd_sensors)">
+      <!-- pcl filter for base rgbd camera -->
+      <node name="base_rgbd_camera_filter" pkg="pal_pcl" type="pal_stockbot_floor_filter_node" output="screen">
+        <remap from="cloud1" to="/base_rgbd_camera/depth/points"/>
+        <rosparam command="load" file="$(find pmb2_rgbd_sensors)/config/base_floor_filter_structure.yaml" />
+      </node>
+    
+      <!-- pcl filter for roof rgbd camera -->
+      <node name="roof_rgbd_camera_filter" pkg="pal_pcl" type="pal_stockbot_floor_filter_node" output="screen">
+        <remap from="cloud1" to="/roof_rgbd_camera/depth/points"/>
+        <rosparam command="load" file="$(find pmb2_rgbd_sensors)/config/roof_floor_filter_structure.yaml" />
+      </node>
+    </group>
+  </group>
 
 
 </launch>
