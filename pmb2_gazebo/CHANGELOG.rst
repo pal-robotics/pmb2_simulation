@@ -2,6 +2,14 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-more-gz-args' into 'erbium-devel'
+  Add more gz args to use other worlds or models
+  See merge request robots/pmb2_simulation!29
+* Add more gz args to use other worlds or models
+* Contributors: Victor Lopez, victor
+
 2.0.21 (2020-04-03)
 -------------------
 
