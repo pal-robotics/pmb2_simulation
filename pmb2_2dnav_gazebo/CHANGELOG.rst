@@ -2,8 +2,8 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.22 (2020-04-14)
+-------------------
 * Merge branch 'fix-public-stvl' into 'erbium-devel'
   fix public sim condition for pal_pcl
   See merge request robots/pmb2_simulation!28
