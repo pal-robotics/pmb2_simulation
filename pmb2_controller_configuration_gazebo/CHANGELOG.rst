@@ -2,6 +2,9 @@
 Changelog for package pmb2_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.22 (2020-04-14)
 -------------------
 

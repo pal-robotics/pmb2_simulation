@@ -2,6 +2,14 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'rename_tf_prefix' into 'erbium-devel'
+  Rename tf_prefix to robot_namespace
+  See merge request robots/pmb2_simulation!30
+* Rename tf_prefix to robot_namespace
+* Contributors: davidfernandez, victor
+
 2.0.22 (2020-04-14)
 -------------------
 * Merge branch 'fix-public-stvl' into 'erbium-devel'
