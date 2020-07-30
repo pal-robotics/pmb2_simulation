@@ -2,8 +2,8 @@
 Changelog for package pmb2_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.23 (2020-07-30)
+-------------------
 * Merge branch 'rename_tf_prefix' into 'erbium-devel'
   Rename tf_prefix to robot_namespace
   See merge request robots/pmb2_simulation!30
