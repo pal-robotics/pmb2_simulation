@@ -41,7 +41,7 @@
         <!-- bring up robot -->
         <include file="$(find pmb2_gazebo)/launch/simulation_pmb2_bringup.launch">
             <arg name="public_sim"  value="$(arg public_sim)"/>
-            <arg name="tf_prefix" value="$(arg robot_name)"/>
+            <arg name="robot_namespace" value="$(arg robot_name)"/>
             <arg name="simple_sim_model" default="$(arg simple_sim_model)"/>
         </include>
 
