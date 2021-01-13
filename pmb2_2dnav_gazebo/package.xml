@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>pmb2_2dnav_gazebo</name>
-  <version>2.0.23</version>
+  <version>2.0.24</version>
   <description>PMB2-specific launch files needed to run
     navigation on the PMB2 robot.</description>
   <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
