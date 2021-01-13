@@ -2,6 +2,14 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'mapping-rgbd' into 'erbium-devel'
+  feat: Add rgbd_sensors argument to pmb2 mapping
+  See merge request robots/pmb2_simulation!31
+* feat: Add rgbd_sensors argument to pmb2 mapping
+* Contributors: victor, yueerro
+
 2.0.23 (2020-07-30)
 -------------------
 * Merge branch 'rename_tf_prefix' into 'erbium-devel'
