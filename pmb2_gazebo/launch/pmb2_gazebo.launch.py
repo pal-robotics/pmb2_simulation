@@ -27,7 +27,7 @@
 import os
 from os import environ, pathsep
 
-from ament_index_python.packages import get_package_share_directory
+from ament_index_python.packages import get_package_share_directory, get_package_prefix
 
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
@@ -54,8 +54,8 @@ def generate_launch_description():
                                    '-entity', 'pmb2'],
                         output='screen')
 
-    pkg_path = get_package_share_directory('pmb2_description')
-    model_path = os.path.join(pkg_path, "models")
+    pkg_path = get_package_prefix('pmb2_description')
+    model_path = os.path.join(pkg_path, "share")
     resource_path = pkg_path
 
     if 'GAZEBO_MODEL_PATH' in environ:

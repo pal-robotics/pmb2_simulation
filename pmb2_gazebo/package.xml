@@ -15,10 +15,10 @@
   <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>gazebo_plugins</exec_depend>
   <exec_depend>pal_gazebo_worlds</exec_depend>
+  <exec_depend>pmb2_controller_configuration</exec_depend>
 
   <!-- Pending to be ported to ROS2 
   <exec_depend>simple_models_gazebo</exec_depend>
-  <exec_depend>pmb2_controller_configuration_gazebo</exec_depend>
   -->
     
   <export>
