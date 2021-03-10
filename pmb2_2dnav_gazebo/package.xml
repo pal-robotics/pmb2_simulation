@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package format="3">
   <name>pmb2_2dnav_gazebo</name>
   <version>2.0.24</version>
   <description>PMB2-specific launch files needed to run
@@ -7,10 +7,15 @@
   <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
   <maintainer email="tiago_support@pal-robotics.com">TIAGo support PAL Robotics</maintainer>
   <license>Modified BSD</license>
-  <author email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</author>
+  <author email="victor.lopez@pal-robotics.com">Victor Lopez</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <run_depend>pmb2_gazebo</run_depend>
-  <run_depend>pmb2_2dnav</run_depend>
+  <exec_depend>pmb2_gazebo</exec_depend>
+  <exec_depend>pmb2_2dnav</exec_depend>
+    
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
 </package>
