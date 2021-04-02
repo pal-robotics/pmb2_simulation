@@ -1,11 +1,10 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.4.0)
 project(pmb2_gazebo)
 
-find_package(catkin REQUIRED)
+find_package(ament_cmake_auto REQUIRED)
 
-catkin_package()
+# PAL Robotics stricter build flags, other developers should not worry about this
+find_package(ament_cmake_pal QUIET)
 
-foreach(dir launch Media models worlds)
-    install(DIRECTORY ${dir}/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
+# Media commented out
+ament_auto_package(INSTALL_TO_SHARE launch models worlds)
