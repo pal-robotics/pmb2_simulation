@@ -2,6 +2,13 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add ament and apply corrections
+* Migrate pmb2_2dnav_gazebo to ROS2
+* First gazebo launch with ROS2
+* Contributors: Victor Lopez
+
 2.0.24 (2021-01-13)
 -------------------
 * Merge branch 'mapping-rgbd' into 'erbium-devel'

@@ -2,6 +2,17 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Cleanup old launch files
+* Correct python launch file
+* Add ament and apply corrections
+* Cleanup
+* Cleanup pmb2_gazebo spawn
+* Path fixes for gazebo
+* First gazebo launch with ROS2
+* Contributors: Victor Lopez
+
 2.0.24 (2021-01-13)
 -------------------
 
