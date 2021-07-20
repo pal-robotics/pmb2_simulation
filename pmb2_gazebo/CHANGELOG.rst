@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.0 (2021-07-20)
+------------------
 * Cleanup old launch files
 * Correct python launch file
 * Add ament and apply corrections

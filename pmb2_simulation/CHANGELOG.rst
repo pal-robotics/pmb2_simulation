@@ -2,8 +2,8 @@
 Changelog for package pmb2_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.0 (2021-07-20)
+------------------
 * Add ament and apply corrections
 * Remove pmb2_controller_configuration_gazebo, use default one for gazebo
   For now we can use the default one

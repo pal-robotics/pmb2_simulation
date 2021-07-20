@@ -2,8 +2,8 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.0 (2021-07-20)
+------------------
 * Add ament and apply corrections
 * Migrate pmb2_2dnav_gazebo to ROS2
 * First gazebo launch with ROS2
