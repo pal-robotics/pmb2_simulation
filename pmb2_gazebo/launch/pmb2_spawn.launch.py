@@ -12,45 +12,41 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
-from os import environ, pathsep
-
-from ament_index_python.packages import get_package_share_directory, get_package_prefix
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable, DeclareLaunchArgument
-from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
 
 from launch_ros.actions import Node
 
 from launch_pal.include_utils import include_launch_py_description
 
-import xacro
-
 
 def generate_launch_description():
-#    This format doesn't work because because we have to expand gzpose into different args for spawn_entity.py
-#    declare_gz_pose = DeclareLaunchArgument(
-#        'gzpose', default_value='-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0 ',
-#        description='Spawn gazebo position as provided to spawn_entity.py'
-#    )
+    #    This format doesn't work because because we have to expand gzpose into
+    #    different args for spawn_entity.py
+    #    declare_gz_pose = DeclareLaunchArgument(
+    #        'gzpose', default_value='-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0 ',
+    #        description='Spawn gazebo position as provided to spawn_entity.py'
+    #    )
     declare_model_name = DeclareLaunchArgument(
         'model_name', default_value='pmb2',
         description='Gazebo model name'
     )
 
     pmb2_state_publisher = include_launch_py_description('pmb2_description',
-                                                         ['launch', 'robot_state_publisher.launch.py'])
+                                                         ['launch',
+                                                          'robot_state_publisher.launch.py'])
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
-                                   '-entity', LaunchConfiguration('model_name'),
-                                  # LaunchConfiguration('gzpose'),
+                                   '-entity', LaunchConfiguration(
+                                       'model_name'),
+                                   # LaunchConfiguration('gzpose'),
                                    ],
                         output='screen')
 
     return LaunchDescription([
-#        declare_gz_pose,
+        #        declare_gz_pose,
         declare_model_name,
         pmb2_state_publisher,
         spawn_entity,
