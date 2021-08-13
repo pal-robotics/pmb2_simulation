@@ -4,19 +4,20 @@
   <version>3.0.0</version>
   <description>PMB2-specific launch files needed to run
     navigation on the PMB2 robot.</description>
+  <maintainer email="victor.lopez@pal-robotics.com">Victor Lopez</maintainer>
   <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
   <maintainer email="tiago_support@pal-robotics.com">TIAGo support PAL Robotics</maintainer>
   <license>Modified BSD</license>
   <author email="victor.lopez@pal-robotics.com">Victor Lopez</author>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
   <exec_depend>pmb2_gazebo</exec_depend>
   <exec_depend>pmb2_2dnav</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
-    
+
   <export>
     <build_type>ament_cmake</build_type>
   </export>
