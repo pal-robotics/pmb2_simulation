@@ -20,10 +20,8 @@ def generate_launch_description():
     # Create the launch description and populate
     ld = LaunchDescription([
         include_launch_py_description(
-            'pmb2_gazebo', ['launch', 'pmb2_gazebo.launch.py'],
-            launch_arguments={
-                'world_name': 'pal_office',
-                }.items()),
+            'pmb2_gazebo', ['launch', 'pmb2_gazebo.launch.py']
+        ),
         include_launch_py_description(
             'pmb2_2dnav', ['launch', 'pmb2_nav_bringup.launch.py'],
             launch_arguments={
