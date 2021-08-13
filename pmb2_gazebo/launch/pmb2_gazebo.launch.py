@@ -29,7 +29,7 @@ def generate_launch_description():
     # This should be removed, it should be retrieved automatically from pal_gazebo.launch.py
     # See https://github.com/ros2/launch/issues/313
     declare_world_name = DeclareLaunchArgument(
-        'world_name', default_value='',
+        'world_name', default_value='pal_office',
         description='Specify world name, we\'ll convert to full path'
     )
 
