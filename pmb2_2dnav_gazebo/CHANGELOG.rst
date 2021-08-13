@@ -2,8 +2,8 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.1 (2021-08-13)
+------------------
 * Resolve missing dependency
 * Merge branch 'foxy_obstacle_avoidance' into 'foxy-devel'
   default world

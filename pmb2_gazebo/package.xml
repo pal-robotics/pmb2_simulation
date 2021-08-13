@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>pmb2_gazebo</name>
-  <version>3.0.0</version>
+  <version>3.0.1</version>
   <description>Simulation files for the PMB2 robot.</description>
   <maintainer email="victor.lopez@pal-robotics.com">Victor Lopez</maintainer>
   <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
