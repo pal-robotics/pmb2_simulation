@@ -2,6 +2,15 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Resolve missing dependency
+* Merge branch 'foxy_obstacle_avoidance' into 'foxy-devel'
+  default world
+  See merge request robots/pmb2_simulation!33
+* default world
+* Contributors: Noel Jimenez Garcia, Victor Lopez, victor
+
 3.0.0 (2021-07-20)
 ------------------
 * Cleanup old launch files

@@ -2,6 +2,9 @@
 Changelog for package pmb2_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 3.0.0 (2021-07-20)
 ------------------
 * Add ament and apply corrections
