@@ -2,6 +2,17 @@
 Changelog for package pmb2_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.0.1 (2021-08-13)
+------------------
+
+3.0.0 (2021-07-20)
+------------------
+* Add ament and apply corrections
+* Remove pmb2_controller_configuration_gazebo, use default one for gazebo
+  For now we can use the default one
+* First gazebo launch with ROS2
+* Contributors: Victor Lopez
+
 2.0.24 (2021-01-13)
 -------------------
 

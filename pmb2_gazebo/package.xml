@@ -1,22 +1,34 @@
 <?xml version="1.0"?>
-<package>
+<package format="3">
   <name>pmb2_gazebo</name>
-  <version>2.0.24</version>
+  <version>3.0.1</version>
   <description>Simulation files for the PMB2 robot.</description>
+  <maintainer email="victor.lopez@pal-robotics.com">Victor Lopez</maintainer>
   <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
   <maintainer email="tiago_support@pal-robotics.com">TIAGo support PAL Robotics</maintainer>
   <license>Modified BSD</license>
-  <author email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</author>
+  <author email="victor.lopez@pal-robotics.com">Victor Lopez</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
-  <run_depend>pmb2_controller_configuration_gazebo</run_depend>
-  <run_depend>pmb2_description</run_depend>
-  <run_depend>pal_hardware_gazebo</run_depend>
-  <run_depend>pmb2_bringup</run_depend>
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>gazebo_plugins</run_depend>
-  <run_depend>pal_gazebo_worlds</run_depend>
-  <run_depend>simple_models_gazebo</run_depend>
+  <exec_depend>launch_pal</exec_depend>
+  <exec_depend>pmb2_description</exec_depend>
+  <exec_depend>pmb2_bringup</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>pal_gazebo_worlds</exec_depend>
+  <exec_depend>pmb2_controller_configuration</exec_depend>
+
+  <!-- Pending to be ported to ROS2 
+  <exec_depend>simple_models_gazebo</exec_depend>
+  -->
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+    
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
 
 </package>

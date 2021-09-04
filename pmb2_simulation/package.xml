@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<package>
+<package format="3">
   <name>pmb2_simulation</name>
-  <version>2.0.24</version>
+  <version>3.0.1</version>
   <description>PMB2-specific simulation components. These include plugins
                and launch scripts necessary for running PMB2 in simulation.</description>
   <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
@@ -9,14 +9,15 @@
   <license>BSD</license>
   <author email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <run_depend>pmb2_controller_configuration_gazebo</run_depend>
-  <run_depend>pmb2_gazebo</run_depend>
-  <run_depend>pal_hardware_gazebo</run_depend>
-  <run_depend>pmb2_2dnav_gazebo</run_depend>
+  <exec_depend>pmb2_gazebo</exec_depend>
+<!--  <exec_depend>pal_hardware_gazebo</exec_depend>-->
+  <exec_depend>pmb2_2dnav_gazebo</exec_depend>
 
+  <test_depend>ament_lint_auto</test_depend>  
+  <test_depend>ament_lint_common</test_depend>
   <export>
-    <metapackage/>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>

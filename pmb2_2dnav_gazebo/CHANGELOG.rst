@@ -2,6 +2,22 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.0.1 (2021-08-13)
+------------------
+* Resolve missing dependency
+* Merge branch 'foxy_obstacle_avoidance' into 'foxy-devel'
+  default world
+  See merge request robots/pmb2_simulation!33
+* default world
+* Contributors: Noel Jimenez Garcia, Victor Lopez, victor
+
+3.0.0 (2021-07-20)
+------------------
+* Add ament and apply corrections
+* Migrate pmb2_2dnav_gazebo to ROS2
+* First gazebo launch with ROS2
+* Contributors: Victor Lopez
+
 2.0.24 (2021-01-13)
 -------------------
 * Merge branch 'mapping-rgbd' into 'erbium-devel'
