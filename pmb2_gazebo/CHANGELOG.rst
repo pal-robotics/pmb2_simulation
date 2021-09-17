@@ -2,6 +2,14 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'gallium_fixes' into 'erbium-devel'
+  Gallium fixes
+  See merge request robots/pmb2_simulation!35
+* Use robot_state_publisher instead of state_publisher
+* Contributors: Jordan Palacios
+
 2.0.25 (2021-09-17)
 -------------------
 * Merge branch 'pass-laser-info' into 'erbium-devel'

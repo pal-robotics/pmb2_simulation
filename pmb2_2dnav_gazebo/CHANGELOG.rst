@@ -2,6 +2,9 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.25 (2021-09-17)
 -------------------
 * Merge branch 'pass-laser-info' into 'erbium-devel'
