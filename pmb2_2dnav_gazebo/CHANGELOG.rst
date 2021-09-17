@@ -2,6 +2,14 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'pass-laser-info' into 'erbium-devel'
+  Pass laser info to navigation.sh
+  See merge request robots/pmb2_simulation!34
+* Pass laser info to navigation.sh
+* Contributors: Victor Lopez, victor
+
 2.0.24 (2021-01-13)
 -------------------
 * Merge branch 'mapping-rgbd' into 'erbium-devel'
