@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.2 (2021-10-19)
+------------------
 * Add gazebo_ros2_control dependency
 * Contributors: Victor Lopez
 

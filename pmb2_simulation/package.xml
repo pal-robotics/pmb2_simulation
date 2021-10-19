@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>pmb2_simulation</name>
-  <version>3.0.1</version>
+  <version>3.0.2</version>
   <description>PMB2-specific simulation components. These include plugins
                and launch scripts necessary for running PMB2 in simulation.</description>
   <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
