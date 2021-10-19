@@ -2,6 +2,9 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 3.0.1 (2021-08-13)
 ------------------
 * Resolve missing dependency
