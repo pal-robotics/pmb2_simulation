@@ -28,9 +28,13 @@ def generate_test_description():
     proc_env = os.environ.copy()
     proc_env['PYTHONUNBUFFERED'] = '1'
 
-    test_dir = DeclareLaunchArgument('test_dir')
+    test_dir = DeclareLaunchArgument('test_dir',
+                                     description='Path to test dir, where the gtest '
+                                     'executable is located')
 
     # dut = device under test, aka the actual test
+    # The compiled gtest executable is not installed, wee need to pass the test_dir
+    # to get the path to the executable
     dut_process = launch_testing.actions.GTest(
         path=PathJoinSubstitution(
             [LaunchConfiguration('test_dir'), 'test_pmb2_gazebo']),

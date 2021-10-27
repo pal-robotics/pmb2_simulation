@@ -15,40 +15,45 @@
 #include <rclcpp/rclcpp.hpp>
 #include <gtest/gtest.h>
 #include <std_msgs/msg/string.hpp>
+#include <sensor_msgs/msg/joint_state.hpp>
 
+template<typename MsgType>
+void waitForMessage(
+  const rclcpp::Node::SharedPtr & node, const std::string & topic_name,
+  const std::chrono::milliseconds & timeout)
+{
+  typename MsgType::SharedPtr msg;
+
+  auto sub = node->create_subscription<std_msgs::msg::String>(
+    topic_name, 1, [&msg](const typename MsgType::SharedPtr recv_msg)
+    {});
+
+  rclcpp::WaitSet wait_set;
+  wait_set.add_subscription(sub);
+  auto ret = wait_set.wait(timeout);
+  EXPECT_EQ(
+    ret.kind(),
+    rclcpp::WaitResultKind::Ready) << "Did not receive any message on " << topic_name;
+  if (ret.kind() == rclcpp::WaitResultKind::Ready) {
+    MsgType msg;
+    rclcpp::MessageInfo info;
+    auto ret_take = sub->take(msg, info);
+    EXPECT_TRUE(ret_take) << "Error retrieving message";
+  } else {
+    RCLCPP_INFO_STREAM(node->get_logger(), "Got " << topic_name);
+  }
+}
 
 TEST(TestGazeboPMB2, test_topics)
 {
-
   std::shared_ptr<rclcpp::Executor> executor =
     std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
 
   auto test_node = std::make_shared<rclcpp::Node>("test_pmb2_gazebo");
 
-  std_msgs::msg::String::SharedPtr robot_description;
-
-  std::string topic_name = "robot_description";
-  auto robot_description_sub = test_node->create_subscription<std_msgs::msg::String>(
-    topic_name, 1, [&robot_description](const std_msgs::msg::String::SharedPtr msg)
-    {
-      robot_description = msg;
-    });
-
-  rclcpp::WaitSet wait_set;
-  wait_set.add_subscription(robot_description_sub);
-  auto ret = wait_set.wait(std::chrono::seconds(10));
-  EXPECT_EQ(ret.kind(), rclcpp::WaitResultKind::Ready) << "Did not receive any message on " << topic_name;
-  if (ret.kind() == rclcpp::WaitResultKind::Ready)
-  {
-    std_msgs::msg::String msg;
-    rclcpp::MessageInfo info;
-    auto ret_take = robot_description_sub->take(msg, info);
-    EXPECT_TRUE(ret_take) << "Error retrieving message";
-  }
-  else
-  {
-    RCLCPP_INFO_STREAM(test_node->get_logger(), "Got " << topic_name);
-  }
+  waitForMessage<std_msgs::msg::String>(test_node, "robot_description", std::chrono::seconds(10));
+//  test_node->get_clock()->
+    rclcpp::sleep_for(std::chrono::seconds(20));
 }
 
 int main(int argc, char ** argv)
@@ -59,4 +64,3 @@ int main(int argc, char ** argv)
   rclcpp::shutdown();
   return res;
 }
-
