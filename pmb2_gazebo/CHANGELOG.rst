@@ -2,6 +2,9 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.26 (2021-09-17)
 -------------------
 * Merge branch 'gallium_fixes' into 'erbium-devel'
