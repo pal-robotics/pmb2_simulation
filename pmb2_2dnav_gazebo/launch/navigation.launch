@@ -21,7 +21,7 @@
 
   <!-- Localization or Mapping state -->
   <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
-        args="pmb2 $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg scan_topic) $(arg laser_model) $(arg multiple) $(arg robot_namespace)"/>
+        args="pmb2 $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg scan_topic) $(arg laser_model) pmb2 $(arg multiple) $(arg robot_namespace)"/>
 
   <!-- Navigation State Machine -->
   <include file="$(find pmb2_2dnav)/launch/state_machine.launch">
@@ -78,4 +78,3 @@
 
 
 </launch>
-
