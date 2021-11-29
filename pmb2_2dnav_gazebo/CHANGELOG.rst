@@ -2,8 +2,8 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.27 (2021-11-29)
+-------------------
 * Merge branch 'fix-sim' into 'erbium-devel'
   Fixed simulation launch
   See merge request robots/pmb2_simulation!36
