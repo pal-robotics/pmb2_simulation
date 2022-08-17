@@ -59,6 +59,9 @@
     <include file="$(find pal_vo_server)/launch/vo_server.launch"/>
   
     <group if="$(arg rgbd_sensors)">
+      <!-- Highways -->
+      <include file="$(find highways_server)/launch/highways_server.launch"/>
+      
       <!-- pcl filter for base rgbd camera -->
       <node name="base_rgbd_camera_filter" pkg="pal_pcl" type="pal_stockbot_floor_filter_node" output="screen">
         <remap from="cloud1" to="/base_rgbd_camera/depth/points"/>
