@@ -2,6 +2,15 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/rgbd-sensors' into 'erbium-devel'
+  launching highways_server when rgbd_sensors
+  See merge request robots/pmb2_simulation!38
+* fixed file name
+* launching highways_server when rgbd_sensors
+* Contributors: antoniobrandi
+
 2.0.28 (2022-02-23)
 -------------------
 * Merge branch 'layered_costmap' into 'erbium-devel'
