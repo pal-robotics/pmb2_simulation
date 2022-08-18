@@ -65,13 +65,13 @@
       <!-- pcl filter for base rgbd camera -->
       <node name="base_rgbd_camera_filter" pkg="pal_pcl" type="pal_stockbot_floor_filter_node" output="screen">
         <remap from="cloud1" to="/base_rgbd_camera/depth/points"/>
-        <rosparam command="load" file="$(find pmb2_rgbd_sensors)/config/base_floor_filter_structure.yaml" />
+        <rosparam command="load" file="$(find pmb2_rgbd_sensors)/config/base_floor_filter_xtion.yaml" />
       </node>
     
       <!-- pcl filter for roof rgbd camera -->
       <node name="roof_rgbd_camera_filter" pkg="pal_pcl" type="pal_stockbot_floor_filter_node" output="screen">
         <remap from="cloud1" to="/roof_rgbd_camera/depth/points"/>
-        <rosparam command="load" file="$(find pmb2_rgbd_sensors)/config/roof_floor_filter_structure.yaml" />
+        <rosparam command="load" file="$(find pmb2_rgbd_sensors)/config/roof_floor_filter_xtion.yaml" />
       </node>
     </group>
   </group>
