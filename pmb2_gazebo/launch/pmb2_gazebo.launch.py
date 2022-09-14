@@ -15,10 +15,10 @@
 import os
 from os import environ, pathsep
 
-from ament_index_python.packages import get_package_share_directory, get_package_prefix
+from ament_index_python.packages import get_package_prefix, get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable, DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 
@@ -30,7 +30,7 @@ def generate_launch_description():
     # See https://github.com/ros2/launch/issues/313
     declare_world_name = DeclareLaunchArgument(
         'world_name', default_value='pal_office',
-        description='Specify world name, we\'ll convert to full path'
+        description="Specify world name, we'll convert to full path"
     )
 
     gazebo = IncludeLaunchDescription(
@@ -46,7 +46,7 @@ def generate_launch_description():
         'pmb2_bringup', ['launch', 'pmb2_bringup.launch.py'])
 
     pkg_path = get_package_prefix('pmb2_description')
-    model_path = os.path.join(pkg_path, "share")
+    model_path = os.path.join(pkg_path, 'share')
     resource_path = pkg_path
 
     if 'GAZEBO_MODEL_PATH' in environ:
@@ -54,9 +54,9 @@ def generate_launch_description():
     if 'GAZEBO_RESOURCE_PATH' in environ:
         resource_path += pathsep + environ['GAZEBO_RESOURCE_PATH']
     return LaunchDescription([
-        SetEnvironmentVariable("GAZEBO_MODEL_PATH", model_path),
+        SetEnvironmentVariable('GAZEBO_MODEL_PATH', model_path),
         # Using this prevents shared library from being found
-        # SetEnvironmentVariable("GAZEBO_RESOURCE_PATH", resource_path),
+        # SetEnvironmentVariable('GAZEBO_RESOURCE_PATH', resource_path),
         declare_world_name,
         gazebo,
         pmb2_spawn,
