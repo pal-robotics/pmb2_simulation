@@ -17,18 +17,23 @@ from launch_pal.include_utils import include_launch_py_description
 
 
 def generate_launch_description():
+
+    pmb2_gazebo_launch = include_launch_py_description(
+        'pmb2_gazebo', ['launch', 'pmb2_gazebo.launch.py'],
+        launch_arguments={
+            'world_name': 'pal_office',
+        }.items())
+
+    pmb2_nav_bringup_launch = include_launch_py_description(
+        'pmb2_2dnav', ['launch', 'pmb2_nav_bringup.launch.py'],
+        launch_arguments={
+            'slam': 'True'
+        }.items())
+
     # Create the launch description and populate
-    ld = LaunchDescription([
-        include_launch_py_description(
-            'pmb2_gazebo', ['launch', 'pmb2_gazebo.launch.py'],
-            launch_arguments={
-                'world_name': 'pal_office',
-                }.items()),
-        include_launch_py_description(
-            'pmb2_2dnav', ['launch', 'pmb2_nav_bringup.launch.py'],
-            launch_arguments={
-                'slam': 'True'
-                }.items()),
-    ])
+    ld = LaunchDescription()
+
+    ld.add_action(pmb2_gazebo_launch)
+    ld.add_action(pmb2_nav_bringup_launch)
 
     return ld

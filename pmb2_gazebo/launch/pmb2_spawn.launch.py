@@ -44,9 +44,12 @@ def generate_launch_description():
                                    ],
                         output='screen')
 
-    return LaunchDescription([
-        #        declare_gz_pose,
-        declare_model_name,
-        pmb2_state_publisher,
-        spawn_entity,
-    ])
+    # Create the launch description and populate
+    ld = LaunchDescription()
+
+    # ld.add_action(declare_gz_pose)
+    ld.add_action(declare_model_name)
+    ld.add_action(pmb2_state_publisher)
+    ld.add_action(spawn_entity)
+
+    return ld
