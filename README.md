@@ -44,7 +44,7 @@ This repository contains the launch files to simulate the pmb2/TIAGo Base robot.
 
 2. To move the robot you can use the following command:
 
-    ros2 topic pub /mobile_base_controller/cmd_vel_unstamped geometry_msgs/msg/Twist '{linear: {x: 1}, angular: {z: 0}}' -r10
+    `ros2 topic pub /mobile_base_controller/cmd_vel_unstamped geometry_msgs/msg/Twist '{linear: {x: 1}, angular: {z: 0}}' -r10`
 
 The velocities can be modified by changing the values of x and z.
 
