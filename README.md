@@ -5,6 +5,11 @@ This repository contains the launch files to simulate the pmb2/TIAGo Base robot.
 
 ## Setup
 
+> **Disclaimer**: In our testing environment, we've found out that the simulation is more reliable if we switch to Cyclone DDS. You can do this by setting the `RMW_IMPLEMENTATION` environment variable: `export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp`. More information on working with different DDS implementations [here](https://docs.ros.org/en/humble/How-To-Guides/Working-with-multiple-RMW-implementations.html).
+>
+> We are still looking on the issues when working with Fast RTPS.
+
+
 1. Create a workspace for pmb2 simulation:
 
     `mkdir -p ~/pmb2_public_ws/src`
