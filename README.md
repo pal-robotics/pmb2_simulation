@@ -22,13 +22,18 @@ This repository contains the launch files to simulate the pmb2/TIAGo Base robot.
 
     To install rosinstall tool you can use `sudo apt install python3-rosinstall`.
 
-4. Build the workspace:
+4. Source ROS 2 Humble
+
+    `source /opt/ros/humble/setup.bash`
+
+5. Build the workspace:
 
     `cd .. && colcon build`
 
-5. Source the workspace:
+6. Source the workspace:
 
     `source install/setup.bash`
+
 
 
 ## Simulate pmb2 robot
