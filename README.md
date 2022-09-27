@@ -5,6 +5,11 @@ This repository contains the launch files to simulate the pmb2/TIAGo Base robot.
 
 ## Setup
 
+> **Disclaimer**: In our testing environment, we've found out that the simulation is more reliable if we switch to Cyclone DDS. You can do this by setting the `RMW_IMPLEMENTATION` environment variable: `export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp`. More information on working with different DDS implementations [here](https://docs.ros.org/en/humble/How-To-Guides/Working-with-multiple-RMW-implementations.html).
+>
+> We are still looking on the issues when working with Fast RTPS.
+
+
 1. Create a workspace for pmb2 simulation:
 
     `mkdir -p ~/pmb2_public_ws/src`
@@ -17,13 +22,18 @@ This repository contains the launch files to simulate the pmb2/TIAGo Base robot.
 
     To install rosinstall tool you can use `sudo apt install python3-rosinstall`.
 
-4. Build the workspace:
+4. Source ROS 2 Humble
+
+    `source /opt/ros/humble/setup.bash`
+
+5. Build the workspace:
 
     `cd .. && colcon build`
 
-5. Source the workspace:
+6. Source the workspace:
 
     `source install/setup.bash`
+
 
 
 ## Simulate pmb2 robot
@@ -34,7 +44,7 @@ This repository contains the launch files to simulate the pmb2/TIAGo Base robot.
 
 2. To move the robot you can use the following command:
 
-    ros2 topic pub /mobile_base_controller/cmd_vel_unstamped geometry_msgs/msg/Twist '{linear: {x: 1}, angular: {z: 0}}' -r10
+    `ros2 topic pub /mobile_base_controller/cmd_vel_unstamped geometry_msgs/msg/Twist '{linear: {x: 1}, angular: {z: 0}}' -r10`
 
 The velocities can be modified by changing the values of x and z.
 
