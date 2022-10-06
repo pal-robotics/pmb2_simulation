@@ -1,63 +1,104 @@
-pmb2_simulation
+PMB2 ROS 2 Simulation
 ==================
 
-This repository contains the launch files to simulate the pmb2/TIAGo Base robot.
+This repository contains the launch files to simulate the PMB2/TIAGo Base robot in ROS 2.
+
+<img src="doc/media/pmb2.png" title="TIAGo Base" width="300">
+
 
 ## Setup
 
-> **Disclaimer**: In our testing environment, we've found out that the simulation is more reliable if we switch to Cyclone DDS. You can do this by setting the `RMW_IMPLEMENTATION` environment variable: `export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp`. More information on working with different DDS implementations [here](https://docs.ros.org/en/humble/How-To-Guides/Working-with-multiple-RMW-implementations.html).
+### Prerequisites
+
+1. Install ROS 2 Humble by following the [installation instructions](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
+
+2. Update the apt package index and install needed packages
+
+```console
+sudo apt-get update
+
+sudo apt-get install git python3-vcstool python3-rosinstall python3-rosdep python3-colcon-common-extensions
+```
+
+> **Disclaimer**: In our testing environment, we've found out that the simulation is more reliable if we switch to Cyclone DDS. You can do this by installing it with `sudo apt install ros-humble-rmw-cyclonedds-cpp` and setting the `RMW_IMPLEMENTATION` environment variable: `export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp`. More information on working with different DDS implementations [here](https://docs.ros.org/en/humble/How-To-Guides/Working-with-multiple-RMW-implementations.html).
 >
 > We are still looking on the issues when working with Fast RTPS.
 
 
-1. Create a workspace for pmb2 simulation:
+### Setting up the workspace
 
-    `mkdir -p ~/pmb2_public_ws/src`
+Create a workspace and clone all repositories:
 
-2. Download the [rosinstall](https://github.com/pal-robotics/pmb2_tutorials/blob/humble-devel/pmb2_public.rosinstall) file and move it to the src directory.
+```console
+mkdir -p ~/pmb2_public_ws/src
+cd ~/pmb2_public_ws
+vcs import --input https://raw.githubusercontent.com/pal-robotics/pmb2_tutorials/humble-devel/pmb2_public.rosinstall src
+```
 
-3. Move to the src directory and use rosinstall to clone the packages:
+Install dependencies using rosdep
 
-    `cd ~/pmb2_public_ws/src && rosinstall . pmb2_public.rosinstall`
+```console
+sudo rosdep init
+rosdep update
+rosdep install --from-paths src -y --ignore-src --skip-keys="robot_control"
+```
 
-    To install rosinstall tool you can use `sudo apt install python3-rosinstall`.
+Source the environment and build
 
-4. Source ROS 2 Humble
+```console
+source /opt/ros/humble/setup.bash
+colcon build --symlink-install
+```
 
-    `source /opt/ros/humble/setup.bash`
+Finally, before running any application you have to source the workspace
 
-5. Build the workspace:
+```console
+source ~/pmb2_public_ws/install/setup.bash
+```
 
-    `cd .. && colcon build`
-
-6. Source the workspace:
-
-    `source install/setup.bash`
+Also you can add it to your .bashrc
 
 
+## Simulation
 
-## Simulate pmb2 robot
+### Standalone
 
-1. Launch gazebo simulation:
+Launch gazebo simulation:
 
-    `ros2 launch pmb2_gazebo pmb2_gazebo.launch.py`
+```console
+ros2 launch pmb2_gazebo pmb2_gazebo.launch.py
+```
 
-2. To move the robot you can use the following command:
+<img src="doc/media/pmb2_gazebo.png" title="PMB2 simulation" width="85%">
 
-    `ros2 topic pub /mobile_base_controller/cmd_vel_unstamped geometry_msgs/msg/Twist '{linear: {x: 1}, angular: {z: 0}}' -r10`
+To move the robot you can use the following command from another terminal:
+
+```console
+ros2 topic pub /mobile_base_controller/cmd_vel_unstamped geometry_msgs/msg/Twist '{linear: {x: 1}, angular: {z: 0}}' -r10
+```
 
 The velocities can be modified by changing the values of x and z.
 
 
-## Simulate pmb2 robot with navigation
+### Navigation 2
 
-1. Launch gazebo simulation with navigation
+You can launch PMB2 navigation by executing 
 
-    `ros2 launch pmb2_2dnav_gazebo pmb2_navigation_gazebo.launch.py`
+```console
+ros2 launch pmb2_2dnav pmb2_nav_bringup.launch.py
+```
 
-2. Set the initial pose in rviz2 and send a goal
+Then, you can send a goal with rviz2
 
-You can also start the simulation and navigation separately by following the steps of the [Simulate pmb2 robot](#simulate-pmb2-robot) section to launch the simulation and then launch navigation in other terminal with the following command:
-    `ros2 launch pmb2_2dnav pmb2_nav_bringup.launch.py`
+<img src="doc/media/rviz_send_goal.gif" title="Send goal with rviz2" width="85%">
 
-Then, rviz can be used in the same way.
+
+### Simulation + Navigation 2
+
+You can also start the simulation and navigation together by using
+
+```console
+ros2 launch pmb2_2dnav_gazebo pmb2_navigation_gazebo.launch.py
+```
+
+Then, rviz2 can be used in the same way.
