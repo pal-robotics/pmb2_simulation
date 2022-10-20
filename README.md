@@ -40,7 +40,7 @@ Install dependencies using rosdep
 ```console
 sudo rosdep init
 rosdep update
-rosdep install --from-paths src -y --ignore-src --skip-keys="robot_control"
+rosdep install --from-paths src -y --ignore-src
 ```
 
 Source the environment and build
