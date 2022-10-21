@@ -2,6 +2,26 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'cleanup' into 'humble-devel'
+  Update package.xml deps
+  See merge request robots/pmb2_simulation!46
+* update package.xml deps
+* Merge branch 'refactor_launch_files' into 'humble-devel'
+  Refactor ld population
+  See merge request robots/pmb2_simulation!42
+* refactor LaunchDescription population
+* Merge branch 'update_copyright' into 'humble-devel'
+  Update copyright and license
+  See merge request robots/pmb2_simulation!41
+* update copyright and license
+* Merge branch 'update_maintainers' into 'humble-devel'
+  update maintainers
+  See merge request robots/pmb2_simulation!40
+* update maintainers
+* Contributors: Jordan Palacios, Noel Jimenez
+
 3.0.2 (2021-10-19)
 ------------------
 
