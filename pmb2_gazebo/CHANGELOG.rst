@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.3 (2022-10-21)
+------------------
 * Merge branch 'add_missing_dep' into 'humble-devel'
   add missing dependency
   See merge request robots/pmb2_simulation!47

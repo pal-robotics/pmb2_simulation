@@ -2,8 +2,8 @@
 Changelog for package pmb2_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.3 (2022-10-21)
+------------------
 * Merge branch 'update_copyright' into 'humble-devel'
   Update copyright and license
   See merge request robots/pmb2_simulation!41
