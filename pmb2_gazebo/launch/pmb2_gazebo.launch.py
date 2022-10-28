@@ -19,6 +19,7 @@ from ament_index_python.packages import get_package_prefix, get_package_share_di
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
+from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 
@@ -33,6 +34,11 @@ def generate_launch_description():
         description="Specify world name, we'll convert to full path"
     )
 
+    navigation_arg = DeclareLaunchArgument(
+        'navigation', default_value='false',
+        description='Specify if launching Navigation2'
+    )
+
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('pal_gazebo_worlds'), 'launch'), '/pal_gazebo.launch.py']),
@@ -44,6 +50,10 @@ def generate_launch_description():
         'pmb2_gazebo', ['launch', 'pmb2_spawn.launch.py'])
     pmb2_bringup = include_launch_py_description(
         'pmb2_bringup', ['launch', 'pmb2_bringup.launch.py'])
+
+    navigation = include_launch_py_description(
+        'tiago_2dnav', ['launch', 'tiago_nav_bringup.launch.py'],
+        condition=IfCondition(LaunchConfiguration('navigation')))
 
     pkg_path = get_package_prefix('pmb2_description')
     model_path = os.path.join(pkg_path, 'share')
@@ -65,5 +75,8 @@ def generate_launch_description():
     ld.add_action(gazebo)
     ld.add_action(pmb2_spawn)
     ld.add_action(pmb2_bringup)
+
+    ld.add_action(navigation_arg)
+    ld.add_action(navigation)
 
     return ld
