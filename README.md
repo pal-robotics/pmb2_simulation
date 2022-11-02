@@ -98,7 +98,7 @@ Then, you can send a goal with rviz2
 You can also start the simulation and navigation together by using
 
 ```console
-ros2 launch pmb2_2dnav_gazebo pmb2_navigation_gazebo.launch.py
+ros2 launch pmb2_gazebo pmb2_gazebo.launch.py navigation:=true
 ```
 
 Then, rviz2 can be used in the same way.
