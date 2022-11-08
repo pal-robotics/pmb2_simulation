@@ -2,6 +2,14 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'refactor_simulation_launchers' into 'humble-devel'
+  Refactor simulation launchers
+  See merge request robots/pmb2_simulation!50
+* move navigation to simulation launcher
+* Contributors: Jordan Palacios, Noel Jimenez
+
 3.0.3 (2022-10-21)
 ------------------
 * Merge branch 'add_missing_dep' into 'humble-devel'
