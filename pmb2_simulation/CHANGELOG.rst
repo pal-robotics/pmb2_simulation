@@ -2,8 +2,8 @@
 Changelog for package pmb2_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.0 (2022-11-08)
+------------------
 * Merge branch 'refactor_simulation_launchers' into 'humble-devel'
   Refactor simulation launchers
   See merge request robots/pmb2_simulation!50
