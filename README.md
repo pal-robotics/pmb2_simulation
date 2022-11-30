@@ -88,10 +88,13 @@ You can launch PMB2 navigation by executing
 ros2 launch pmb2_2dnav pmb2_nav_bringup.launch.py
 ```
 
-Then, you can send a goal with rviz2
+Then, you can send a goal:
+
+- With rviz2
 
 <img src="doc/media/rviz_send_goal.gif" title="Send goal with rviz2" width="85%">
 
+- By using Navigation 2 API. For further information see [Navigation 2 Tutorials](https://navigation.ros.org/tutorials/index.html)
 
 ### Simulation + Navigation 2
 
@@ -101,4 +104,4 @@ You can also start the simulation and navigation together by using
 ros2 launch pmb2_gazebo pmb2_gazebo.launch.py navigation:=true
 ```
 
-Then, rviz2 can be used in the same way.
+Then, goals can be sent in the same way.
