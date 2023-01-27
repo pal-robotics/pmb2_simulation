@@ -12,7 +12,6 @@
     <arg name="global_planner" default="global_planner"/>
     <arg name="localization"   default="amcl"/>
     <arg name="map"            default="$(env HOME)/.pal/pmb2_maps/configurations/$(arg world)"/>
-    <arg name="octomap"        default="false"/>
 
     <arg name="public_sim" default="false"/>
     <arg name="simple_sim_model" default="false"/>
@@ -61,10 +60,10 @@
             <arg name="local_planner"  value="$(arg local_planner)"/>
             <arg name="localization"   value="$(arg localization)"/>
             <arg name="map"            value="$(arg map)"/>
-            <arg name="octomap"        value="$(arg octomap)"/>
             <arg name="public_sim"     value="$(arg public_sim)"/>
             <arg name="robot_namespace"      value="$(arg robot_name)"/>
             <arg name="multiple"       value="true"/>
+            <arg name="is_fleet"       value="true"/>
         </include>
 
     </group>
