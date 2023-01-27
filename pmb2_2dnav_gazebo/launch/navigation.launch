@@ -1,44 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
-  <arg name="state" default="localization"/>
+  <arg name="state"           default="localization"/>
+  <arg name="planner"         default="base"/>
+  <arg name="global_planner"  default="global_planner"/>
+  <arg name="local_planner"   default="pal"/>
+  <arg name="localization"    default="amcl"/>
+  <arg name="mapping"         default="karto"/>
+  <arg name="public_sim"      default="false"/>
+  <arg name="robot_namespace" default=""/>
+  <arg name="multiple"        default="false"/>
+  <arg name="scan_topic"      default="scan_raw"/>
+  <arg name="laser_model"     default="sick-571"/>
+  <arg name="rgbd_sensors"    default="false"/>
+  <arg name="map"             default="$(env HOME)/.pal/pmb2_maps/config"/>
+  <arg name="is_fleet"        default="false"/>
 
-  <arg name="planner"        default="base"/>
-  <arg name="global_planner" default="global_planner"/>
-  <arg name="local_planner"  default="pal"/>
-  <arg name="localization"   default="amcl"/>
-  <arg name="mapping"        default="karto"/>
-  <arg name="octomap"        default="false"/>
-  <arg name="public_sim"     default="false"/>
-  <arg name="robot_namespace"   default=""/>
-  <arg name="multiple"       default="false"/>
-  <arg name="scan_topic"    default="scan_raw"/>
-  <arg name="laser_model"    default="sick-571"/>
-  <arg name="rgbd_sensors"   default="false"/>
-
-
-  <arg name="map" default="$(env HOME)/.pal/pmb2_maps/config"/>
-
+  <!-- Map -->
   <!-- Localization or Mapping state -->
-  <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
-        args="pmb2 $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg scan_topic) $(arg laser_model) pmb2 $(arg multiple) $(arg robot_namespace)"/>
+  <group if="$(arg public_sim)">
+    <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
+        args="pmb2 $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg scan_topic) $(arg laser_model) pmb2 $(arg multiple) $(arg robot_namespace)"/>
+  </group>
+
+  <group unless="$(arg public_sim)">
+    <include file="$(find pal_map_manager)/launch/pal_map_manager.launch">
+      <arg name="map"           value="$(arg map)"/>
+      <arg name="namespace"     value="$(arg robot_namespace)"/>
+      <arg name="use_hostname"  value="false"/>
+    </include>
+  </group>
 
   <!-- Navigation State Machine -->
   <include file="$(find pmb2_2dnav)/launch/state_machine.launch">
-    <arg name="state" value="$(arg state)"/>
-    <arg name="public_sim" value="$(arg public_sim)"/>
+    <arg name="state"           value="$(arg state)"/>
+    <arg name="public_sim"      value="$(arg public_sim)"/>
+    <arg name="is_sim"          value="true"/>
+    <arg name="multiple"        value="$(arg multiple)"/>
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
     <arg if="$(arg multiple)" name="map_frame" value="/$(arg robot_namespace)/map"/>
     <arg if="$(arg multiple)" name="base_frame" value="/$(arg robot_namespace)/base_footprint"/>
+    <arg name="is_fleet"        value="$(arg is_fleet)"/>
   </include>
 
   <!-- Planning -->
   <include file="$(find pmb2_2dnav)/launch/move_$(arg planner).launch">
-    <arg name="global_planner" value="$(arg global_planner)"/>
-    <arg name="local_planner"  value="$(arg local_planner)"/>
-    <arg name="public_sim"     value="$(arg public_sim)"/>
-    <arg name="robot_namespace"      value="$(arg robot_namespace)"/>
-    <arg name="multiple"       value="$(arg multiple)"/>
-    <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
+    <arg name="global_planner"  value="$(arg global_planner)"/>
+    <arg name="local_planner"   value="$(arg local_planner)"/>
+    <arg name="public_sim"      value="$(arg public_sim)"/>
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="multiple"        value="$(arg multiple)"/>
+    <arg name="rgbd_sensors"    value="$(arg rgbd_sensors)"/>
   </include>
 
   <include file="$(find robot_pose)/launch/robot_pose.launch">

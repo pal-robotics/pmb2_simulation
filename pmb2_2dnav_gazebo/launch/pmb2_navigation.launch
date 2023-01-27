@@ -16,7 +16,6 @@
   <arg name="local_planner"  default="$(eval 'teb' if arg('public_sim') else 'pal')"/> 
   <arg name="localization"   default="amcl"/>
   <arg name="map"            default="$(env HOME)/.pal/pmb2_maps/configurations/$(arg world)"/>
-  <arg name="octomap"        default="false"/>
 
   <arg name="rviz"     default="true"/>
   <arg name="gzclient" default="true"/>
@@ -47,10 +46,9 @@
       <arg name="local_planner"  value="$(arg local_planner)"/>
       <arg name="localization"   value="$(arg localization)"/>
       <arg name="map"            value="$(arg map)"/>
-      <arg name="octomap"        value="$(arg octomap)"/>
       <arg name="public_sim"     value="$(arg public_sim)"/>
       <arg name="laser_model"    value="$(arg laser_model)"/>
-      <arg name="rgbd_sensors" value="$(arg rgbd_sensors)"/>
+      <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
     </include>
 
     <group if="$(arg advanced_navigation)">

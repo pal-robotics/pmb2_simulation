@@ -13,7 +13,6 @@
   <arg name="global_planner" default="global_planner"/>
   <arg name="local_planner"  default="$(eval 'teb' if arg('public_sim') else 'pal')"/> 
   <arg name="mapping"        default="$(eval 'gmapping' if arg('public_sim') else 'karto')"/> 
-  <arg name="octomap"        default="false"/>
 
   <arg name="recording" default="false"/>
   <arg name="extra_gazebo_args" default=""/>
@@ -38,7 +37,6 @@
     <include file="$(find pmb2_2dnav_gazebo)/launch/navigation.launch">
       <arg name="state"          value="mapping"/>
       <arg name="mapping"        value="$(arg mapping)"/>
-      <arg name="octomap"        value="$(arg octomap)"/>
       <arg name="planner"        value="$(arg planner)"/>
       <arg name="global_planner" value="$(arg global_planner)"/>
       <arg name="local_planner"  value="$(arg local_planner)"/>

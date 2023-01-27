@@ -13,4 +13,5 @@
 
   <run_depend>pmb2_gazebo</run_depend>
   <run_depend>pmb2_2dnav</run_depend>
+  <run_depend>pal_map_manager</run_depend>
 </package>
