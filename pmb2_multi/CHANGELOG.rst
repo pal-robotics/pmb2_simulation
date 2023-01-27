@@ -2,6 +2,14 @@
 Changelog for package pmb2_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'feat/map-manager' into 'erbium-devel'
+  Move to map manager
+  See merge request robots/pmb2_simulation!48
+* Move to map manager
+* Contributors: antoniobrandi
+
 2.0.29 (2022-08-18)
 -------------------
 
