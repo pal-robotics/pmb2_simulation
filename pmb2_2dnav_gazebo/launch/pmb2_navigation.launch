@@ -55,9 +55,6 @@
       <node pkg="pal_zoi_detector" type="zoi_detector_node" name="zoi_detector" />
       <include file="$(find pal_waypoint)/launch/pal_waypoint.launch"/>
       <include file="$(find pal_navigation_manager)/launch/poi_navigation_server.launch"/>
-      <include file="$(find pal_map_utils)/launch/map_configuration_server.launch">
-        <env name="PAL_HOST" value="pmb2c"/>
-      </include>
     </group>
 
     <group if="$(arg advanced_navigation)">
