@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.2 (2023-02-08)
+------------------
 * Merge branch 'fix/2dnav' into 'humble-devel'
   using pmb2_2dnav
   See merge request robots/pmb2_simulation!55
