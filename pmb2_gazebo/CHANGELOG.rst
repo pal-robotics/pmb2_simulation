@@ -2,6 +2,18 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/2dnav' into 'humble-devel'
+  using pmb2_2dnav
+  See merge request robots/pmb2_simulation!55
+* using pmb2_2dnav
+* Merge branch 'robot_state_publisher' into 'humble-devel'
+  remove robot_state_publisher from pmb2_spawn
+  See merge request robots/pmb2_simulation!53
+* remove robot_state_publisher from pmb2_spawn
+* Contributors: Jordan Palacios, Noel Jimenez, antoniobrandi
+
 4.0.1 (2022-11-30)
 ------------------
 
