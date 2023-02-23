@@ -2,6 +2,9 @@
 Changelog for package pmb2_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.30 (2023-01-27)
 -------------------
 * Merge branch 'feat/map-manager' into 'erbium-devel'
