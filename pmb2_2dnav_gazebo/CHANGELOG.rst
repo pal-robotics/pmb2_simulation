@@ -2,8 +2,8 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.31 (2023-02-23)
+-------------------
 * Merge branch 'feat/share-mmap' into 'erbium-devel'
   deprecating map_configuration_server
   See merge request robots/pmb2_simulation!54
