@@ -2,6 +2,17 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix_world' into 'erbium-devel'
+  Move world to pal_gazebo_world + rm duplicated models
+  See merge request robots/pmb2_simulation!57
+* Remove Media, models and worlds from the install rules
+* Move models to pal_gazebo_worlds
+* Move models dependent of the worlds
+* Move world to pal_gazebo_world + rm duplicated models
+* Contributors: saikishor, thomaspeyrucain
+
 2.0.31 (2023-02-23)
 -------------------
 
