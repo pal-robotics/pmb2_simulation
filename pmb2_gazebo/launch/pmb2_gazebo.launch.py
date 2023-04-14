@@ -53,7 +53,8 @@ def generate_launch_description():
 
     navigation = include_launch_py_description(
         'pmb2_2dnav', ['launch', 'pmb2_nav_bringup.launch.py'],
-        condition=IfCondition(LaunchConfiguration('navigation')))
+        condition=IfCondition(LaunchConfiguration('navigation')),
+        launch_arguments={"is_robot": "False"}.items())
 
     pkg_path = get_package_prefix('pmb2_description')
     model_path = os.path.join(pkg_path, 'share')
