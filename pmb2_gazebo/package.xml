@@ -11,13 +11,15 @@
 
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
-  <exec_depend>launch_pal</exec_depend>
-  <exec_depend>pmb2_description</exec_depend>
-  <exec_depend>pmb2_bringup</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
   <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>gazebo_ros2_control</exec_depend>
+  <exec_depend>launch_pal</exec_depend>
+  <exec_depend>pal_gazebo_plugins</exec_depend>
   <exec_depend>pal_gazebo_worlds</exec_depend>
   <exec_depend>pmb2_2dnav</exec_depend>
+  <exec_depend>pmb2_bringup</exec_depend>
+  <exec_depend>pmb2_description</exec_depend>
 
   <!-- Pending to be ported to ROS2 
   <exec_depend>simple_models_gazebo</exec_depend>
