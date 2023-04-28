@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add missing gazebo_plugins dependencies
+* Contributors: Noel Jimenez
+
 4.0.2 (2023-02-08)
 ------------------
 * Merge branch 'fix/2dnav' into 'humble-devel'
