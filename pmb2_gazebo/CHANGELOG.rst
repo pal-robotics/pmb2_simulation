@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.3 (2023-04-28)
+------------------
 * add missing gazebo_plugins dependencies
 * Contributors: Noel Jimenez
 
