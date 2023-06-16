@@ -2,6 +2,15 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/set-is-robot' into 'humble-devel'
+  Use a different navigation launcher for simulation
+  See merge request robots/pmb2_simulation!60
+* use pmb2_sim_navigation
+* setting is_robot argument for simulation
+* Contributors: antoniobrandi
+
 4.0.3 (2023-04-28)
 ------------------
 * add missing gazebo_plugins dependencies
