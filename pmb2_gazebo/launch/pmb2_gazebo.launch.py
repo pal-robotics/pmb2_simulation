@@ -49,10 +49,12 @@ def generate_launch_description():
     pmb2_spawn = include_launch_py_description(
         'pmb2_gazebo', ['launch', 'pmb2_spawn.launch.py'])
     pmb2_bringup = include_launch_py_description(
-        'pmb2_bringup', ['launch', 'pmb2_bringup.launch.py'])
+        'pmb2_bringup', ['launch', 'pmb2_bringup.launch.py'],
+        launch_arguments={'use_sim_time': 'True'}.items())
 
     navigation = include_launch_py_description(
         'pmb2_2dnav', ['launch', 'pmb2_sim_nav_bringup.launch.py'],
+        launch_arguments={'use_sim_time': 'True'}.items(),
         condition=IfCondition(LaunchConfiguration('navigation')))
 
     pkg_path = get_package_prefix('pmb2_description')
