@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.5 (2023-11-13)
+------------------
 * Set use_sim_time true
 * Remove pal flags dependency
 * Contributors: Noel Jimenez
