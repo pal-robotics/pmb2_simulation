@@ -9,6 +9,8 @@
   <license>Apache License 2.0</license>
   <author email="victor.lopez@pal-robotics.com">Victor Lopez</author>
 
+  <url type="website">https://github.com/pal-robotics/pmb2_simulation</url>
+
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
   <exec_depend>gazebo_plugins</exec_depend>
