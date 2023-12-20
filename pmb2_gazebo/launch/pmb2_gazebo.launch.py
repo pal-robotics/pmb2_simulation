@@ -27,12 +27,6 @@ from launch_pal.include_utils import include_launch_py_description
 
 
 def generate_launch_description():
-    # This should be removed, it should be retrieved automatically from pal_gazebo.launch.py
-    # See https://github.com/ros2/launch/issues/313
-    declare_world_name = DeclareLaunchArgument(
-        'world_name', default_value='pal_office',
-        description="Specify world name, we'll convert to full path"
-    )
 
     navigation_arg = DeclareLaunchArgument(
         'navigation', default_value='false',
@@ -42,8 +36,6 @@ def generate_launch_description():
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('pal_gazebo_worlds'), 'launch'), '/pal_gazebo.launch.py']),
-        launch_arguments={
-            'world_name': LaunchConfiguration('world_name')}.items(),
     )
 
     pmb2_spawn = include_launch_py_description(
@@ -73,7 +65,6 @@ def generate_launch_description():
     # Using this prevents shared library from being found
     # ld.add_action(SetEnvironmentVariable('GAZEBO_RESOURCE_PATH', resource_path))
 
-    ld.add_action(declare_world_name)
     ld.add_action(gazebo)
     ld.add_action(pmb2_spawn)
     ld.add_action(pmb2_bringup)
