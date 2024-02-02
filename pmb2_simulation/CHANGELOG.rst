@@ -2,6 +2,9 @@
 Changelog for package pmb2_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 4.0.6 (2023-11-14)
 ------------------
 * Add website tag

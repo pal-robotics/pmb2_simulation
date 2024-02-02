@@ -2,6 +2,18 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'feat/register-components' into 'humble-devel'
+  use single entry point for navigation
+  See merge request robots/pmb2_simulation!66
+* use single entry point for navigation
+* Merge branch 'abr/fix/world-name' into 'humble-devel'
+  moving world_name to pal_gazebo_worlds
+  See merge request robots/pmb2_simulation!65
+* moving world_name to pal_gazebo_worlds
+* Contributors: Noel Jimenez, antoniobrandi
+
 4.0.6 (2023-11-14)
 ------------------
 * Add website tag
