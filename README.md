@@ -85,7 +85,7 @@ The velocities can be modified by changing the values of x and z.
 You can launch PMB2 navigation by executing 
 
 ```console
-ros2 launch pmb2_2dnav pmb2_nav_bringup.launch.py
+ros2 launch pmb2_2dnav pmb2_nav_bringup.launch.py is_public_sim:=true
 ```
 
 Then, you can send a goal:
@@ -101,7 +101,7 @@ Then, you can send a goal:
 You can also start the simulation and navigation together by using
 
 ```console
-ros2 launch pmb2_gazebo pmb2_gazebo.launch.py navigation:=true
+ros2 launch pmb2_gazebo pmb2_gazebo.launch.py navigation:=true is_public_sim:=true
 ```
 
 Then, goals can be sent in the same way.
