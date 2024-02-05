@@ -2,6 +2,9 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 4.0.7 (2024-02-02)
 ------------------
 * Merge branch 'feat/register-components' into 'humble-devel'
