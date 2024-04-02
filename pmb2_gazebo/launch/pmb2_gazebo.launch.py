@@ -32,7 +32,7 @@ def generate_launch_description():
         'navigation', default_value='False',
         description='Specify if launching Navigation2'
     )
-    
+
     slam_arg = DeclareLaunchArgument(
         'slam', default_value='False',
         description='Specify if launching SLAM Toolbox'
