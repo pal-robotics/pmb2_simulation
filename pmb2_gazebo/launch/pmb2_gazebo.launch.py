@@ -29,8 +29,13 @@ from launch_pal.include_utils import include_launch_py_description
 def generate_launch_description():
 
     navigation_arg = DeclareLaunchArgument(
-        'navigation', default_value='false',
+        'navigation', default_value='False',
         description='Specify if launching Navigation2'
+    )
+    
+    slam_arg = DeclareLaunchArgument(
+        'slam', default_value='False',
+        description='Specify if launching SLAM Toolbox'
     )
 
     gazebo = IncludeLaunchDescription(
@@ -45,15 +50,9 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': 'True'}.items())
 
     navigation = include_launch_py_description(
-        'pmb2_2dnav', ['launch', 'pmb2_nav_bringup.launch.py'],
-        launch_arguments={
-            'use_sim_time': 'True',
-            'remappings_file': os.path.join(
-                get_package_share_directory('pmb2_2dnav'),
-                'params',
-                'pmb2_remappings_sim.yaml')
-        }.items(),
-        condition=IfCondition(LaunchConfiguration('navigation')))
+        pkg_name="pmb2_2dnav",
+        paths=["launch", "pmb2_nav_bringup.launch.py"],
+        condition=IfCondition(LaunchConfiguration("navigation")))
 
     pkg_path = get_package_prefix('pmb2_description')
     model_path = os.path.join(pkg_path, 'share')
@@ -76,6 +75,7 @@ def generate_launch_description():
     ld.add_action(pmb2_bringup)
 
     ld.add_action(navigation_arg)
+    ld.add_action(slam_arg)
     ld.add_action(navigation)
 
     return ld
