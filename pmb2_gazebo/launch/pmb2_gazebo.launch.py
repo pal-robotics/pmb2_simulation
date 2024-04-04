@@ -33,11 +33,6 @@ def generate_launch_description():
         description='Specify if launching Navigation2'
     )
 
-    slam_arg = DeclareLaunchArgument(
-        'slam', default_value='False',
-        description='Specify if launching SLAM Toolbox'
-    )
-
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('pal_gazebo_worlds'), 'launch'), '/pal_gazebo.launch.py']),
@@ -75,7 +70,6 @@ def generate_launch_description():
     ld.add_action(pmb2_bringup)
 
     ld.add_action(navigation_arg)
-    ld.add_action(slam_arg)
     ld.add_action(navigation)
 
     return ld
