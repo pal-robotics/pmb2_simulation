@@ -74,7 +74,7 @@ ros2 launch pmb2_gazebo pmb2_gazebo.launch.py is_public_sim:=true
 You can launch gazebo simulation using PAL office gazebo world by executing:
 
 ```console
-ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=true world_name:=pal_office
+ros2 launch pmb2_gazebo pmb2_gazebo.launch.py is_public_sim:=true world_name:=pal_office
 ```
 
 To move the robot you can use the following command from another terminal:
