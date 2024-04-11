@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.9 (2024-04-11)
+------------------
 * Merge branch 'feat/ros2-pipelines' into 'humble-devel'
   navigation pipeline integration for private sim
   See merge request robots/pmb2_simulation!68
