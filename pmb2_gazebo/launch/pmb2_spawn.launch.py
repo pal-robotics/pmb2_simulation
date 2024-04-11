@@ -36,6 +36,12 @@ def generate_launch_description():
                         arguments=['-topic', 'robot_description',
                                    '-entity', LaunchConfiguration(
                                        'model_name'),
+                                   '-x', '0.0',
+                                   '-y', '0.0',
+                                   '-z', '0.0',
+                                   '-R', '0.0',
+                                   '-P', '0.0',
+                                   '-Y', '0.0'
                                    # LaunchConfiguration('gzpose'),
                                    ],
                         output='screen')
