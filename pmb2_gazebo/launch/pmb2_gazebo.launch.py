@@ -29,7 +29,7 @@ from launch_pal.include_utils import include_launch_py_description
 def generate_launch_description():
 
     navigation_arg = DeclareLaunchArgument(
-        'navigation', default_value='False',
+        'navigation', default_value='false',
         description='Specify if launching Navigation2'
     )
 
