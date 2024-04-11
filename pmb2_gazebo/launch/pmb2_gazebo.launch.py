@@ -45,9 +45,9 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': 'True'}.items())
 
     navigation = include_launch_py_description(
-        pkg_name="pmb2_2dnav",
-        paths=["launch", "pmb2_nav_bringup.launch.py"],
-        condition=IfCondition(LaunchConfiguration("navigation")))
+        pkg_name='pmb2_2dnav',
+        paths=['launch', 'pmb2_nav_bringup.launch.py'],
+        condition=IfCondition(LaunchConfiguration('navigation')))
 
     pkg_path = get_package_prefix('pmb2_description')
     model_path = os.path.join(pkg_path, 'share')

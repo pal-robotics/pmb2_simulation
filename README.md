@@ -66,67 +66,16 @@ Also you can add it to your .bashrc
 Launch gazebo simulation:
 
 ```console
-ros2 launch pmb2_gazebo pmb2_gazebo.launch.py
+ros2 launch pmb2_gazebo pmb2_gazebo.launch.py is_public_sim:=true
 ```
 
 <img src="doc/media/pmb2_gazebo.png" title="PMB2 simulation" width="85%">
 
-To move the robot you can use the following command from another terminal:
+You can launch gazebo simulation using PAL office gazebo world by executing:
 
 ```console
-ros2 topic pub /mobile_base_controller/cmd_vel_unstamped geometry_msgs/msg/Twist '{linear: {x: 1}, angular: {z: 0}}' -r10
+ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=true world_name:=pal_office
 ```
-
-The velocities can be modified by changing the values of x and z.
-
-
-### Navigation 2
-
-You can launch PMB2 navigation by executing 
-
-```console
-ros2 launch pmb2_2dnav pmb2_nav_bringup.launch.py 
-```
-
-Then, you can send a goal:
-
-- With rviz2
-
-<img src="doc/media/rviz_send_goal.gif" title="Send goal with rviz2" width="85%">
-
-- By using Navigation 2 API. For further information see [Navigation 2 Tutorials](https://navigation.ros.org/tutorials/index.html)
-
-### Simulation + Navigation 2
-
-You can also start the simulation and navigation together by using
-
-```console
-ros2 launch pmb2_gazebo pmb2_gazebo.launch.py navigation:=true
-```
-
-Then, goals can be sent in the same way.
-
-### Simulation + Navigation 2 + SLAM
-
-You can start the SLAM and navigation in simulation by using
-
-```console
-ros2 launch pmb2_gazebo pmb2_gazebo.launch.py navigation:=true slam:=true
-```
-
-Then, goals can be sent in the same way.
-
-## Public Simulation
-
-### Standalone
-
-Launch gazebo simulation:
-
-```console
-ros2 launch pmb2_gazebo pmb2_gazebo.launch.py is_public_sim:=true 
-```
-
-<img src="doc/media/pmb2_gazebo.png" title="PMB2 simulation" width="85%">
 
 To move the robot you can use the following command from another terminal:
 
@@ -158,7 +107,16 @@ Then, you can send a goal:
 You can also start the simulation and navigation together by using
 
 ```console
-ros2 launch pmb2_gazebo pmb2_gazebo.launch.py navigation:=true is_public_sim:=true
+ros2 launch pmb2_gazebo pmb2_gazebo.launch.py is_public_sim:=true navigation:=true
 ```
 
 Then, goals can be sent in the same way.
+
+### Simulation + Navigation 2 + SLAM
+
+You can start the SLAM and navigation in simulation by using
+
+```console
+ros2 launch pmb2_gazebo pmb2_gazebo.launch.py is_public_sim:=true navigation:=true slam:=true
+```
+To use private simulation you can avoid to set is_public_sim argument.
