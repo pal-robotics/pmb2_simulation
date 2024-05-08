@@ -2,6 +2,12 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added pose configuration in spawn entity
+* added pose conifiguration in spawn_entity args
+* Contributors: martinaannicelli
+
 4.0.9 (2024-04-11)
 ------------------
 * Merge branch 'feat/ros2-pipelines' into 'humble-devel'
