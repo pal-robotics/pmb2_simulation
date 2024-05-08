@@ -23,10 +23,16 @@ from launch_ros.actions import Node
 def generate_launch_description():
     #    This format doesn't work because because we have to expand gzpose into
     #    different args for spawn_entity.py
-    #    declare_gz_pose = DeclareLaunchArgument(
-    #        'gzpose', default_value='-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0 ',
-    #        description='Spawn gazebo position as provided to spawn_entity.py'
-    #    )
+
+    pose = {
+        'x': LaunchConfiguration('x', default='0.0'),
+        'y': LaunchConfiguration('y', default='0.0'),
+        'z': LaunchConfiguration('z', default='0.0'),
+        'R': LaunchConfiguration('R', default='0.0'),
+        'P': LaunchConfiguration('P', default='0.0'),
+        'Y': LaunchConfiguration('Y', default='0.0'),
+    }
+
     declare_model_name = DeclareLaunchArgument(
         'model_name', default_value='pmb2',
         description='Gazebo model name'
@@ -36,13 +42,18 @@ def generate_launch_description():
                         arguments=['-topic', 'robot_description',
                                    '-entity', LaunchConfiguration(
                                        'model_name'),
-                                   '-x', '0.0',
-                                   '-y', '0.0',
-                                   '-z', '0.0',
-                                   '-R', '0.0',
-                                   '-P', '0.0',
-                                   '-Y', '0.0'
-                                   # LaunchConfiguration('gzpose'),
+                                   '-x',
+                                   pose['x'],
+                                   '-y',
+                                   pose['y'],
+                                   '-z',
+                                   pose['z'],
+                                   '-R',
+                                   pose['R'],
+                                   '-P',
+                                   pose['P'],
+                                   '-Y',
+                                   pose['Y'],
                                    ],
                         output='screen')
 
