@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.10 (2024-05-08)
+-------------------
 * added pose configuration in spawn entity
 * added pose conifiguration in spawn_entity args
 * Contributors: martinaannicelli
