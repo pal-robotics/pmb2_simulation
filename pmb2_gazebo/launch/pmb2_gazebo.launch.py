@@ -31,7 +31,7 @@ from dataclasses import dataclass
 class LaunchArguments(LaunchArgumentsBase):
     wheel_model: DeclareLaunchArgument = PMB2Args.wheel_model
     laser_model: DeclareLaunchArgument = PMB2Args.laser_model
-    courier_rgbd_sensors: DeclareLaunchArgument = PMB2Args.courier_rgbd_sensors
+    has_courier_rgbd_sensors: DeclareLaunchArgument = PMB2Args.has_courier_rgbd_sensors
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     world_name: DeclareLaunchArgument = CommonArgs.world_name
     navigation: DeclareLaunchArgument = CommonArgs.navigation
@@ -109,7 +109,7 @@ def declare_actions(
         launch_arguments={
             "wheel_model": launch_args.wheel_model,
             "laser_model": launch_args.laser_model,
-            "courier_rgbd_sensors": launch_args.courier_rgbd_sensors,
+            "has_courier_rgbd_sensors": launch_args.has_courier_rgbd_sensors,
             "use_sim_time": launch_args.use_sim_time,
         }
     )
