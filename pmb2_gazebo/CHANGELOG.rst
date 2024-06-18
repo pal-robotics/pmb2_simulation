@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.11 (2024-06-18)
+-------------------
 * courier_rgdb_sensor renamed
 * Launch std
 * Contributors: Oscar, oscarmartinez
