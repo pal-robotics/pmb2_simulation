@@ -24,6 +24,7 @@ from launch.substitutions import LaunchConfiguration
 from launch_pal.arg_utils import LaunchArgumentsBase, CommonArgs
 from launch_pal.robot_arguments import PMB2Args
 from launch_pal.include_utils import include_scoped_launch_py_description
+from launch_pal.actions import CheckPublicSim
 from dataclasses import dataclass
 
 
@@ -32,7 +33,7 @@ class LaunchArguments(LaunchArgumentsBase):
     wheel_model: DeclareLaunchArgument = PMB2Args.wheel_model
     laser_model: DeclareLaunchArgument = PMB2Args.laser_model
     has_courier_rgbd_sensors: DeclareLaunchArgument = PMB2Args.has_courier_rgbd_sensors
-    use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
+    is_public_sim: DeclareLaunchArgument = CommonArgs.is_public_sim
     world_name: DeclareLaunchArgument = CommonArgs.world_name
     navigation: DeclareLaunchArgument = CommonArgs.navigation
     x: DeclareLaunchArgument = CommonArgs.x
@@ -60,6 +61,10 @@ def declare_actions(
     set_sim_time = SetLaunchConfiguration("use_sim_time", "True")
     launch_description.add_action(set_sim_time)
 
+    # Shows error if is_public_sim is not set to True when using public simulation
+    public_sim_check = CheckPublicSim()
+    launch_description.add_action(public_sim_check)
+
     robot_name = 'pmb2'
     packages = ['pmb2_description']
 
@@ -86,6 +91,9 @@ def declare_actions(
         launch_arguments={
             "robot_name":  robot_name,
             "laser":  launch_args.laser_model,
+            "is_public_sim": launch_args.is_public_sim,
+            "use_sim_time": LaunchConfiguration('use_sim_time'),
+            "world_name": launch_args.world_name,
         },
         condition=IfCondition(LaunchConfiguration('navigation')))
 
@@ -111,6 +119,7 @@ def declare_actions(
             "laser_model": launch_args.laser_model,
             "has_courier_rgbd_sensors": launch_args.has_courier_rgbd_sensors,
             "use_sim_time": launch_args.use_sim_time,
+            "is_public_sim": launch_args.is_public_sim,
         }
     )
 
