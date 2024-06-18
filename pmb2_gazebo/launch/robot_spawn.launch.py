@@ -13,18 +13,19 @@
 # limitations under the License.
 
 
+from dataclasses import dataclass
+
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
+from launch_pal.arg_utils import CommonArgs, LaunchArgumentsBase
 from launch_ros.actions import Node
-from dataclasses import dataclass
-from launch_pal.arg_utils import LaunchArgumentsBase, CommonArgs
 
 
 @dataclass(frozen=True)
 class LaunchArguments(LaunchArgumentsBase):
     robot_name: DeclareLaunchArgument = DeclareLaunchArgument(
-        name="robot_name", description="Gazebo model name"
+        name='robot_name', description='Gazebo model name'
     )
 
     x: DeclareLaunchArgument = CommonArgs.x
@@ -49,19 +50,19 @@ def declare_actions(
     launch_description: LaunchDescription, launch_args: LaunchArguments
 ):
     robot_entity = Node(
-        package="gazebo_ros",
-        executable="spawn_entity.py",
+        package='gazebo_ros',
+        executable='spawn_entity.py',
         arguments=[
-            "-topic",
-            "robot_description",
-            "-entity",
-            LaunchConfiguration("robot_name"),
-            '-x', LaunchConfiguration("x"),
-            '-y', LaunchConfiguration("y"),
-            '-Y', LaunchConfiguration("yaw"),
+            '-topic',
+            'robot_description',
+            '-entity',
+            LaunchConfiguration('robot_name'),
+            '-x', LaunchConfiguration('x'),
+            '-y', LaunchConfiguration('y'),
+            '-Y', LaunchConfiguration('yaw'),
         ],
 
-        output="screen",
+        output='screen',
     )
     launch_description.add_action(robot_entity)
 

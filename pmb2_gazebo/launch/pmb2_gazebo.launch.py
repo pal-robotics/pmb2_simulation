@@ -12,20 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from dataclasses import dataclass
 import os
 from os import environ, pathsep
 
 from ament_index_python.packages import get_package_prefix
-
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable, SetLaunchConfiguration
 from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration
-from launch_pal.arg_utils import LaunchArgumentsBase, CommonArgs
-from launch_pal.robot_arguments import PMB2Args
-from launch_pal.include_utils import include_scoped_launch_py_description
 from launch_pal.actions import CheckPublicSim
-from dataclasses import dataclass
+from launch_pal.arg_utils import CommonArgs, LaunchArgumentsBase
+from launch_pal.include_utils import include_scoped_launch_py_description
+from launch_pal.robot_arguments import PMB2Args
 
 
 @dataclass(frozen=True)
@@ -58,7 +57,7 @@ def declare_actions(
     launch_description: LaunchDescription, launch_args: LaunchArguments
 ):
     # Set use_sim_time to True
-    set_sim_time = SetLaunchConfiguration("use_sim_time", "True")
+    set_sim_time = SetLaunchConfiguration('use_sim_time', 'True')
     launch_description.add_action(set_sim_time)
 
     # Shows error if is_public_sim is not set to True when using public simulation
@@ -78,9 +77,9 @@ def declare_actions(
         paths=['launch', 'pal_gazebo.launch.py'],
         env_vars=[gazebo_model_path_env_var],
         launch_arguments={
-            "world_name":  launch_args.world_name,
-            "model_paths": packages,
-            "resource_paths": packages,
+            'world_name':  launch_args.world_name,
+            'model_paths': packages,
+            'resource_paths': packages,
         })
 
     launch_description.add_action(gazebo)
@@ -89,11 +88,11 @@ def declare_actions(
         pkg_name='pmb2_2dnav',
         paths=['launch', 'pmb2_nav_bringup.launch.py'],
         launch_arguments={
-            "robot_name":  robot_name,
-            "laser":  launch_args.laser_model,
-            "is_public_sim": launch_args.is_public_sim,
-            "use_sim_time": LaunchConfiguration('use_sim_time'),
-            "world_name": launch_args.world_name,
+            'robot_name':  robot_name,
+            'laser':  launch_args.laser_model,
+            'is_public_sim': launch_args.is_public_sim,
+            'use_sim_time': LaunchConfiguration('use_sim_time'),
+            'world_name': launch_args.world_name,
         },
         condition=IfCondition(LaunchConfiguration('navigation')))
 
@@ -115,11 +114,11 @@ def declare_actions(
     pmb2_bringup = include_scoped_launch_py_description(
         pkg_name='pmb2_bringup', paths=['launch', 'pmb2_bringup.launch.py'],
         launch_arguments={
-            "wheel_model": launch_args.wheel_model,
-            "laser_model": launch_args.laser_model,
-            "has_courier_rgbd_sensors": launch_args.has_courier_rgbd_sensors,
-            "use_sim_time": launch_args.use_sim_time,
-            "is_public_sim": launch_args.is_public_sim,
+            'wheel_model': launch_args.wheel_model,
+            'laser_model': launch_args.laser_model,
+            'has_courier_rgbd_sensors': launch_args.has_courier_rgbd_sensors,
+            'use_sim_time': LaunchConfiguration('use_sim_time'),
+            'is_public_sim': launch_args.is_public_sim,
         }
     )
 
@@ -127,13 +126,13 @@ def declare_actions(
 
 
 def get_model_paths(packages_names):
-    model_paths = ""
+    model_paths = ''
     for package_name in packages_names:
-        if model_paths != "":
+        if model_paths != '':
             model_paths += pathsep
 
         package_path = get_package_prefix(package_name)
-        model_path = os.path.join(package_path, "share")
+        model_path = os.path.join(package_path, 'share')
 
         model_paths += model_path
 
