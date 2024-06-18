@@ -2,6 +2,12 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* courier_rgdb_sensor renamed
+* Launch std
+* Contributors: Oscar, oscarmartinez
+
 4.0.10 (2024-05-08)
 -------------------
 * added pose configuration in spawn entity
