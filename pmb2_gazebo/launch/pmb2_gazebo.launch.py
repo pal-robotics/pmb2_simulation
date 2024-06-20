@@ -22,9 +22,10 @@ from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable, SetLau
 from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration
 from launch_pal.actions import CheckPublicSim
-from launch_pal.arg_utils import CommonArgs, LaunchArgumentsBase
+from launch_pal.robot_arguments import CommonArgs
+from launch_pal.arg_utils import LaunchArgumentsBase
 from launch_pal.include_utils import include_scoped_launch_py_description
-from launch_pal.robot_arguments import PMB2Args
+from pmb2_description.launch_arguments import PMB2Args
 
 
 @dataclass(frozen=True)
