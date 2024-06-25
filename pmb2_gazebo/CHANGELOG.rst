@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.12 (2024-06-25)
+-------------------
 * Fix linters
 * Remove unused dependencies
 * Remove unused worlds, models and media'
