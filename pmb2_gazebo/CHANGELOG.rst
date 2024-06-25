@@ -2,6 +2,14 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix linters
+* Remove unused dependencies
+* Remove unused worlds, models and media'
+* Add public sim check
+* Contributors: David ter Kuile
+
 4.0.11 (2024-06-18)
 -------------------
 * courier_rgdb_sensor renamed
