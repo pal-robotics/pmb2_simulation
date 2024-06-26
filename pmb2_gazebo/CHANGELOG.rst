@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Change import for launch args
+* Contributors: David ter Kuile
+
 4.0.12 (2024-06-25)
 -------------------
 * Fix linters
