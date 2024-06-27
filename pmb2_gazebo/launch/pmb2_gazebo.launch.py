@@ -32,7 +32,7 @@ from pmb2_description.launch_arguments import PMB2Args
 class LaunchArguments(LaunchArgumentsBase):
     wheel_model: DeclareLaunchArgument = PMB2Args.wheel_model
     laser_model: DeclareLaunchArgument = PMB2Args.laser_model
-    has_courier_rgbd_sensors: DeclareLaunchArgument = PMB2Args.has_courier_rgbd_sensors
+    add_on_module: DeclareLaunchArgument = PMB2Args.add_on_module
     is_public_sim: DeclareLaunchArgument = CommonArgs.is_public_sim
     world_name: DeclareLaunchArgument = CommonArgs.world_name
     navigation: DeclareLaunchArgument = CommonArgs.navigation
@@ -117,7 +117,7 @@ def declare_actions(
         launch_arguments={
             'wheel_model': launch_args.wheel_model,
             'laser_model': launch_args.laser_model,
-            'has_courier_rgbd_sensors': launch_args.has_courier_rgbd_sensors,
+            'add_on_module': launch_args.add_on_module,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
             'is_public_sim': launch_args.is_public_sim,
         }
