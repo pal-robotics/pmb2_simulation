@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.14 (2024-06-28)
+-------------------
 * Change courier sensors to add-on-module
 * Contributors: David ter Kuile
 
