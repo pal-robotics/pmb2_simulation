@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Change courier sensors to add-on-module
+* Contributors: David ter Kuile
+
 4.0.13 (2024-06-26)
 -------------------
 * Change import for launch args
