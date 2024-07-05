@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.15 (2024-07-05)
+-------------------
 * Add slam argument for navigation
 * Contributors: Noel Jimenez
 
