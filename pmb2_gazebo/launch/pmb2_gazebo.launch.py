@@ -36,6 +36,7 @@ class LaunchArguments(LaunchArgumentsBase):
     is_public_sim: DeclareLaunchArgument = CommonArgs.is_public_sim
     world_name: DeclareLaunchArgument = CommonArgs.world_name
     navigation: DeclareLaunchArgument = CommonArgs.navigation
+    slam: DeclareLaunchArgument = CommonArgs.slam
     x: DeclareLaunchArgument = CommonArgs.x
     y: DeclareLaunchArgument = CommonArgs.y
     yaw: DeclareLaunchArgument = CommonArgs.yaw
@@ -94,6 +95,7 @@ def declare_actions(
             'is_public_sim': launch_args.is_public_sim,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
             'world_name': launch_args.world_name,
+            'slam': launch_args.slam,
         },
         condition=IfCondition(LaunchConfiguration('navigation')))
 
