@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add slam argument for navigation
+* Contributors: Noel Jimenez
+
 4.0.14 (2024-06-28)
 -------------------
 * Change courier sensors to add-on-module
