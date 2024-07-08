@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.16 (2024-07-08)
+-------------------
 * added advanced navigation
 * Contributors: antoniobrandi
 
