@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added advanced navigation
+* Contributors: antoniobrandi
+
 4.0.15 (2024-07-05)
 -------------------
 * Add slam argument for navigation
