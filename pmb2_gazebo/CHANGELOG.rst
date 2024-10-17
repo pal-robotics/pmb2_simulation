@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.1.0 (2024-10-17)
+------------------
 * added advanced nav launch arg to navigation
 * Contributors: martinaannicelli
 
