@@ -2,6 +2,9 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.32 (2023-04-04)
 -------------------
 * Merge branch 'fix_world' into 'erbium-devel'

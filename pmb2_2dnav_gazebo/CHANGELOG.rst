@@ -2,6 +2,11 @@
 Changelog for package pmb2_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* feat: launch highways server if sim is not public
+* Contributors: josegarcia
+
 2.0.32 (2023-04-04)
 -------------------
 
