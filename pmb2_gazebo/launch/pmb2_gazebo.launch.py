@@ -20,7 +20,7 @@ from ament_index_python.packages import get_package_prefix
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable, SetLaunchConfiguration
 from launch.conditions import IfCondition
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_pal.actions import CheckPublicSim
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
@@ -114,7 +114,18 @@ def declare_actions(
     docking = include_scoped_launch_py_description(
         pkg_name='pmb2_docking',
         paths=['launch', 'pmb2_docking_bringup.launch.py'],
-        condition=IfCondition(LaunchConfiguration('docking')))
+        condition=IfCondition(
+            PythonExpression(
+                [
+                    "'",
+                    LaunchConfiguration('docking'),
+                    "' == 'True' or '",
+                    LaunchConfiguration('advanced_navigation'),
+                    "' == 'True'"
+                ]
+            )
+        )
+    )
 
     launch_description.add_action(docking)
 
