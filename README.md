@@ -119,4 +119,3 @@ You can start the SLAM and navigation in simulation by using
 ```console
 ros2 launch pmb2_gazebo pmb2_gazebo.launch.py is_public_sim:=True navigation:=True slam:=True
 ```
-To use private simulation you can avoid to set is_public_sim argument.
