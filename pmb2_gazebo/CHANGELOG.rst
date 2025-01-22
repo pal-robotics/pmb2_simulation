@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* support camera_model argument
+* Contributors: antoniobrandi
+
 4.2.0 (2024-12-02)
 ------------------
 * always start docking with adv navigation
