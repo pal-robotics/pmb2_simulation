@@ -15,6 +15,7 @@
 from dataclasses import dataclass
 import os
 import yaml
+import tempfile
 from os import environ, pathsep
 
 from ament_index_python.packages import get_package_prefix, get_package_share_directory
@@ -66,30 +67,29 @@ def private_navigation(context, *args, **kwargs):
     if advanced_navigation == 'True':
         rviz_cfg_pkg = 'pmb2_advanced_2dnav'
 
-    robot_info_path = robot_info = os.path.join(
-        get_package_share_directory('pmb2_gazebo'),
-        'config',
-    )
-    robot_info = os.path.join(robot_info_path, '99_robot_info.yaml')
-    with open(robot_info, 'r') as robot_info_file:
-        cur_yaml = yaml.safe_load(robot_info_file)
-
-    params = cur_yaml.get('robot_info_publisher', {}).get('ros__parameters', {})
-    new_values = {
-        'advanced_navigation': (advanced_navigation == 'True'),
-        'has_dock': (docking == 'True'),
-        'add_on_module': add_on_module,
-        'camera_model': camera_model,
+    robot_info = {
+        "robot_info_publisher": {
+            "ros__parameters": {
+                "robot_type": "pmb2",
+                "base_type": "pmb2",
+                "add_on_module": add_on_module,
+                "laser_model": "sick-571",
+                "camera_model": camera_model,
+                "advanced_navigation": (advanced_navigation == 'True'),
+                "has_dock": (docking == 'True'),
+            }
+        }
     }
-    params.update(new_values)
 
-    with open(robot_info, 'w') as robot_info_file:
-        yaml.safe_dump(cur_yaml, robot_info_file)
+    temp_yaml = tempfile.mkdtemp()
+    temp_robot_info = os.path.join(temp_yaml, '99_robot_info.yaml')
+    with open(temp_robot_info, 'w') as temp_robot_info_file:
+        yaml.safe_dump(robot_info, temp_robot_info_file)
 
     # Robot Info Publisher
     robot_info_env = SetEnvironmentVariable(
         name='ROBOT_INFO_PATH',
-        value=robot_info_path,
+        value=temp_yaml,
     )
     actions.append(robot_info_env)
 

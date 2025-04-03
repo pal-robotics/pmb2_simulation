@@ -1,9 +1,0 @@
-robot_info_publisher:
-  ros__parameters:
-    robot_type: pmb2
-    base_type: pmb2
-    add_on_module: no-add-on
-    laser_model: sick-571
-    camera_model: no-camera
-    advanced_navigation: False
-    has_dock: False
