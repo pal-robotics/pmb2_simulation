@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.5.0 (2025-04-03)
+------------------
 * store robot_info in tmp
 * Contributors: antoniobrandi
 
