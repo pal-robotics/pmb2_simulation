@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.5.1 (2025-04-09)
+------------------
 * rviz_typo_pluci_nav
 * Contributors: salvatorepiccolo
 
