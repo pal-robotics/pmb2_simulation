@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.5.2 (2025-05-05)
+------------------
 * fix deps
 * Contributors: andreacapodacqua
 
