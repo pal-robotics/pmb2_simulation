@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* rviz use_sim_time
+* Contributors: antoniobrandi
+
 4.5.2 (2025-05-05)
 ------------------
 * fix deps
