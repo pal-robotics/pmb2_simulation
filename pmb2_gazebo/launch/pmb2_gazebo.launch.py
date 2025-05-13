@@ -55,6 +55,7 @@ class LaunchArguments(LaunchArgumentsBase):
     x: DeclareLaunchArgument = CommonArgs.x
     y: DeclareLaunchArgument = CommonArgs.y
     yaw: DeclareLaunchArgument = CommonArgs.yaw
+    namespace: DeclareLaunchArgument = CommonArgs.namespace
 
 
 def private_navigation(context, *args, **kwargs):
@@ -296,6 +297,7 @@ def declare_actions(
         pkg_name='pmb2_gazebo',
         paths=['launch', 'robot_spawn.launch.py'],
         launch_arguments={
+            'namespace': launch_args.namespace,
             'robot_name': robot_name,
             'x': launch_args.x,
             'y': launch_args.y,
@@ -308,6 +310,7 @@ def declare_actions(
     pmb2_bringup = include_scoped_launch_py_description(
         pkg_name='pmb2_bringup', paths=['launch', 'pmb2_bringup.launch.py'],
         launch_arguments={
+            'namespace': launch_args.namespace,
             'wheel_model': launch_args.wheel_model,
             'laser_model': launch_args.laser_model,
             'add_on_module': launch_args.add_on_module,
