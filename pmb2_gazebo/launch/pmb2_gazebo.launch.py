@@ -26,6 +26,7 @@ from launch.actions import (
     SetLaunchConfiguration,
     GroupAction,
     OpaqueFunction,
+    LogInfo,
 )
 from launch.conditions import IfCondition, UnlessCondition
 from launch.substitutions import LaunchConfiguration
@@ -38,6 +39,9 @@ from launch_pal.include_utils import (
     include_launch_py_description,
 )
 from pmb2_description.launch_arguments import PMB2Args
+
+import rclpy
+from rclpy.node import Node as RclpyNode
 
 
 @dataclass(frozen=True)
@@ -274,7 +278,18 @@ def declare_actions(
             'resource_paths': packages,
         })
 
-    launch_description.add_action(gazebo)
+    # If Gazebo is not running launch it, otherwise skip it
+    rclpy.init()
+    node = RclpyNode('node_checker')
+    rclpy.spin_once(node, timeout_sec=1.0)
+    if 'gazebo' not in node.get_node_names():
+        launch_description.add_action(gazebo)
+    else:
+        launch_description.add_action(
+            LogInfo(msg='Gazebo is already running, skipping it!')
+        )
+    node.destroy_node()
+    rclpy.shutdown()
 
     navigation = GroupAction(
         condition=IfCondition(LaunchConfiguration('navigation')),

@@ -17,7 +17,7 @@ from dataclasses import dataclass
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
 from launch_ros.actions import Node
@@ -59,7 +59,18 @@ def declare_actions(
             '-topic',
             'robot_description',
             '-entity',
-            LaunchConfiguration('robot_name'),
+            # 'namespace' if $arg('namespace') is not empty else 'robot_name'
+            PythonExpression(
+                [
+                    "'",
+                    LaunchConfiguration('namespace'),
+                    "' if '",
+                    LaunchConfiguration('namespace'),
+                    "' else '",
+                    LaunchConfiguration('robot_name'),
+                    "'"
+                ]
+            ),
             '-robot_namespace',
             LaunchConfiguration('namespace'),
             '-x', LaunchConfiguration('x'),
