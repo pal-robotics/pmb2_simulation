@@ -26,12 +26,12 @@ from launch.actions import (
     SetLaunchConfiguration,
     GroupAction,
     OpaqueFunction,
-    LogInfo,
 )
 from launch.conditions import IfCondition, UnlessCondition
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from launch_pal.actions import CheckPublicSim
+from launch_pal.conditions import UnlessNodeRunning
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase, read_launch_argument
 from launch_pal.include_utils import (
@@ -39,9 +39,6 @@ from launch_pal.include_utils import (
     include_launch_py_description,
 )
 from pmb2_description.launch_arguments import PMB2Args
-
-import rclpy
-from rclpy.node import Node as RclpyNode
 
 
 @dataclass(frozen=True)
@@ -276,20 +273,11 @@ def declare_actions(
             'world_name':  launch_args.world_name,
             'model_paths': packages,
             'resource_paths': packages,
-        })
+        },
+        condition=UnlessNodeRunning("gazebo"),
+    )
 
-    # If Gazebo is not running launch it, otherwise skip it
-    rclpy.init()
-    node = RclpyNode('node_checker')
-    rclpy.spin_once(node, timeout_sec=1.0)
-    if 'gazebo' not in node.get_node_names():
-        launch_description.add_action(gazebo)
-    else:
-        launch_description.add_action(
-            LogInfo(msg='Gazebo is already running, skipping it!')
-        )
-    node.destroy_node()
-    rclpy.shutdown()
+    launch_description.add_action(gazebo)
 
     navigation = GroupAction(
         condition=IfCondition(LaunchConfiguration('navigation')),
