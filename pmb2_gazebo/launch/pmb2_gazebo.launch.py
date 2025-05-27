@@ -256,7 +256,7 @@ def declare_actions(
     launch_description.add_action(public_sim_check)
 
     robot_name = 'pmb2'
-    packages = ['pmb2_description']
+    packages = ['pmb2_description', 'pal_urdf_utils']
 
     model_path = get_model_paths(packages)
 
