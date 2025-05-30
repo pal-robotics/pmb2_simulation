@@ -137,6 +137,10 @@ def declare_actions(
     launch_description.add_action(pmb2_bringup)
 
     # Robot Info Publisher
+    robot_info_ns = PythonExpression([
+        "'/", LaunchConfiguration('namespace'),
+        "' if '", LaunchConfiguration('namespace'), "' else ''"
+    ])
     robot_info_file = RobotInfoFile(
         content={
             'robot_type': robot_name,
@@ -147,9 +151,10 @@ def declare_actions(
             'laser_model': launch_args.laser_model,
             'has_dock': launch_args.docking,
             'advanced_navigation': launch_args.advanced_navigation,
+            'namespace': robot_info_ns,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
         },
-    ),
+    )
     robot_info_env = SetEnvironmentVariable(
         name='ROBOT_INFO_PATH',
         value=robot_info_file
