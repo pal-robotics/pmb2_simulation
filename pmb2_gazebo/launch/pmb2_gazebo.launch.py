@@ -16,27 +16,21 @@ from dataclasses import dataclass
 import os
 from os import environ, pathsep
 
-from ament_index_python.packages import get_package_prefix, get_package_share_directory
+from ament_index_python.packages import get_package_prefix
 from launch import LaunchDescription
 from launch.actions import (
     DeclareLaunchArgument,
     SetEnvironmentVariable,
     SetLaunchConfiguration,
-    GroupAction,
 )
-from launch.conditions import IfCondition, UnlessCondition
+from launch.conditions import IfCondition
 from launch.substitutions import (
     LaunchConfiguration,
-    PathJoinSubstitution,
-    PythonExpression,
     AndSubstitution,
     NotSubstitution,
 )
-from launch_ros.actions import Node
-from launch_ros.substitutions import FindPackageShare
 from launch_pal.actions import CheckPublicSim
 from launch_pal.conditions import UnlessNodeRunning
-from launch_pal.substitutions import RobotInfoFile
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
 from launch_pal.include_utils import include_scoped_launch_py_description
@@ -136,246 +130,38 @@ def declare_actions(
 
     launch_description.add_action(pmb2_bringup)
 
-    # Robot Info Publisher
-    robot_info_ns = PythonExpression([
-        "'/", LaunchConfiguration('namespace'),
-        "' if '", LaunchConfiguration('namespace'), "' else ''"
-    ])
-    robot_info_file = RobotInfoFile(
-        content={
-            'robot_type': robot_name,
-            'base_type': robot_name,
-            'wheel_model': launch_args.wheel_model,
-            'camera_model': launch_args.camera_model,
-            'add_on_module': launch_args.add_on_module,
-            'laser_model': launch_args.laser_model,
-            'has_dock': launch_args.docking,
-            'advanced_navigation': launch_args.advanced_navigation,
-            'namespace': robot_info_ns,
-            'use_sim_time': LaunchConfiguration('use_sim_time'),
-        },
-    )
-    robot_info_env = SetEnvironmentVariable(
-        name='ROBOT_INFO_PATH',
-        value=robot_info_file
-    )
-    launch_description.add_action(robot_info_env)
-
-    robot_info_publisher = Node(
-        namespace=LaunchConfiguration('namespace'),
-        package='robot_info_publisher',
-        executable='robot_info_publisher',
-        name='robot_info_publisher',
-        output='screen',
-        condition=UnlessCondition(LaunchConfiguration('is_public_sim')),
-    )
-    launch_description.add_action(robot_info_publisher)
-
-    public_nav_params = os.path.join(
-        get_package_share_directory('pmb2_2dnav'), 'config', 'nav_public_sim.yaml'
-    )
-    public_navigation_launch = GroupAction(
+    public_navigation_launch = include_scoped_launch_py_description(
         condition=IfCondition(AndSubstitution(
             LaunchConfiguration('is_public_sim'), LaunchConfiguration('navigation'))
         ),
-        actions=[
-            # Navigation
-            include_scoped_launch_py_description(
-                pkg_name='nav2_bringup',
-                paths=['launch', 'navigation_launch.py'],
-                launch_arguments={
-                    'params_file': public_nav_params,
-                    'use_sim_time': LaunchConfiguration('use_sim_time'),
-                },
-            ),
-
-            # Localization
-            include_scoped_launch_py_description(
-                pkg_name='nav2_bringup',
-                paths=['launch', 'localization_launch.py'],
-                launch_arguments={
-                    'params_file': public_nav_params,
-                    'map': PathJoinSubstitution([
-                        get_package_share_directory('pal_maps'),
-                        'maps',
-                        LaunchConfiguration('world_name'),
-                        'map.yaml'
-                    ]),
-                    'use_sim_time': LaunchConfiguration('use_sim_time'),
-                },
-                condition=UnlessCondition(LaunchConfiguration('slam')),
-            ),
-
-            # SLAM
-            include_scoped_launch_py_description(
-                pkg_name='nav2_bringup',
-                paths=['launch', 'slam_launch.py'],
-                launch_arguments={
-                    'params_file': public_nav_params,
-                    'use_sim_time': LaunchConfiguration('use_sim_time'),
-                },
-                condition=IfCondition(LaunchConfiguration('slam')),
-            ),
-
-            # RViz
-            include_scoped_launch_py_description(
-                pkg_name='nav2_bringup',
-                paths=['launch', 'rviz_launch.py'],
-            ),
-        ]
+        pkg_name='pmb2_gazebo',
+        paths=['launch', 'navigation_public_sim.launch.py'],
+        launch_arguments={
+            'world_name': launch_args.world_name,
+            'slam': launch_args.slam,
+            'use_sim_time': LaunchConfiguration('use_sim_time'),
+        },
     )
     launch_description.add_action(public_navigation_launch)
 
-    rviz_cfg_pkg = PythonExpression([
-        "'pmb2_advanced_2dnav' if '",
-        LaunchConfiguration('advanced_navigation'),
-        "'=='True' else 'pmb2_2dnav'",
-    ]),
-    private_navigation_launch = GroupAction(
+    private_navigation_launch = include_scoped_launch_py_description(
         condition=IfCondition(AndSubstitution(
             NotSubstitution(LaunchConfiguration('is_public_sim')),
             LaunchConfiguration('navigation'))
         ),
-        actions=[
-            # Laser Sensors
-            include_scoped_launch_py_description(
-                pkg_name='pmb2_laser_sensors',
-                paths=['launch', 'laser_sim.launch.py'],
-                launch_arguments={
-                    'namespace': launch_args.namespace,
-                    'wheel_model': launch_args.wheel_model,
-                    'camera_model': launch_args.camera_model,
-                    'add_on_module': launch_args.add_on_module,
-                    'laser_model': launch_args.laser_model,
-                    'docking': launch_args.docking,
-                    'advanced_navigation': launch_args.advanced_navigation,
-                    'use_sim_time': LaunchConfiguration('use_sim_time'),
-                },
-                env_vars=[robot_info_env],
-            ),
-
-            # Navigation
-            include_scoped_launch_py_description(
-                pkg_name='pmb2_2dnav',
-                paths=['launch', 'navigation.launch.py'],
-                launch_arguments={
-                    'namespace': launch_args.namespace,
-                    'wheel_model': launch_args.wheel_model,
-                    'camera_model': launch_args.camera_model,
-                    'add_on_module': launch_args.add_on_module,
-                    'laser_model': launch_args.laser_model,
-                    'docking': launch_args.docking,
-                    'advanced_navigation': launch_args.advanced_navigation,
-                    'use_sim_time': LaunchConfiguration('use_sim_time'),
-                },
-                env_vars=[robot_info_env],
-            ),
-
-            # Localization
-            include_scoped_launch_py_description(
-                pkg_name='pmb2_2dnav',
-                paths=['launch', 'localization.launch.py'],
-                launch_arguments={
-                    'namespace': launch_args.namespace,
-                    'wheel_model': launch_args.wheel_model,
-                    'camera_model': launch_args.camera_model,
-                    'add_on_module': launch_args.add_on_module,
-                    'laser_model': launch_args.laser_model,
-                    'docking': launch_args.docking,
-                    'advanced_navigation': launch_args.advanced_navigation,
-                    'use_sim_time': LaunchConfiguration('use_sim_time'),
-                },
-                env_vars=[robot_info_env],
-                condition=UnlessCondition(LaunchConfiguration('slam')),
-            ),
-
-            # SLAM
-            include_scoped_launch_py_description(
-                pkg_name='pmb2_2dnav',
-                paths=['launch', 'slam.launch.py'],
-                launch_arguments={
-                    'namespace': launch_args.namespace,
-                    'wheel_model': launch_args.wheel_model,
-                    'camera_model': launch_args.camera_model,
-                    'add_on_module': launch_args.add_on_module,
-                    'laser_model': launch_args.laser_model,
-                    'docking': launch_args.docking,
-                    'advanced_navigation': launch_args.advanced_navigation,
-                    'use_sim_time': LaunchConfiguration('use_sim_time'),
-                },
-                env_vars=[robot_info_env],
-                condition=IfCondition(LaunchConfiguration('slam')),
-            ),
-
-            # Docking
-            include_scoped_launch_py_description(
-                pkg_name='pmb2_docking',
-                paths=['launch', 'docking_sim.launch.py'],
-                launch_arguments={
-                    'namespace': launch_args.namespace,
-                    'wheel_model': launch_args.wheel_model,
-                    'camera_model': launch_args.camera_model,
-                    'add_on_module': launch_args.add_on_module,
-                    'laser_model': launch_args.laser_model,
-                    'docking': launch_args.docking,
-                    'has_dock': launch_args.docking,
-                    'advanced_navigation': launch_args.advanced_navigation,
-                    'use_sim_time': LaunchConfiguration('use_sim_time'),
-                },
-                env_vars=[robot_info_env],
-                condition=IfCondition(LaunchConfiguration('docking'))
-            ),
-
-            # Stores Server
-            Node(
-                namespace=LaunchConfiguration('namespace'),
-                package='pal_stores_server',
-                executable='pal_stores_server',
-                arguments=[PathJoinSubstitution([
-                    os.environ['HOME'], '.pal',
-                    PythonExpression(["'", LaunchConfiguration('namespace'), "stores.db'"]),
-                ])],
-                condition=IfCondition(LaunchConfiguration('advanced_navigation'))
-            ),
-
-            # Advanced Navigation
-            include_scoped_launch_py_description(
-                pkg_name='pmb2_advanced_2dnav',
-                paths=['launch', 'advanced_navigation.launch.py'],
-                launch_arguments={
-                    'namespace': launch_args.namespace,
-                    'wheel_model': launch_args.wheel_model,
-                    'camera_model': launch_args.camera_model,
-                    'add_on_module': launch_args.add_on_module,
-                    'laser_model': launch_args.laser_model,
-                    'has_dock': launch_args.docking,
-                    'docking': launch_args.docking,
-                    'advanced_navigation': launch_args.advanced_navigation,
-                    'use_sim_time': LaunchConfiguration('use_sim_time'),
-                },
-                env_vars=[robot_info_env],
-                condition=IfCondition(LaunchConfiguration('advanced_navigation'))
-            ),
-
-            # RViz
-            Node(
-                namespace=LaunchConfiguration('namespace'),
-                package='rviz2',
-                executable='rviz2',
-                arguments=['-d', PathJoinSubstitution([
-                    FindPackageShare(rviz_cfg_pkg),
-                    'config',
-                    'rviz',
-                    'navigation.rviz',
-                ])],
-                parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
-                output='screen',
-                remappings=[
-                    ('/tf', 'tf'),
-                    ('/tf_static', 'tf_static'),
-                ],
-            ),
-        ]
+        pkg_name='pmb2_gazebo',
+        paths=['launch', 'navigation_private_sim.launch.py'],
+        launch_arguments={
+            'namespace': launch_args.namespace,
+            'wheel_model': launch_args.wheel_model,
+            'camera_model': launch_args.camera_model,
+            'add_on_module': launch_args.add_on_module,
+            'laser_model': launch_args.laser_model,
+            'docking': launch_args.docking,
+            'slam': launch_args.slam,
+            'advanced_navigation': launch_args.advanced_navigation,
+            'use_sim_time': LaunchConfiguration('use_sim_time'),
+        },
     )
     launch_description.add_action(private_navigation_launch)
 
