@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add pal_urdf_utils as env var path for simulation
+* Contributors: Aina
+
 4.7.0 (2025-05-07)
 ------------------
 * add use_sim_time to robot_info
