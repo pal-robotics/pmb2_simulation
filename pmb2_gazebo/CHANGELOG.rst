@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.8.0 (2025-06-17)
+------------------
 * split gazebo launch file
 * use namespace in robot_info
 * multi robot launch
