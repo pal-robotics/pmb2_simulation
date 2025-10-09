@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added gzclient and rviz args
+* Contributors: martinaannicelli
+
 4.8.0 (2025-06-17)
 ------------------
 * split gazebo launch file
