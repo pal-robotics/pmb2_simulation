@@ -44,6 +44,7 @@ class LaunchArguments(LaunchArgumentsBase):
     docking: DeclareLaunchArgument = CommonArgs.docking
     namespace: DeclareLaunchArgument = CommonArgs.namespace
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
+    rviz: DeclareLaunchArgument = CommonArgs.rviz
 
 
 def generate_launch_description():
@@ -254,6 +255,7 @@ def declare_actions(
             ('/tf', 'tf'),
             ('/tf_static', 'tf_static'),
         ],
+        condition=IfCondition(LaunchConfiguration('rviz')),
     )
 
     launch_description.add_action(rviz)

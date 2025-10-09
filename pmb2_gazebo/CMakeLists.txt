@@ -10,4 +10,4 @@ if(BUILD_TESTING)
 endif()
 
 # Media commented out
-ament_auto_package(INSTALL_TO_SHARE launch)
+ament_auto_package(USE_SCOPED_HEADER_INSTALL_DIR INSTALL_TO_SHARE launch)

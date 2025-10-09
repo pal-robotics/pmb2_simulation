@@ -53,6 +53,8 @@ class LaunchArguments(LaunchArgumentsBase):
     y: DeclareLaunchArgument = CommonArgs.y
     yaw: DeclareLaunchArgument = CommonArgs.yaw
     namespace: DeclareLaunchArgument = CommonArgs.namespace
+    rviz: DeclareLaunchArgument = CommonArgs.rviz
+    gzclient: DeclareLaunchArgument = CommonArgs.gzclient
 
 
 def generate_launch_description():
@@ -95,6 +97,7 @@ def declare_actions(
             'world_name':  launch_args.world_name,
             'model_paths': packages,
             'resource_paths': packages,
+            'gzclient': launch_args.gzclient,
         },
         condition=UnlessNodeRunning("gazebo"),
     )
@@ -140,6 +143,7 @@ def declare_actions(
             'world_name': launch_args.world_name,
             'slam': launch_args.slam,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
+            'rviz': launch_args.rviz,
         },
     )
     launch_description.add_action(public_navigation_launch)
@@ -161,6 +165,7 @@ def declare_actions(
             'slam': launch_args.slam,
             'advanced_navigation': launch_args.advanced_navigation,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
+            'rviz': launch_args.rviz,
         },
     )
     launch_description.add_action(private_navigation_launch)

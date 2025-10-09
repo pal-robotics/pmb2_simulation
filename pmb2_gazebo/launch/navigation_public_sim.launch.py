@@ -31,6 +31,7 @@ class LaunchArguments(LaunchArgumentsBase):
     world_name: DeclareLaunchArgument = CommonArgs.world_name
     slam: DeclareLaunchArgument = CommonArgs.slam
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
+    rviz: DeclareLaunchArgument = CommonArgs.rviz
 
 
 def generate_launch_description():
@@ -78,6 +79,7 @@ def declare_actions(
                 'map.yaml'
             ]),
             'use_sim_time': LaunchConfiguration('use_sim_time'),
+            'world_name': LaunchConfiguration('world_name'),
         },
         condition=UnlessCondition(LaunchConfiguration('slam')),
     )
@@ -101,6 +103,7 @@ def declare_actions(
     rviz = include_scoped_launch_py_description(
         pkg_name='nav2_bringup',
         paths=['launch', 'rviz_launch.py'],
+        condition=IfCondition(LaunchConfiguration('rviz')),
     )
 
     launch_description.add_action(rviz)
