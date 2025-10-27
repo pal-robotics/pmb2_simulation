@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added missing dep for public sim
+* Contributors: andreacapodacqua
+
 4.9.0 (2025-10-09)
 ------------------
 * added gzclient and rviz args
