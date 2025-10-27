@@ -27,6 +27,7 @@
   <exec_depend>pmb2_description</exec_depend>
   <exec_depend>ros2launch</exec_depend>
   <exec_depend condition="$PAL_DISTRO >= alum">robot_info_publisher</exec_depend>
+  <exec_depend>nav2_bringup</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
