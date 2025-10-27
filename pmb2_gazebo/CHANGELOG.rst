@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.9.1 (2025-10-27)
+------------------
 * added missing dep for public sim
 * Contributors: andreacapodacqua
 
