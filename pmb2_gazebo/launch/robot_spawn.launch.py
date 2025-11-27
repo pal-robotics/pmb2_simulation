@@ -33,6 +33,7 @@ class LaunchArguments(LaunchArgumentsBase):
 
     x: DeclareLaunchArgument = CommonArgs.x
     y: DeclareLaunchArgument = CommonArgs.y
+    z: DeclareLaunchArgument = CommonArgs.z
     yaw: DeclareLaunchArgument = CommonArgs.yaw
     namespace: DeclareLaunchArgument = CommonArgs.namespace
     gazebo_version: DeclareLaunchArgument = CommonArgs.gazebo_version
@@ -78,6 +79,7 @@ def declare_actions(
             LaunchConfiguration('namespace'),
             '-x', LaunchConfiguration('x'),
             '-y', LaunchConfiguration('y'),
+            '-z', LaunchConfiguration('z'),
             '-Y', LaunchConfiguration('yaw'),
         ],
         condition=LaunchConfigurationEquals('gazebo_version', 'classic'),

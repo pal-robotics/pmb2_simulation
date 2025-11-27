@@ -17,7 +17,7 @@ import os
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable
-from launch.conditions import IfCondition, UnlessCondition
+from launch.conditions import IfCondition, UnlessCondition, LaunchConfigurationEquals
 from launch.substitutions import (
     LaunchConfiguration,
     PathJoinSubstitution,
@@ -232,6 +232,26 @@ def declare_actions(
     )
 
     launch_description.add_action(advanced_navigation)
+
+    # RGBD Sensors
+    rgbd = include_scoped_launch_py_description(
+        pkg_name='pmb2_rgbd_sensors',
+        paths=['launch', 'rgbd_sim.launch.py'],
+        launch_arguments={
+            'namespace': launch_args.namespace,
+            'wheel_model': launch_args.wheel_model,
+            'camera_model': launch_args.camera_model,
+            'add_on_module': launch_args.add_on_module,
+            'laser_model': launch_args.laser_model,
+            'docking': launch_args.docking,
+            'advanced_navigation': launch_args.advanced_navigation,
+            'use_sim_time': LaunchConfiguration('use_sim_time'),
+        },
+        env_vars=[robot_info_env],
+        condition=LaunchConfigurationEquals('add_on_module', 'cobra')
+    )
+
+    launch_description.add_action(rgbd)
 
     # RViz
     rviz_cfg_pkg = PythonExpression([
