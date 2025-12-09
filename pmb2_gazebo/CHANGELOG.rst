@@ -2,6 +2,13 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Remove usage of gazebo plugins for JointStatePublisher and DiffDrive
+  Already handled by ros2_control
+* Add support for new gazebo
+* Contributors: Noel Jimenez
+
 4.9.1 (2025-10-27)
 ------------------
 * added missing dep for public sim
