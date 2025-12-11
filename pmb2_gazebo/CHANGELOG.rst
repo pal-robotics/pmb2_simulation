@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.11.0 (2025-12-11)
+-------------------
 * Point Cloud filter pipeline
 * Contributors: antoniobrandi
 
