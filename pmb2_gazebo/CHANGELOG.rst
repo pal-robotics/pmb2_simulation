@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Point Cloud filter pipeline
+* Contributors: antoniobrandi
+
 4.10.0 (2025-12-09)
 -------------------
 * Remove usage of gazebo plugins for JointStatePublisher and DiffDrive
