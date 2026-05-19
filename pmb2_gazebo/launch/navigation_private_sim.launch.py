@@ -178,8 +178,13 @@ def declare_actions(
     launch_description.add_action(slam)
 
     # Docking
+    docking_pkg = PythonExpression([
+        "'pmb2_advanced_docking' if '",
+        LaunchConfiguration('advanced_navigation'),
+        "'=='True' else 'pmb2_docking'",
+    ])
     docking = include_scoped_launch_py_description(
-        pkg_name='pmb2_docking',
+        pkg_name=docking_pkg,
         paths=['launch', 'docking_sim.launch.py'],
         launch_arguments={
             'namespace': launch_args.namespace,
