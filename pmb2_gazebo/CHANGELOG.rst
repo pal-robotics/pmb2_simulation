@@ -2,6 +2,12 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* stores_server log level
+* separate advanced docking
+* Contributors: antoniobrandi
+
 4.11.1 (2025-12-15)
 -------------------
 * missing deps
