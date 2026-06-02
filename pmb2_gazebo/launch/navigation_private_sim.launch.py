@@ -208,10 +208,13 @@ def declare_actions(
         namespace=LaunchConfiguration('namespace'),
         package='pal_stores_server',
         executable='pal_stores_server',
-        arguments=[PathJoinSubstitution([
-            os.environ['HOME'], '.pal',
-            PythonExpression(["'", LaunchConfiguration('namespace'), "stores.db'"]),
-        ])],
+        arguments=[
+            PathJoinSubstitution([
+                os.environ['HOME'], '.pal',
+                PythonExpression(["'", LaunchConfiguration('namespace'), "stores.db'"]),
+            ]),
+            '--ros-args', '--log-level', 'WARN'
+        ],
         condition=IfCondition(LaunchConfiguration('advanced_navigation'))
     )
 
