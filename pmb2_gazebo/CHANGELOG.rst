@@ -2,6 +2,11 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add missing dependency ros_gz_sim
+* Contributors: Noel Jimenez
+
 4.12.0 (2026-06-02)
 -------------------
 * stores_server log level
