@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.13.0 (2026-07-17)
+-------------------
 * start apps using localization manager
 * Contributors: antoniobrandi
 
