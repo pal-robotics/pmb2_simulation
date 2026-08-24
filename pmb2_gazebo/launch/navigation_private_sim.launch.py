@@ -90,6 +90,15 @@ def declare_actions(
     )
     launch_description.add_action(robot_info_env)
 
+    pal_configuration_manager = Node(
+        namespace=LaunchConfiguration('namespace'),
+        package='pal_configuration_manager',
+        executable='configuration_manager',
+        name='configuration_manager',
+        output='screen',
+    )
+    launch_description.add_action(pal_configuration_manager)
+
     robot_info_publisher = Node(
         namespace=LaunchConfiguration('namespace'),
         package='robot_info_publisher',

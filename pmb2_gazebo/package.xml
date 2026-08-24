@@ -32,6 +32,7 @@
   <exec_depend>ros_gz_bridge</exec_depend>
   <exec_depend>ros_gz_sim</exec_depend>
   <exec_depend condition="$PAL_DISTRO >= alum">robot_info_publisher</exec_depend>
+  <exec_depend condition="$PAL_DISTRO >= alum">pal_configuration_manager</exec_depend>
   <exec_depend>nav2_bringup</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
