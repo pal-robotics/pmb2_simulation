@@ -2,8 +2,8 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.14.0 (2026-08-24)
+-------------------
 * added pal_configuration_manager
 * Contributors: antoniobrandi
 
